@@ -1,5 +1,5 @@
-# MAKEFILE FOR PGM2 GAME
-# (c) 2006  XingXing
+# Makefile For PGM2 Game Patch
+# (c) 2016  XingXing(HappyASR#gmail.com)
 
 #############################################################################
 #需要配置的部分

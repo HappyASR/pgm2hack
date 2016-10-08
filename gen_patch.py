@@ -16,9 +16,9 @@ def process_asm(filename):
 		c = c.strip(' ').strip('\t')
 		org_str = c.split('(')[1].split(')')[0]
 		if org_str[:2]=='0x':
-			org_val = int(org_str,16)
+			org_val = int(org_str,16)&0xfffffff
 		else:
-			org_val = int(org_str)
+			org_val = int(org_str)&0xfffffff
 		resp.append( (org_val,filename,linecount,'\t'+TOKEN_PATCH+c) )
 		linecount += c.count('\n')
 	return resp

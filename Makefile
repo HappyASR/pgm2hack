@@ -17,7 +17,7 @@ ROM_FREE = 0x600000
 #DEBUG	= 1
 
 ROM_BASE=0x10000000
-RAM_BASE=0x20000000
+RAM_BASE=0x80000000
 
 #############################################################################
 SRCDIR  = src
@@ -32,7 +32,9 @@ GLOBAL_INCLUDE = $(SRCDIR)/xxpacth_include.h
 #############################################################################
 #所有的文件
 #############################################################################
-GAMEOBJ	=	$(OBJDIR)/patch.o $(GAMEOBJDIR)/game_test.o
+GAMEOBJ	=	$(OBJDIR)/patch.o\
+			$(GAMEOBJDIR)/retarget.o\
+			$(GAMEOBJDIR)/game_test.o
 
 #############################################################################
 #编译器配置
@@ -61,7 +63,6 @@ LDS = game.lds
 LDFLAGS = -nostdlib -lc_s -lgcc -lg -lm -Wl,-Map,$(MAP),-T,$(LDS),--section-start,.rom=$(ROM_BASE),--section-start,.ram=$(RAM_BASE)
 
 OBJCOPY = $(CROSS)objcopy
-OBJCOPYFLAGS = -Obinary -j.rom
 
 RM				= rm -f
 MD				= mkdir
@@ -70,8 +71,9 @@ MD				= mkdir
 
 GAME_OBJ_COMPILED    = $(GAMEOBJDIR)/rom.o
 ROM_COMPILED = $(GAMEOBJDIR)/rom.bin
+RAM_COMPILED = $(GAMEOBJDIR)/ram.bin
 DIRALL			= $(OBJDIR) $(GAMEOBJDIR) 
-OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_IGS_ENC) $(ROM_FIX_CHKSUM) $(ROM_ENC_FUNC) $(ROM_PATCHED) $(ROM_COMPILED)
+OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_COMPILED) $(RAM_COMPILED) $(SRCDIR)/patch.S
 
 #-------------------------------------------------
 # 'all' target needs to go here, before the 
@@ -81,12 +83,15 @@ OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_IGS_ENC) $(ROM_FIX_CHKSUM)
 all: maketree rom 
 
 #补丁工具
-$(ROM_NEW)	:	$(ROM_ORI) $(ROM_COMPILED)
-		app_patch.py $(ROM_ORI) $(MAP) $(ROM_COMPILED) $(ROM_NEW)
+$(ROM_NEW)	:	$(ROM_ORI) $(ROM_COMPILED) $(RAM_COMPILED)
+		app_patch.py $(ROM_ORI) $(MAP) $(ROM_COMPILED) $(RAM_COMPILED) $(ROM_NEW)
 
 #把OBJ转成BINARY
 $(ROM_COMPILED)	:	$(GAME_OBJ_COMPILED)
-		$(OBJCOPY) $(OBJCOPYFLAGS) $(GAME_OBJ_COMPILED) $(ROM_COMPILED)
+		$(OBJCOPY) -Obinary -j.rom $(GAME_OBJ_COMPILED) $(ROM_COMPILED)
+
+$(RAM_COMPILED)	:	$(GAME_OBJ_COMPILED)
+		$(OBJCOPY) -Obinary -j.ram $(GAME_OBJ_COMPILED) $(RAM_COMPILED)
 
 #链接
 $(GAME_OBJ_COMPILED)	:	$(GAMEOBJ)

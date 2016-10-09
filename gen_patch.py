@@ -38,7 +38,7 @@ def gen_patch(outfile,inpdir):
 	f.write('''
 #include "xxpacth_include.h"
 .text
-XXLABEL_START(dumpy)
+XXEXPORT_START(dumpy)
 
 ''')
 	for c in patch_all:
@@ -47,9 +47,11 @@ XXLABEL_START(dumpy)
 		f.write('.line %d\n' % c[2])
 		f.write(c[3]+'\n')
 
-	f.write('XXLABEL_END(dumpy)\n')
+	f.write('.file __FILE__\n')
+	f.write('.line __LINE__\n')
+	f.write('XXEXPORT_END(dumpy)\n')
 	f.write('.org ROM_FREE\n')
-	f.write('XXLABEL_START(ccode)\n')
+	f.write('XXEXPORT_START(ccode)\n')
 	f.close()
 
 if __name__=='__main__':

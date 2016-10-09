@@ -1,10 +1,12 @@
 #ifndef __XXPATCH_H__
 #define __XXPATCH_H__
 
-#define XXLABEL_START(x)  .global __patch_start_##x;__patch_start_##x:
-#define XXLABEL_END(x)   .global __patch_end_##x;__patch_end_##x:
+#define XXEXPORT(x) .global x;x:
 
-#define XXPATCH(x,y) XXLABEL_END(x);.org (x)&0xfffffff;.code y;XXLABEL_START(x)
+#define XXEXPORT_START(x)  XXEXPORT(__patch_start_##x)
+#define XXEXPORT_END(x)    XXEXPORT(__patch_end_##x)
+
+#define XXPATCH(x,y) XXEXPORT_END(x);.org (x)&0xfffffff;.code y;.eabi_attribute Tag_THUMB_ISA_use, 1;XXEXPORT_START(x)
 
 #define XXPATCH32(x) XXPATCH(x,32)
 #define XXPATCH16(x) XXPATCH(x,16)

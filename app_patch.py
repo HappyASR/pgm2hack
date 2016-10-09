@@ -5,7 +5,7 @@ import os
 import re
 import sys
 
-def patch_file(fileori,filemap,filepatch,fileout):
+def patch_file(fileori,filemap,filerom,fileram,fileout):
 	print 'processing', fileout
 	map_list = []
 	for c in open(filemap,'r').readlines():
@@ -18,7 +18,7 @@ def patch_file(fileori,filemap,filepatch,fileout):
 	#print map_list
 	dat_ori = open(fileori,'rb').read()
 	len_ori = len(dat_ori)
-	dat_pat = open(filepatch,'rb').read()
+	dat_pat = open(filerom,'rb').read()+open(fileram,'rb').read()
 	for i in range(len(map_list)/2):
 		pat_start = map_list[2*i][0]
 		pat_end = map_list[2*i+1][0]
@@ -32,5 +32,5 @@ def patch_file(fileori,filemap,filepatch,fileout):
 	print "Saved OK."
 
 if __name__=='__main__':
-	if len(sys.argv)>4:
-		patch_file(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+	if len(sys.argv)>5:
+		patch_file(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5])

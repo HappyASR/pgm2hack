@@ -14,12 +14,17 @@ SECTIONS
     *(.text*)
     *(.rodata)
     *(.rodata.*)
+    . = ALIGN(4);
+    PROVIDE(__rom_end__ = .);
   }
 
   .ram :
   {
-    *(.data)
-    *(.bss)
+    PROVIDE(__ram_start__ = .);
+    *(.data*)
+    *(.bss*)
+    *(COMMON*)
+    PROVIDE(__ram_end__ = .);
   }
 
 

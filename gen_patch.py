@@ -3,6 +3,7 @@
 
 TOKEN_PATCH = 'XXPATCH'
 import os
+import re
 
 #return (org,file,line,str)
 def process_asm(filename):
@@ -14,7 +15,8 @@ def process_asm(filename):
 	linecount = dat[0].count('\n')
 	for c in dat[1:]:
 		c = c.strip(' ').strip('\t')
-		org_str = c.split('(')[1].split(')')[0]
+		org_str = c.split('(')[1].strip()
+		org_str = re.compile(r'[), ]').split(org_str)[0]
 		if org_str[:2]=='0x':
 			org_val = int(org_str,16)&0xfffffff
 		else:

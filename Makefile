@@ -32,7 +32,7 @@ GLOBAL_INCLUDE = $(SRCDIR)/xxpacth_include.h
 #############################################################################
 #所有的文件
 #############################################################################
-GAMEOBJ	=	$(GAMEOBJDIR)/patch.o $(GAMEOBJDIR)/game_test.o
+GAMEOBJ	=	$(OBJDIR)/patch.o $(GAMEOBJDIR)/game_test.o
 
 #############################################################################
 #编译器配置
@@ -54,10 +54,11 @@ else
 CFLAGS += -DINLINE="__inline__"
 endif
 
-LD = $(CROSS)ld
+LD = $(CROSS)gcc
 MAP = $(OBJDIR)/game.map
 LDS = game.lds
-LDFLAGS = -t -Map $(MAP) -T $(LDS) --section-start .rom=$(ROM_BASE) --section-start .ram=$(RAM_BASE)
+#LDFLAGS = -t -Map $(MAP) -T $(LDS) -lgcc --section-start .rom=$(ROM_BASE) --section-start .ram=$(RAM_BASE)
+LDFLAGS = -nostdlib -lc_s -lgcc -lg -lm -Wl,-Map,$(MAP),-T,$(LDS),--section-start,.rom=$(ROM_BASE),--section-start,.ram=$(RAM_BASE)
 
 OBJCOPY = $(CROSS)objcopy
 OBJCOPYFLAGS = -Obinary -j.rom
@@ -97,10 +98,17 @@ $(GAME_OBJ_COMPILED)	:	$(GAMEOBJ)
 $(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.c $(GLOBAL_INCLUDE)
 		$(CC) $(CFLAGS) -c $< -o $@
 
-$(GAMEOBJDIR)/patch.o : 	$(SRCDIR)/patch/*.S $(GLOBAL_INCLUDE)
-		gen_patch.py
-		$(CC) $(CFLAGS) -c $(SRCDIR)/patch.S -o $@
+$(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
 
+$(OBJDIR)/%.o : $(SRCDIR)/%.c $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(SRCDIR)/patch.S : $(SRCDIR)/patch/*.S $(GLOBAL_INCLUDE)
+		gen_patch.py
 
 #-------------------------------------------------
 # primary targets

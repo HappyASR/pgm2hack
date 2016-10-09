@@ -73,13 +73,20 @@ XXLABEL_START(dumpy)
 .file ".\\src\\patch\\debug.S"
 .line 1
 	XXPATCH16(0x1002F9F0)
+#if 0
 	BL	DebugMainMenu
+#endif
 
 
 .file ".\\src\\patch\\debug.S"
-.line 4
+.line 6
 	XXPATCH16(0x1003F38A)
 DebugMainMenu:
+
+
+.file ".\\src\\patch\\test_patch.S"
+.line 1
+	XXPATCH16JMP16(0x10073A02,patch_sub_10073A02)
 
 
 XXLABEL_END(dumpy)

@@ -6,7 +6,7 @@
 #define XXEXPORT_START(x)  XXEXPORT(__patch_start_##x)
 #define XXEXPORT_END(x)    XXEXPORT(__patch_end_##x)
 
-#define XXPATCH(x,y) XXEXPORT_END(x);.org (x)&0xfffffff;.code y;.eabi_attribute Tag_THUMB_ISA_use, 1;XXEXPORT_START(x)
+#define XXPATCH(x,y) XXEXPORT_END(x);.org (x)&0xfffffff;.code y;XXEXPORT_START(x)
 
 #define XXPATCH32(x) XXPATCH(x,32)
 #define XXPATCH16(x) XXPATCH(x,16)

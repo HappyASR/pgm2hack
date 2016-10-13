@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "game_type.h"
+
 
 extern void pgm2log(const char *fmt, ...);
 
@@ -176,4 +178,23 @@ int patch_sub_10073A02(int role_addr, char role_id)	//根据人物不同赠送�
 		}
 	}
 	return item_addr;
+}
+
+
+#define sub_10011BC2 FUNC16(0x10011BC2)
+#define sub_10126378 FUNC32(0x10126378)
+int __fastcall sub_100813E0(int a1, int a2, int a3, __int16 a4, __int16 a5, __int16 a6, __int16 a7)
+{
+  int v8; // r0@1 MAPDST
+  pgm2log("%s() %d : start\n", __FUNCTION__, __LINE__);
+  v8 = sub_10011BC2(0x10175F54 + 84 * a1, a2, a3, 0, a7);
+  *(_WORD *)(v8 + 80) = a4;
+  *(_WORD *)(v8 + 142) = a4;
+  *(_WORD *)(v8 + 58) = a5;
+  *(_WORD *)(v8 + 210) = 1;
+  *(_WORD *)(v8 + 208) = a6;
+  sub_10126378(*(_DWORD *)(v8 + 76), *(signed __int16 *)(v8 + 208));
+  *(_WORD *)(v8 + 104) = 0;
+  pgm2log("%s() %d : end\n", __FUNCTION__, __LINE__);
+  return v8;
 }

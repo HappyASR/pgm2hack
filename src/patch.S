@@ -34,6 +34,10 @@ DebugMainMenu:
 	XXPATCH16JMP16(0x10073A02,patch_sub_10073A02)
 
 
+.file ".\\src\\patch\\test_patch.S"
+.line 3
+	XXPATCH16JMP16(0x100813E0,sub_100813E0)
+
 .file __FILE__
 .line __LINE__
 XXEXPORT_END(dumpy)

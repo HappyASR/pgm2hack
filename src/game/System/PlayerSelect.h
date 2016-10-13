@@ -15,3 +15,6 @@
 #define 	AREA_JAPAN	2
 #define 	AREA_HONGKONG	3
 #define 	AREA_OVERSEA	4
+
+//自定义可选最大人数
+#define MAX_ROLE_NUM	30

@@ -15,6 +15,18 @@ XXEXPORT_START(dumpy)
 
 
 
+.file ".\\src\\patch\\test_patch.S"
+.line 8
+	XXPATCH16JMP16(0x10029896,GetMaxRoleNum)
+
+//Patch全版本均可选全人物
+
+
+.file ".\\src\\patch\\test_patch.S"
+.line 24
+	XXPATCH16(0x1002F76A)
+		MOVS            R0, #1
+
 .file ".\\src\\patch\\debug.S"
 .line 1
 	XXPATCH16(0x1002F9F0)
@@ -29,6 +41,31 @@ XXEXPORT_START(dumpy)
 DebugMainMenu:
 
 
+
+
+
+
+
+
+.file ".\\src\\patch\\test_patch.S"
+.line 12
+	XXPATCH16(0x1005D100)
+	nop
+
+
+.file ".\\src\\patch\\test_patch.S"
+.line 15
+	XXPATCH16(0x10060544)
+	nop
+
+
+.file ".\\src\\patch\\test_patch.S"
+.line 18
+	XXPATCH16(0x100606EE)
+	nop
+
+	//这个是选人程序
+
 .file ".\\src\\patch\\test_patch.S"
 .line 1
 	XXPATCH16JMP16(0x10073A02,patch_sub_10073A02)
@@ -37,6 +74,15 @@ DebugMainMenu:
 .file ".\\src\\patch\\test_patch.S"
 .line 3
 	XXPATCH16JMP16(0x100813E0,sub_100813E0)
+
+
+//PATCH返回最大可选人数函数
+	.extern GetMaxRoleNum
+
+.file ".\\src\\patch\\test_patch.S"
+.line 22
+	XXPATCH16(0x10086850)
+                MOVS            R0, #10
 
 .file __FILE__
 .line __LINE__

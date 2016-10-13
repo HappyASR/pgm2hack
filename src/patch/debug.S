@@ -7,3 +7,9 @@
 	XXPATCH16(0x1003F38A)
 DebugMainMenu:
 
+
+
+
+
+
+

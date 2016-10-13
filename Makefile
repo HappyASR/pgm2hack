@@ -22,9 +22,10 @@ RAM_BASE=0x80000000
 #############################################################################
 SRCDIR  = src
 OBJDIR  = obj
-GAMESRCDIR		= $(SRCDIR)/game
+GAMESRCDIR		= $(SRCDIR)\game
 GAMEOBJDIR		= $(OBJDIR)\game
-SYSTEMOBJDIR	= $(OBJDIR)\game\System
+SYSTEMSRCDIR	= $(GAMESRCDIR)\System
+SYSTEMOBJDIR	= $(GAMEOBJDIR)\System
 #############################################################################
 #全局头文件，所有通用的定义都在这个文件
 #############################################################################
@@ -36,7 +37,7 @@ GLOBAL_INCLUDE = $(SRCDIR)/xxpacth_include.h
 GAMEOBJ	=	$(OBJDIR)/patch.o\
 			$(GAMEOBJDIR)/retarget.o\
 			$(GAMEOBJDIR)/game_test.o\
-			$(GAMEOBJDIR)/System/PlayerSelect.o
+			$(SYSTEMOBJDIR)/PlayerSelect.o
 
 #############################################################################
 #编译器配置
@@ -67,7 +68,7 @@ LDFLAGS = -nostdlib -lc_s -lgcc -lg -lm -Wl,-Map,$(MAP),-T,$(LDS),--section-star
 OBJCOPY = $(CROSS)objcopy
 
 RM				= rm -f
-MD				= mkdir
+MD				= -mkdir
 
 
 
@@ -101,33 +102,32 @@ $(GAME_OBJ_COMPILED)	:	$(GAMEOBJ)
 		@echo Linking $(GAME_OBJ_COMPILED)...
 		$(LD) -o $(GAME_OBJ_COMPILED) $(GAMEOBJ) $(LDFLAGS)
 
-
-$(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.c $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
-
-$(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.S $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
-
+#----------------------------------------------------------------		
+#ROOT
 $(OBJDIR)/%.o : $(SRCDIR)/%.c $(GLOBAL_INCLUDE)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR)/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
 		$(CC) $(CFLAGS) -c $< -o $@
-#----------------------------------------------------------------		
-$(GAMEOBJDIR)/System/%.o : $(GAMESRCDIR)/%.c $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
 
-$(GAMEOBJDIR)/System/%.o : $(GAMESRCDIR)/%.S $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/System/%.o : $(SRCDIR)/%.c $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR)/System/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
-		$(CC) $(CFLAGS) -c $< -o $@
 #----------------------------------------------------------------	
 $(SRCDIR)/patch.S : $(SRCDIR)/patch/*.S $(GLOBAL_INCLUDE)
 		gen_patch.py
+
+#----------------------------------------------------------------		
+# game
+$(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.c $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(GAMEOBJDIR)/%.o : $(GAMESRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+#----------------------------------------------------------------		
+# System
+$(SYSTEMOBJDIR)/%.o : $(SYSTEMSRCDIR)/%.c $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(SYSTEMOBJDIR)/%.o : $(SYSTEMSRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
 
 #-------------------------------------------------
 # primary targets
@@ -140,7 +140,7 @@ maketree: $(sort $(DIRALL))
 clean:
 	@echo Deleting object tree $(OBJALL)...
 	$(RM) -r $(OBJALL)
-	$(RM) $(GAMEOBJDIR)/*
+	$(RM) -fr $(OBJDIR)/*
 	@echo Deleting $(ROM_NEW)...
 	$(RM) $(ROM_NEW)
 	$(RM) $(MAP)
@@ -149,7 +149,6 @@ clean:
 #-------------------------------------------------
 # directory targets
 #-------------------------------------------------
-
 $(sort $(DIRALL)):
 	$(MD) $@
 

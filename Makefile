@@ -24,6 +24,7 @@ SRCDIR  = src
 OBJDIR  = obj
 GAMESRCDIR		= $(SRCDIR)/game
 GAMEOBJDIR		= $(OBJDIR)\game
+SYSTEMOBJDIR	= $(OBJDIR)\game\System
 #############################################################################
 #全局头文件，所有通用的定义都在这个文件
 #############################################################################
@@ -34,7 +35,8 @@ GLOBAL_INCLUDE = $(SRCDIR)/xxpacth_include.h
 #############################################################################
 GAMEOBJ	=	$(OBJDIR)/patch.o\
 			$(GAMEOBJDIR)/retarget.o\
-			$(GAMEOBJDIR)/game_test.o
+			$(GAMEOBJDIR)/game_test.o\
+			$(GAMEOBJDIR)/System/PlayerSelect.o
 
 #############################################################################
 #编译器配置
@@ -72,7 +74,7 @@ MD				= mkdir
 GAME_OBJ_COMPILED    = $(GAMEOBJDIR)/rom.o
 ROM_COMPILED = $(GAMEOBJDIR)/rom.bin
 RAM_COMPILED = $(GAMEOBJDIR)/ram.bin
-DIRALL			= $(OBJDIR) $(GAMEOBJDIR) 
+DIRALL			= $(OBJDIR) $(GAMEOBJDIR) $(SYSTEMOBJDIR)
 OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_COMPILED) $(RAM_COMPILED) $(SRCDIR)/patch.S
 
 #-------------------------------------------------
@@ -111,7 +113,19 @@ $(OBJDIR)/%.o : $(SRCDIR)/%.c $(GLOBAL_INCLUDE)
 
 $(OBJDIR)/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
 		$(CC) $(CFLAGS) -c $< -o $@
+#----------------------------------------------------------------		
+$(GAMEOBJDIR)/System/%.o : $(GAMESRCDIR)/%.c $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
 
+$(GAMEOBJDIR)/System/%.o : $(GAMESRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/System/%.o : $(SRCDIR)/%.c $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR)/System/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
+		$(CC) $(CFLAGS) -c $< -o $@
+#----------------------------------------------------------------	
 $(SRCDIR)/patch.S : $(SRCDIR)/patch/*.S $(GLOBAL_INCLUDE)
 		gen_patch.py
 

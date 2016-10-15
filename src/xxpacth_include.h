@@ -19,5 +19,7 @@
 #define XXPTR32(x) .extern x;  .long (x)
 #define XXPTR16(x) .extern x;  .long ((x)+1)
 
+#define XXPATCH16PTR32(x,y) XXPATCH16(x);XXPTR32(y)
+#define XXPATCH16PTR16(x,y) XXPATCH16(x);XXPTR16(y)
 
 #endif //__XXPATCH_H__

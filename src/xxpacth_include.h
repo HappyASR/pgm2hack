@@ -16,4 +16,8 @@
 
 #define XXPATCH16JMP16(x,y) XXPATCH16(x);.rept (x/2)&1; nop; .endr; XXJUMP16(y)
 
+#define XXPTR32(x) .extern x;  .long (x)
+#define XXPTR16(x) .extern x;  .long ((x)+1)
+
+
 #endif //__XXPATCH_H__

@@ -5,7 +5,6 @@
 
 
 //PATCH返回最大可选人数函数
-	.extern GetMaxRoleNum
 	XXPATCH16JMP16(0x10029896,GetMaxRoleNum)
 
 
@@ -21,8 +20,11 @@
 
 	//这个是选人程序
 	XXPATCH16(0x10086850)
-                MOVS            R0, #10
+	MOVS            R0, #10
 
 //Patch全版本均可选全人物
 	XXPATCH16(0x1002F76A)
-		MOVS            R0, #1
+	MOVS            R0, #1
+
+
+

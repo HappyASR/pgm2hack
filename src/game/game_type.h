@@ -1,7 +1,13 @@
 #ifndef __GAME_DEF_H__
 #define __GAME_DEF_H__
 #include <stdint.h>
-//#define __fastcall   //这里经常编译警告所以屏蔽了
+
+#ifndef __fastcall
+#define __fastcall
+#endif
+#ifndef __cdcel
+#define __cdcel
+#endif
 
 #define __int8 char
 #define __int16 short
@@ -28,6 +34,9 @@ typedef  u32 (*_FUNC)();
 #define V8(x)      (*P8(x))
 #define V16(x)      (*P16(x))
 #define V32(x)      (*P32(x))
+
+
+extern void pgm2log(const char *fmt, ...);
 
 #endif
 

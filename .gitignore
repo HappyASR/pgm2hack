@@ -1,5 +1,6 @@
 src/patch.S
 obj
+build
 *.u7
 *.bin
 *.zip

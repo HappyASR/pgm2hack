@@ -4,6 +4,7 @@
 TOKEN_PATCH = 'XXPATCH'
 import os
 import re
+import sys
 
 #return (org,file,line,str)
 def process_asm(filename):
@@ -26,12 +27,10 @@ def process_asm(filename):
 	return resp
 
 def gen_patch(outfile,inpdir):
-	print "inpdir=%s" % inpdir
+	print "outfile=%s" % outfile
 	patch_all = []
-	for root, dirs, files in os.walk(inpdir):
-		for f in files:
-			if f.endswith('.S'):
-				patch_all.extend( process_asm(root+f) )
+	for f in inpdir:
+		patch_all.extend( process_asm(f) )
 
 	patch_all.sort()
 	f = open(outfile,'w+')
@@ -50,9 +49,9 @@ XXEXPORT_START(dumpy)
 	f.write('.file __FILE__\n')
 	f.write('.line __LINE__\n')
 	f.write('XXEXPORT_END(dumpy)\n')
-	f.write('.org ROM_FREE\n')
+	f.write('.org 0x600000\n')
 	f.write('XXEXPORT_START(ccode)\n')
 	f.close()
 
 if __name__=='__main__':
-	gen_patch('.\\src\\patch.S', '.\\src\\patch\\')
+	gen_patch(sys.argv[1],sys.argv[2:])

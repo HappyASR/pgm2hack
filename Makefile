@@ -76,10 +76,8 @@ MD				= -mkdir
 
 
 GAME_OBJ_COMPILED    = $(GAMEOBJDIR)/rom.o
-ROM_COMPILED = $(GAMEOBJDIR)/rom.bin
-RAM_COMPILED = $(GAMEOBJDIR)/ram.bin
 DIRALL			= $(OBJDIR) $(GAMEOBJDIR) $(SYSTEMOBJDIR)
-OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_COMPILED) $(RAM_COMPILED) $(SRCDIR)/patch.S
+OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(SRCDIR)/patch.S
 
 #-------------------------------------------------
 # 'all' target needs to go here, before the 
@@ -89,15 +87,8 @@ OBJALL			= $(GAMEOBJ) $(GAME_GAME_OBJ_COMPILED) $(ROM_COMPILED) $(RAM_COMPILED) 
 all: maketree rom 
 
 #补丁工具
-$(ROM_NEW)	:	$(ROM_ORI) $(ROM_COMPILED) $(RAM_COMPILED)
-		app_patch.py $(ROM_ORI) $(MAP) $(ROM_COMPILED) $(RAM_COMPILED) $(ROM_NEW)
-
-#把OBJ转成BINARY
-$(ROM_COMPILED)	:	$(GAME_OBJ_COMPILED)
-		$(OBJCOPY) -Obinary -j.rom $(GAME_OBJ_COMPILED) $(ROM_COMPILED)
-
-$(RAM_COMPILED)	:	$(GAME_OBJ_COMPILED)
-		$(OBJCOPY) -Obinary -j.ram $(GAME_OBJ_COMPILED) $(RAM_COMPILED)
+$(ROM_NEW)	:	$(ROM_ORI) $(GAME_OBJ_COMPILED)
+		python app_patch.py $(GAME_OBJ_COMPILED) $(MAP) $(ROM_ORI) $(ROM_NEW)
 
 #链接
 $(GAME_OBJ_COMPILED)	:	$(GAMEOBJ)
@@ -114,8 +105,8 @@ $(OBJDIR)/%.o : $(SRCDIR)/%.S $(GLOBAL_INCLUDE)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 #----------------------------------------------------------------	
-$(SRCDIR)/patch.S : $(SRCDIR)/patch/*.S $(GLOBAL_INCLUDE)
-		gen_patch.py
+$(SRCDIR)/patch.S : $(SRCDIR)/patch/*.S
+		python gen_patch.py $@ $^
 
 #----------------------------------------------------------------		
 # game

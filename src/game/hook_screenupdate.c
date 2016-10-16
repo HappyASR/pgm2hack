@@ -3,10 +3,8 @@
 #include <string.h>
 #include "game_type.h"
 #include "xyj2_func.h"
-extern void pgm2log(const char *fmt, ...);
 
 //--------------game_mode----------------------------
-
 #define Main_Fsm			V8(0x20020104)
 #define V_20020105			V8(0x20020105)
 #define V_20020106			V8(0x20020106)
@@ -79,7 +77,5 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 
   ++P32_200200FC;
   return 1;
-
-
-
 }
+

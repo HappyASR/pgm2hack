@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include "game_type.h"
 
-
-extern void pgm2log(const char *fmt, ...);
-
 const char *const build_info = "Build By XingXing @[" __DATE__ "][" __TIME__ "]";
 
 void test_function(void)

@@ -69,11 +69,6 @@
 #define	p10395DB4						P32(0x10395DB4)//
 #define	p10395EB4						P32(0x10395EB4)//
 #define	p10175F54						P32(0x10175F54)//
-extern void pgm2log(const char *fmt, ...);
-
-
-
-
 
 
 int hook_CreatOBJ_100813E0(int a1, int x, int y, __int16 pal, __int16 picnum, __int16 layer, __int16 a7)//sub_100813E0()

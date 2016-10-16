@@ -12,12 +12,9 @@
 #define P32_20020110		P32(0x20020110)
 #define P64_20020110		P64(0x20020110)
 #define P32_2002010C		P32(0x2002010C)
-#define printf_10000CE0		(*(int (*)())(0x10000CE0+1))
-#define P32_200200FC		*( int *)0x200200FC
-#define exp					*( int *)0x2005F768
+#define P32_200200FC		V32(0x200200FC)
+#define exp					V32(0x2005F768)
 
-
-int MemInfo[1];
 int MemInfo[]={0x0};
 int hook_screen_update(int a1,int a2,int a3,int a4)
 {
@@ -51,7 +48,7 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
   sub_1006482E();
   if ( Main_Fsm != 3 )
   {
-    while ( sub_1002F674() )
+    while ( GetDipStopMode() )
       ;
   }
 //  if ( P32_2002010C )
@@ -59,14 +56,14 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
     while ( !sub_1002F6A0() )
       ;
   }
-	  printf_10000CE0(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
+	  vPrint(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
 
 
 	for (i=0;i<sizeof(MemInfo)/sizeof(int) ;i++ )
 	{
 		  if (MemInfo[i])//这里用来测试内存地址的
 		{
-			  printf_10000CE0(5,7+i,0,0,(int)"%02X:%d",MemInfo[i],V8( MemInfo[i]));
+			  vPrint(5,7+i,0,0,(int)"%02X:%d",MemInfo[i],V8( MemInfo[i]));
 		}
 		
 	}

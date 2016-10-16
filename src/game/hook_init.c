@@ -5,9 +5,7 @@
 #include "xyj2_func.h"
 
 #define ClearRAM_1002F722				FUNC16(0x1002F722)//全局初始化内存
-#define	GetDipsw_1002F5F4				FUNC16(0x1002F5F4)//Get v200200F8<<24
 #define ChkKeySt_100000B2				FUNC16(0x100000B2)//检查按键状态
-#define Warnning_100374B0				FUNC16(0x100374B0)//WARNNING界面
 
 //--Game Init -----
 
@@ -15,15 +13,8 @@
 //--Main Title-----
 #define SetAudio_1002F36C					FUNC16(0x1002F36C)
 #define SetAudio_1002F26C					FUNC16(0x1002F26C)
-
 #define CreatMainTitle_10042B48				FUNC16(0x10042B48)
-
 #define CreatGameWorld_1008C63C				FUNC16(0x1008C63C)
-
-
-#define BIOS_10126378						FUNC32(0x10126378)
-#define	BIOS_101263D8						FUNC32(0x101263D8)//JMPOUT(0x3128)
-#define	BIOS_101263C0						FUNC32(0x101263C0)//JMPOUT(0x30B8)
 
 //------------------
 #define	v2001058						V8(0x2001058)//
@@ -91,7 +82,7 @@ int hook_CreatOBJ_100813E0(int a1, int x, int y, __int16 pal, __int16 picnum, __
   *(_WORD *)(v8 + 58) = picnum;//图片编号
   *(_WORD *)(v8 + 210) = 1;//是否显示
   *(_WORD *)(v8 + 208) = layer;//第几层
-  BIOS_10126378(*(_DWORD *)(v8 + 76), *(signed __int16 *)(v8 + 208));
+  sub_10126378(*(_DWORD *)(v8 + 76), *(signed __int16 *)(v8 + 208));
   *(_WORD *)(v8 + 104) = 0;
   return v8;
 }
@@ -116,7 +107,7 @@ int hook_CreatOBJ_10081440(int a1, int x, int y, __int16 pal, __int16 picnum, __
   *(_WORD *)(v8 + 58) = picnum;//图片编号
   *(_WORD *)(v8 + 210) = 1;//是否显示
   *(_WORD *)(v8 + 208) = layer;//第几层
-  BIOS_10126378(*(_DWORD *)(v8 + 76), *(signed __int16 *)(v8 + 208));
+  sub_10126378(*(_DWORD *)(v8 + 76), *(signed __int16 *)(v8 + 208));
   *(_WORD *)(v8 + 104) = 0;
   return v8;
 }
@@ -180,7 +171,7 @@ int hook_Main_Title()		//sub_10042C6C标题画面
 	v20020105 = 0;
 //	CreatGameWorld_1008C63C(bPlayerNo);//这里创建选模式和选人的界面
 	hook_CreatGameWorld(bPlayerNo);
-	if ( sub_1002F65C() )
+	if ( GetDipFreePlay() )
 		sub_10030698();
 	v20020106 = 0;
 	sub_10031D66();
@@ -234,11 +225,10 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 	v6 = 1;
 	
 	ClearRAM_1002F722(a1,a2,a3,a4);
-	sub_1002FA82();
-	
-	sub_10099596();
+	vAIC_GameInit();
+	MPU_Init();
 
-	BIOS_101263D8();//   这里JMPOUT 跟BIOS有关
+	sub_101263D8();//   这里JMPOUT 跟BIOS有关
 
 	if(v5)
 	{
@@ -247,23 +237,23 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 		sub_1000F094();
 	}
 
-	if(GetDipsw_1002F5F4() & 1)	
+	if(GetDipValue() & 1)	
 		vMainFsm = 3;
 
 	if (vMainFsm != 3)
 	{
 
-		BIOS_101263C0(vMainFsm); //这里JMPOUT 跟BIOS有关
+		bios_get_boot_status(vMainFsm); //这里JMPOUT 跟BIOS有关
 		
 		if (v6)
 		{
-			if(GetDipsw_1002F5F4() & 0x80)
+			if(GetDipValue() & 0x80)
 			{
 				if (ChkKeySt_100000B2(41) || ChkKeySt_100000B2(5) || !ChkKeySt_100000B2(6) || !ChkKeySt_100000B2(7) || ChkKeySt_100000B2(8))
 				{
 					if ( ChkKeySt_100000B2(41) || !ChkKeySt_100000B2(5) || !ChkKeySt_100000B2(6) || ChkKeySt_100000B2(7) || ChkKeySt_100000B2(8) )
 					{
-						Warnning_100374B0();
+						vShow_Copyright();
 					}
 					else
 					{
@@ -277,7 +267,7 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 			}
 			else
 			{
-				Warnning_100374B0();
+				vShow_Copyright();
 			}
 		}
 	}
@@ -297,10 +287,10 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 //				hook_Main_Title();
 				break;
 			case 3:
-				sub_10035112();
+				test_mode_main();
 				break;
 			case 4:
-				sub_10037340();
+				qc_main();
 				return;
 			default:
 				vMainFsm = 2;

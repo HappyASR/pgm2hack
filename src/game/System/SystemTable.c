@@ -10,3 +10,38 @@ const int ExpTableCN[]={					//0x10161890升级经验表 目前采用的是日版的表
 2060467,2114708,2169796,2225737,2282539,2340205,2398744,2458161,2518463,2579653,//70-79
 2641741,2704732,2768632,2833448,2899184,2965848,3033445,3101984,3171467,3241903,//80-89
 3313297,3385657,3458987,3533293,3608584,3684864,3762139,3840416,3919700,4000000};//90-99
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//RegionTileStringAndSetting 暂时用不上
+//struct RegionTileStringAndSetting
+//{
+//	char string[10];
+//	char unk1;
+//	char unk2;
+//	char unk3;
+//	char unk4;
+//};
+//const RegionTileStringAndSetting RegionTileStringAndSettingTable[]={
+//	"CHINA    ",1,1,1,1,
+//	"TAIWAN   ",0,0,0,0,
+//	"JAPAN    ",3,3,3,3,
+//	"HONGKONG ",0,0,0,0,
+//	"OVERSEA  ",2,2,2,2};
+
+
+
+//下面是关于1P-4P的表格
+const short UnkPlayerNoTable1[]={2,41,2,41};//0x1001764B4 Tile_x
+const short UnkPlayerNoTable2[]={5,5,19,19};//0x1001764BC Tile_y

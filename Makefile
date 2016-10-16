@@ -39,6 +39,7 @@ GAMEOBJ	=	$(OBJDIR)/patch.o\
 			$(GAMEOBJDIR)/hook_screenupdate.o\
 			$(GAMEOBJDIR)/hook_givestartitem.o\
 			$(GAMEOBJDIR)/hook_init.o\
+			$(GAMEOBJDIR)/hook_selectrole.o\
 			$(SYSTEMOBJDIR)/SystemTable.o\
 			$(SYSTEMOBJDIR)/PlayerSelect.o
 
@@ -66,7 +67,7 @@ LD = $(CROSS)gcc
 MAP = $(OBJDIR)/game.map
 LDS = game.lds
 #LDFLAGS = -t -Map $(MAP) -T $(LDS) -lgcc --section-start .rom=$(ROM_BASE) --section-start .ram=$(RAM_BASE)
-LDFLAGS = -nostdlib -lc_s -lnosys -lgcc -lg -lm -Wl,-Map,$(MAP),-T,$(LDS),--section-start,.rom=$(ROM_BASE),--section-start,.ram=$(RAM_BASE)
+LDFLAGS = -nostdlib -lc_s -lgcc -lg -lm -Wl,-Map,$(MAP),-T,$(LDS),--section-start,.rom=$(ROM_BASE),--section-start,.ram=$(RAM_BASE)
 
 OBJCOPY = $(CROSS)objcopy
 

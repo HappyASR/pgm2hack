@@ -25,7 +25,6 @@ SECTIONS
     *(.bss*)
     *(COMMON*)
     PROVIDE(__ram_end__ = .);
-    PROVIDE(end = .);
   }
 
 

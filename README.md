@@ -1,4 +1,4 @@
-#pgm2hack
+#pgm2hook
 Patch For PGM2 Platform
 
 ##Dependency:

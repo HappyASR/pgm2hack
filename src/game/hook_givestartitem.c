@@ -2,6 +2,10 @@
 #include <stdio.h>
 #include "game_type.h"
 
+
+extern void pgm2log(const char *fmt, ...);
+
+
 int hook_GiveStartItem(int role_addr, char role_id)	//根据人物不同赠送初始道具 by 海叔 v.20161009
 {
 	int item_addr;

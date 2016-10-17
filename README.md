@@ -11,3 +11,12 @@ https://launchpad.net/gcc-arm-embedded/4.8/4.8-2013-q4-major/+download/gcc-arm-n
 - cmake
 https://cmake.org/download/
 
+##How to build:
+- git clone https://github.com/HappyASR/pgm2hack.git
+- cd pgm2hack
+- mkdir build
+- cd build
+- cmake .. -DCMAKE_TOOLCHAIN_FILE=../pgm2.cmake -G"MinGW Makefiles"
+- make
+
+

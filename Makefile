@@ -39,6 +39,8 @@ GAMEOBJ	=	$(OBJDIR)/patch.o\
 			$(GAMEOBJDIR)/hook_screenupdate.o\
 			$(GAMEOBJDIR)/hook_givestartitem.o\
 			$(GAMEOBJDIR)/hook_init.o\
+			$(GAMEOBJDIR)/hook_selectrole.o\
+			$(GAMEOBJDIR)/hook_dropfood.o\
 			$(SYSTEMOBJDIR)/SystemTable.o\
 			$(SYSTEMOBJDIR)/PlayerSelect.o
 

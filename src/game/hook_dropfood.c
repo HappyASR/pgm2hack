@@ -4,70 +4,71 @@
 #include "game_type.h"
 #include "xyj2_func.h"
 
-extern void pgm2log(const char *fmt, ...);
-
-int hook_dropitem(int x, int y,int a3,int itemid,int a5,int a6,int a7,int a8)	//游戏中的掉落ITEM函数 by 海叔 v.20161009
-{
-	int v9;
-	int result;
-	pgm2log("%s()itemid:%d\n",__FUNCTION__,itemid); //参数是hook_dropitem(x,y,0,itemid,0,0,fixX,fixY)
-	result = V8(0x20020104);
-	if (result != 2 && itemid && itemid < 214 )
-	{
-		if (x >= V16(0x20020154) + 33)
-		{
-			if (x > V16(0x20020154) + 416)
-			{
-				x = V16(0x20020154) + 416;
-			}
-		}
-		else
-			x = V16(0x20020154) +33;
-	}
-	if (y > V16(0x20020156) + 224)
-	{
-		y = V16(0x20020156) + 210;
-	}
-	srand((int)__TIME__);
-	if (a7 != 1)					
-	{
-			itemid = rand()% 141 + 1;//这里把掉物品改成了随机装备
-	}
-	result = sub_10098326(x,y,a3,itemid,1,a5,a6);//实际的掉物底层函数
-
-	v9 = result;
-	if (result)
-	{
-		result = 104;
-		V16(v9 + 104) = a8;
-	}
-	return result;
-}
-
-
 
 
 #define main_fsm         V8(0x20020104)
-#define word_20020154    VS16(0x20020154)
-#define word_20020156    VS16(0x20020156)
-void __fastcall hook_dropfood(__int16 x, __int16 y, int a3, int a4, int a5, __int16 a6)
-{
-  int p; // [sp+8h] [bp-28h]@11
+#define g_ScreenX        VS16(0x20020154)
+#define g_ScreenY        VS16(0x20020156)
 
-  if ( main_fsm != 2 && a4 > 0x8000 && a4 < 0x8020 )
+void __fastcall hook_dropitem(int x, int y, __int16 a3, int id, int a5, __int16 a6, __int16 a7, __int16 a8)
+{
+  int p; // r4@12
+  __int16 x_; // [sp+14h] [bp-24h]@1
+  __int16 y_; // [sp+18h] [bp-20h]@1
+
+  x_ = x;
+  y_ = y;
+  if ( main_fsm != 2 && id && id < 214 )
   {
-    if ( x >= word_20020154 + 33 )
+    pgm2log("%s, x=%d,y=%d,id=%x\n", __FUNCTION__,x,y,id);
+    if ( x >= g_ScreenX + 33 )
     {
-      if ( x > word_20020154 + 416 )
-        x = word_20020154 + 416;
+      if ( x > g_ScreenX + 416 )
+        x_ = g_ScreenX + 416;
     }
     else
     {
-      x = word_20020154 + 33;
+      x_ = g_ScreenX + 33;
     }
-    if ( y > word_20020156 + 224 )
-      y = word_20020156 + 210;
-    p = sub_1004E74C(y, y, a3, a4, a5);
+    if ( y > g_ScreenY + 224 )
+      y_ = g_ScreenY + 210;
+
+    if ( a7!=1 )
+      id = rand()% 141 + 1;//这里把掉物品改成了随机装备
+
+    p = sub_10098326(x_, y_, a3, id, 1, a5, a6, a7);
+    if ( p )
+      *(_WORD *)(p + 104) = a8;
+  }
+}
+
+
+void __fastcall hook_dropfood(int x, int y, __int16 a3, int id, __int16 a5, __int16 a6)
+{
+  int p; // [sp+8h] [bp-28h]@11
+  signed __int16 x_; // [sp+Ch] [bp-24h]@1
+  signed __int16 y_; // [sp+10h] [bp-20h]@1
+
+  x_ = x;
+  y_ = y;
+  if ( main_fsm != 2 && id > 0x8000 && id < 0x8020 )
+  {
+    pgm2log("%s, x=%d,y=%d,id=%x\n", __FUNCTION__,x,y,id);
+    if ( x >= g_ScreenX + 33 )
+    {
+      if ( x > g_ScreenX + 416 )
+        x_ = g_ScreenX + 416;
+    }
+    else
+    {
+      x_ = g_ScreenX + 33;
+    }
+    if ( y > g_ScreenY + 224 )
+      y_ = g_ScreenY + 210;
+
+    //id = rand()% 19 + 0x8001;//这里把掉物品改成了随机装备
+
+    p = sub_1004E74C(x_, y_, a3, id, a5);
     if ( p )
       *(_WORD *)(p + 104) = a6;
   }

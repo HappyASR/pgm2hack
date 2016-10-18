@@ -10,7 +10,9 @@ import sys
 def process_asm(filename):
 	resp = []
 	print 'processing', filename
-	dat = open(filename,'r').read().split(TOKEN_PATCH)
+	dat = open(filename).read()
+	dat = re.sub('//[ \t]*'+TOKEN_PATCH, '//$$PATCH', dat)
+	dat = dat.split(TOKEN_PATCH)
 	if len(dat)<2:
 		return []
 	linecount = dat[0].count('\n')

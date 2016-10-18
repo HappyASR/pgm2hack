@@ -11,6 +11,7 @@ SECTIONS
   .rom :
   {
     *patch.o(.text* .rodata*)
+    *patch.S.o(.text* .rodata*)
     *(.text*)
     *(.rodata)
     *(.rodata.*)

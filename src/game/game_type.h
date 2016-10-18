@@ -31,10 +31,17 @@ typedef  u32 (*_FUNC)();
 #define P16(x)      ((u16 *)(x))
 #define P32(x)      ((u32 *)(x))
 
+#define PS8(x)      ((s8 *)(x))
+#define PS16(x)      ((s16 *)(x))
+#define PS32(x)      ((s32 *)(x))
+
 #define V8(x)      (*P8(x))
 #define V16(x)      (*P16(x))
 #define V32(x)      (*P32(x))
 
+#define VS8(x)      (*PS8(x))
+#define VS16(x)      (*PS16(x))
+#define VS32(x)      (*PS32(x))
 
 extern void pgm2log(const char *fmt, ...);
 

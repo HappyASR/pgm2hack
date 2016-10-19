@@ -2,7 +2,7 @@ struct ROLE_INFO{
 	char	Status;	//
 	char	isCard;	//
 	char	RoleId;	//
-	char	Lifes;	//ÉúÃüÊý v2001050
+	char	Lifes;	//ç”Ÿå‘½æ•° v2001050
 	int	DWORD_4;	//
 	char	DWORD_8;	//
 	int	DWORD_12;	//
@@ -61,7 +61,7 @@ struct ROLE_INFO{
 	int	NowEXP;	//
 	char	BYTE_208;	//
 	char	BYTE_209;	//
-	char	Level;	//0x200201BAµÄÖµ+table0x10161BBC
+	char	Level;	//0x200201BAçš„å€¼+table0x10161BBC
 	char	BYTE_211;	//
 	char	BYTE_212;	//
 	char	BYTE_213;	//

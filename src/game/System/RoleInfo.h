@@ -18,7 +18,10 @@ struct ROLE_INFO{
 	char	BYTE_53;	//
 	char	BYTE_54;	//
 	char	BYTE_55;	//
-	char	DWORD_56;	//
+	char	BYTE_56;	//
+	char	BYTE_57;
+	char	BYTE_58;
+	char	BYTE_59;
 	int	DWORD_60;	//
 	int	DWORD_64;	//
 	int	DWORD_68;	//
@@ -57,7 +60,9 @@ struct ROLE_INFO{
 	int	DWORD_188;	//
 	int	DWORD_192;	//
 	int	DWORD_196;	//
-	int	Cash;	//
+	short	Cash;
+	char	BYTE_202;//
+	char	BYTE_203;
 	int	NowEXP;	//
 	char	BYTE_208;	//
 	char	BYTE_209;	//

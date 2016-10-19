@@ -185,9 +185,17 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
   ScreenUpdate_1002F81A();
   sub_100827F4();
 
+		
+//		for (i = 0; i < 124 ; i++)
+//		{	
+//			V8(0x2003DC8C+i) =  V8(0x2000E00 + byte_20020170 * 124 +i);//从NVRAM里读卡片数据
+//		}
+//
+//		pgm2log("read\n");
+
+	
 
 
-
-
+	
 	return sub_1006514A(0x2005F69C,byte_20020170);//这个函数是SetPlayer，把选人结果传递给系统。参数1：1P的内存基址，参数2：ROLEID。
 }

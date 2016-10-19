@@ -11,7 +11,10 @@ struct ROLE_INFO{
 	int	DWORD_28;	//
 	int	DWORD_32;	//
 	int	DWORD_36;	//
-	int	DWORD_40;	//
+	char	DWORD_40;	//sub_1005CDE()与这个参数有关，关于进第一关商店的
+	char	DWORD_41;
+	char	DWORD_42;
+	char	DWORD_43;
 	int	DWORD_44;	//
 	int	DWORD_48;	//
 	char	BYTE_52;	//

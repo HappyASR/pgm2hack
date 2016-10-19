@@ -29,9 +29,10 @@ void __fastcall hook_dropitem(__int16 x, __int16 y, __int16 a3, int id, int a5, 
     if ( y > g_ScreenY + 224 )
       y = g_ScreenY + 210;
 
-    
-    id = rand(208) + 1;//这里把掉物品改成了随机装备
-
+    if (id > 142)
+    {
+		id = rand(208) + 1;//这里把掉物品改成了随机装备
+    }
     p = sub_10098326(x, y, a3, id, 1, a5, a6, a7);
     if ( p )
       *(_WORD *)(p + 104) = a8;

@@ -1,9 +1,9 @@
 struct ROLE_INFO{			
 	char	Status;	//
-	char	isCard;	//
+	char	PlayerNo;	//
 	char	RoleId;	//
 	char	Lifes;	//生命数 v2001050
-	int	DWORD_4;	//
+	int		TablesPtr;	//
 	char	DWORD_8;	//
 	int	DWORD_12;	//
 	int	DWORD_16;	//

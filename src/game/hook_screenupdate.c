@@ -16,6 +16,7 @@
 #define exp					V32(0x2005F768)
 
 int MemInfo[]={0x0};
+int readcard = 0;
 int hook_screen_update(int a1,int a2,int a3,int a4)
 {
 	int i;
@@ -70,12 +71,16 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 	//cheat-start---------------------------------
 	V8(0x2005F7B6) = 6;//取消技能等级限制.
 	V8(0x2005F7B7) = 2;//取消普攻等级限制.
-	//V8(0x200203E2) = 1;//这里让特殊人物可选
+	V8(0x200203E2) = 1;//这里让特殊人物可选
 	
 	V8(0x20020509) = 1;//是否有卡.
 	V8(0x20020048) = 1;//是否有卡.
 	//0x2003DC8C 是内存里卡片数据基址 124 * 4大小
 	//cheat-end--------------------------------------
+
+
+
+
   ++P32_200200FC;
   return 1;
 }

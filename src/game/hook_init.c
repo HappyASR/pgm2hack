@@ -282,7 +282,7 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 				sub_10041F56();
 				break;
 			case 0:
-//				sub_1003F38A();//这里取消屏蔽可以进DEBUG
+//				main_menu_mode();//这里取消屏蔽可以进DEBUG
 				sub_10042C6C();//原版标题画面
 //				hook_Main_Title();
 				break;

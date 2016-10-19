@@ -1,31 +1,25 @@
 struct ROLE_ITEM_SET{			
 	char	BYTE_0;	//
-	char	STRING_1[9];	//
-	char	Item1_Flag;	//
-	char	Item1_ID;	//
-	char	Item1_Have;	//
-	char	STRING_13[7];	//
-	char	Item2_Flag;	//
-	char	Item2_ID;	//
-	char	Item2_Have;	//
-	char	STRING_23[7];	//
-	char	Item3_Flag;	//
-	char	Item3_ID;	//
-	char	Item3_Have;	//
-	char	STRING_33[7];	//
-	char	Item4_Flag;	//
-	char	Item4_ID;	//
-	char	Item4_Have;	//
-	char	STRING_43[7];	//
-	char	Item5_Flag;	//
-	char	Item5_ID;	//
-	char	Item5_Have;	//
-	char	STRING_53[7];	//
-	char	Item6_Flag;	//
-	char	Item6_ID;	//
-	char	Item6_Have;	//
-	char	STRING_63[7];	//
-	char	STRING_70[270];	//
+	char	BYTE_1;	//
+	char	BYTE_2;
+	char	STRING_3[7];	//
+	ITEM_BOX	ITEM[6];	//
+	char	STRING_70[50];	//
+	ITEM_BOX	WEAPON[6];
+	char	STRING_180[50];
+	ITEM_BOX	EQUIP[4];
+	char	STRING_270[70];
 	char	ItemBoxNum;	//
-	char	STRING_341[347];	//
+	char	WeaponBoxNum;//
+	char	EquipBoxNum;
+	char	STRING_343[345];	//
 };			
+
+struct ITEM_BOX{
+	char	Flag;
+	char	Id;
+	char	Num;
+	char	Unk;
+	short	Dura;
+	char	BYTE6[4];
+}

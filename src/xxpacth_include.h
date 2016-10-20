@@ -25,3 +25,5 @@
 #define XXPATCH16PTR16(_addr_,_ptr_) XXPATCH16(_addr_);XXPTR16(_ptr_)
 
 #endif //__XXPATCH_H__
+
+

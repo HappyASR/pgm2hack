@@ -13,8 +13,7 @@ def process_asm(filename):
 	dat = open(filename).read()
 	dat = re.sub('//[ \t]*'+TOKEN_PATCH, '//$$PATCH', dat)
 	dat = dat.split(TOKEN_PATCH)
-	if len(dat)<2:
-		return []
+	resp.append( (0,filename,0,dat[0]) )
 	linecount = dat[0].count('\n')
 	for c in dat[1:]:
 		c = c.strip(' ').strip('\t')
@@ -30,6 +29,7 @@ def process_asm(filename):
 
 def gen_patch(outfile,inpdir):
 	print "outfile=%s" % outfile
+	basepathlen = len(outfile)-len('src/patch.S')
 	patch_all = []
 	for f in inpdir:
 		patch_all.extend( process_asm(f) )
@@ -44,7 +44,7 @@ XXEXPORT_START(dumpy)
 ''')
 	for c in patch_all:
 		#print c
-		f.write('.file "%s"\n' % c[1].replace('\\','\\\\'))
+		f.write('.file "%s"\n' % c[1][basepathlen:].replace('\\','\\\\'))
 		f.write('.line %d\n' % c[2])
 		f.write(c[3]+'\n')
 

@@ -38,7 +38,8 @@ def gen_patch(outfile,inpdir):
 	f = open(outfile,'w+')
 	f.write('''
 #include "xxpacth_include.h"
-.text
+.section .patch,"ax"
+
 XXEXPORT_START(dumpy)
 
 ''')

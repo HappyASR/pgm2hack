@@ -10,8 +10,7 @@ SECTIONS
 {
   .rom :
   {
-    *patch.o(.text* .rodata*)
-    *patch.S.o(.text* .rodata*)
+    *(.patch*)
     *(.text*)
     *(.rodata)
     *(.rodata.*)

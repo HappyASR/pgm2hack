@@ -1,0 +1,16 @@
+extern int Input_Ins_6A[];
+extern int Input_Ins_2A[];
+extern int Input_Ins_28A[];
+extern int Input_Ins_82A[];
+extern int Input_Ins_46A[];
+extern int Input_Ins_236A[];
+extern int Input_Ins_88A[];
+extern int Input_Ins_22A[];
+extern int Input_Ins_6B[];
+extern int Input_Ins_2B[];
+extern int Input_Ins_28B[];
+extern int Input_Ins_82B[];
+extern int Input_Ins_46B[];
+extern int Input_Ins_236B[];
+extern int Input_Ins_88B[];
+extern int Input_Ins_22B[];

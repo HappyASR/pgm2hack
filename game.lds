@@ -3,7 +3,7 @@
 # (c) 2016  XingXing(HappyASR#gmail.com)
 */
 
-OUTPUT_FORMAT("elf32-littlearm", "elf32-bigarm", "elf32-littlearm")
+OUTPUT_FORMAT("elf32-littlearm")
 OUTPUT_ARCH(arm)
 
 SECTIONS
@@ -12,8 +12,7 @@ SECTIONS
   {
     *(.patch*)
     *(.text*)
-    *(.rodata)
-    *(.rodata.*)
+    *(.rodata*)
     . = ALIGN(4);
     PROVIDE(__rom_end__ = .);
   }

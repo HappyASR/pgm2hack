@@ -23,16 +23,15 @@ SECTIONS
     *(.data*)
     *(.bss*)
     *(COMMON*)
+    . = ALIGN(4);
     PROVIDE(__ram_end__ = .);
     PROVIDE(end = .);
   }
 
+  /DISCARD/ :
+  { 
+    *(.discard*)
+    *(.comment*)
+  }
 
-
-
-/DISCARD/ :
- { 
-   *(.discard)
-   *(.comment)
- }
 }

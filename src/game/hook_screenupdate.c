@@ -75,6 +75,7 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 	
 	V8(0x20020509) = 1;//是否有卡.
 	V8(0x20020048) = 1;//是否有卡.
+	V8(0x2003DC8C + 14) = 1; //是否通关过
 	//0x2003DC8C 是内存里卡片数据基址 124 * 4大小
 	//0x2003DE71 同样是一个124*4大小的内存。意义不明
 	//cheat-end--------------------------------------
@@ -107,7 +108,7 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 //			}
 		//pgm2log("write\n");
 				
-	}
+//	}
 	//cardend
 
 

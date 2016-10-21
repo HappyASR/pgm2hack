@@ -13,7 +13,7 @@
 void __fastcall hook_dropitem(__int16 x, __int16 y, __int16 a3, int id, int a5, __int16 a6, __int16 a7, __int16 a8)
 {
   int p; // r4@12
-  int i;
+
   if ( main_fsm != 2 && id && id < 214 )
   {
     pgm2log("%s, x=%d,y=%d,id=%x\n", __FUNCTION__,x,y,id);
@@ -33,13 +33,12 @@ void __fastcall hook_dropitem(__int16 x, __int16 y, __int16 a3, int id, int a5, 
     {
 		id = rand(208) + 1;//这里把掉物品改成了随机装备
 		
-		for (i = 0; i<10;i++ )//这里让掉物取消本武的掉落
-		{
-			while (id == 9*i+1)
+
+			while (id < 143 && id % 9 == 1)
 			{
 				id = rand(208) + 1;//这里把掉物品改成了随机装备	
 			}
-		}
+
 
     }
     p = sub_10098326(x, y, a3, id, 1, a5, a6, a7);
@@ -76,26 +75,24 @@ void __fastcall hook_dropfood(__int16 x, __int16 y, __int16 a3, int id, __int16 
 	  {
 		  id = rand(143) + 1 ;
 		
-		  for (i = 0; i<10;i++ )//这里让掉物取消本武的掉落
-		  {
-			  while (id == 9*i+1)
-			  {
-			    	id = rand(143) + 1;//这里把掉物品改成了随机装备	
-			  }
-		  }
+
+			while (id < 143 && id % 9 == 1)
+			{
+				id = rand(143) + 1;//这里把掉物品改成了随机装备	
+			}
+
       p = sub_10098326(x, y, a3, id , 1, 0, 0, 0);//随机掉装备
 	  }
     else//其他加分数的道具
 	  {
 		  id = rand(208) + 1 ;
 		
-		  for (i = 0; i<10;i++ )//这里让掉物取消本武的掉落
-		  {
-			  while (id == 9*i+1)
-			  {
-			    	id = rand(208) + 1;//这里把掉物品改成了随机装备	
-			  }
-		  }
+
+			while (id < 143 && id % 9 == 1)
+			{
+				id = rand(208) + 1;//这里把掉物品改成了随机装备	
+			}
+
       p = sub_10098326(x, y, a3, id , 1, 0, 0, 0);//随机掉装备
 	  }
     if ( p )

@@ -43,7 +43,8 @@ struct ROLE_INFO{
 	int	DWORD_120;	//
 	int	DWORD_124;	//
 	int	DWORD_128;	//
-	int	DWORD_132;	//
+	short	WORD_132;	//
+	short	WORD_134;
 	int	DWORD_136;	//
 	int	DWORD_140;	//
 	int	DWORD_144;	//

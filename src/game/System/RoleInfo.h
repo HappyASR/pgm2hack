@@ -92,9 +92,15 @@ struct ROLE_INFO{
 	char	BYTE_245;	//
 	char	BYTE_246;	//
 	char	BYTE_247;	//
-	int	DWORD_248;	//
+	char	PowersMax;	//
+	char	BYTE_249;
+	char	BYTE_250;
+	char	BYTE_251;
 	int	DWORD_252;	//
-	int	DWORD_256;	//
+	char	BYTE_256;	//
+	char	BYTE_257;
+	char	BYTE_258;
+	char	BYTE_259;
 	int	DWORD_260;	//
 	short	WORD_264;	//
 	short	WORD_266;	//
@@ -102,13 +108,13 @@ struct ROLE_INFO{
 	short	WORD_272;	//
 	short	WORD_274;	//
 	int	DWORD_276;	//
-	char	BYTE_280;	//
-	char	BYTE_281;	//
-	char	BYTE_282;	//
-	char	BYTE_283;	//
-	char	BYTE_284;	//
-	char	BYTE_285;	//
-	char	BYTE_286;	//
+	char	Limit_280;	//0x10161BCB，根据角色不同有不同表格，0-9
+	char	PowersLimit;	//能量数限制，0-9，0x10161C9A，通用
+	char	SkillLimit;	//技能等级限制，0-6，0x10161A84，根据角色不同有不同
+	char	AttackLimit;	//普攻等级限制，0-2，0x10161B20，根据角色不同有不同
+	char	BYTE_284;	//0-2，0x10161B54，根据角色不同有不同
+	char	BYTE_285;	//0-2，0x10161B88，根据角色不同有不同
+	char	Limit_286;	//根据等级来的，0-16，通用
 	char	BYTE_287;	//
 	char	BYTE_288;	//
 	char	BYTE_289;	//

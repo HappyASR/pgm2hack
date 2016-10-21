@@ -1,15 +1,18 @@
 struct IC_CARD{			
 	char	BYTE_0;	//
-	char	isNamed;	//
-	short	UseCount;	//
+	char	Version;	//
+	short	Credit;	//
 	char	Name[8];	//
 	short	Title;	//
 	char	RoleID;	//
-	char	BYTE_14;	//
+	char	OverTimes;	//
+	char	ContinueTimes;//
 	int	NowExp;	//
-	char	STRING[20];	//
-	short	Cash;	//
-	short	WORD_34;	//
+	int	StoryScore;	//
+	int	ChallengeScore;//
+	int	IRScore;
+	short	Money;	//
+	short	ItemGift;	//
 	char	ITEM_ID[6];	//
 	char	ITEM_NUM[6];	//
 	short	ITEM_DURA[6];	//

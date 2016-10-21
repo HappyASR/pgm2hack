@@ -3,7 +3,7 @@
 #include <string.h>
 #include "game_type.h"
 #include "xyj2_func.h"
-
+#include "system\ICCard.h"
 //--------------game_mode----------------------------
 #define Main_Fsm			V8(0x20020104)
 #define V_20020105			V8(0x20020105)
@@ -17,12 +17,26 @@
 
 int MemInfo[]={0x0};
 int role = 0;
+
+
+
 int hook_screen_update(int a1,int a2,int a3,int a4)
 {
 	int i;
 	int v4;
 	int v5;
 	int v9;
+	//struct IC_CARD IC_Test;
+	//IC_Test.Name[] = {0x11,0x11,0x11,0x11,0x11,0x11,0x11,0x11};
+
+
+
+
+
+
+
+
+
 	v4=Main_Fsm;
 	if(Main_Fsm!=1)
 	{
@@ -69,23 +83,38 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 		
 	}
 	//cheat-start---------------------------------
-	//V8(0x2005F7B6) = 6;//取消技能等级限制.
-	//V8(0x2005F7B7) = 2;//取消普攻等级限制.
+	V8(0x2005F7B6) = 6;//取消技能等级限制.
+	V8(0x2005F7B7) = 2;//取消普攻等级限制.
 	V8(0x200203E2) = 1;//这里让特殊人物可选
 	
 	V8(0x20020509) = 1;//是否有卡.
 	V8(0x20020048) = 1;//是否有卡.
 	//0x2003DC8C 是内存里卡片数据基址 124 * 4大小
 	//0x2003DE71 同样是一个124*4大小的内存。意义不明
-	V8(0x2003DC8C+14) = 1;//通关标记
-	for (i=0;i<5 ;i++ )//5本经书
-	{
-		V8(0x2003DC8C + 84 + 4 + i) = 209 + i;
-		V8(0x2003DC8C + 93 + 4 + i) = 1;
-		V8(0x2003DC8C + 102 + 8 + i * 2) = 100;
-	}
+//	V8(0x2003DC8C+14) = 1;//通关标记
+//	for (i=0;i<5 ;i++ )//5本经书
+//	{
+//		V8(0x2003DC8C + 84 + 4 + i) = 209 + i;
+//		V8(0x2003DC8C + 93 + 4 + i) = 1;
+//		V8(0x2003DC8C + 102 + 8 + i * 2) = 100;
+//	}
+
+//		P8(0x2003DC90)[0] = 0x11; //名字
+//		P8(0x2003DC90)[1] = 0x06;
+//		P8(0x2003DC90)[2] = 0xD6;
+//		P8(0x2003DC90)[3] = 0x0B;
+//		P8(0x2003DC90)[4] = 0xD6;
+//		P8(0x2003DC90)[5] = 0x0B;
+//		P8(0x2003DC90)[6] = 0xD6;
+//		P8(0x2003DC90)[7] = 0x0B;
 
 
+
+
+
+	
+	
+	
 
 
 

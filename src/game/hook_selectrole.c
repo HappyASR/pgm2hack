@@ -3,6 +3,7 @@
 #include <string.h>
 #include "game_type.h"
 #include "xyj2_func.h"
+#include "system\ICCard.h"
 
 extern void pgm2log(const char *fmt, ...);
 
@@ -28,12 +29,39 @@ struct Menu{		//0x101309B0
 	int	*String;	//菜单文本地址
 	int *Function;	//菜单程序地址
 };	
+const struct IC_CARD CardTest= 
+{
+	0,
+	0,//版本
+	500,//卡片次数
+	{0x11,0x06,0xD6,0x0B,0xD6,0x0B,0xD6,0x0B},//名字
+	9,//称号
+	0,//角色
+	1,//通关次数
+	0,
+	0,//经验
+	0,
+	0,
+	0,
+	0,//金币
+	0,
+	{0,	0,	0,	0,	0,	0},//A面道具ID
+	{0,	0,	0,	0,	0,	0},//A面道具数量
+	{0,	0,	0,	0,	0,	0},//A面道具耐久
+	{0,	0,	0,	0,	0,	0},//B面装备ID
+	{0,	0,	0,	0,	0,	0},//B面装备数量
+	{0,	0,	0,	0,	0,	0},//B面装备耐久
+	{0,	0,	0,	0,	209,	210,	211,	212,	213},//身上装备+经书 ID
+	{0,	0,	0,	0,	1,	1,	1,	1,	1},//身上装备+经书 数量
+	{0,	0,	0,	0,	100,	100,	100,	100,	100},//身上装备+经书 耐久
+	0};
 int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 {
 	int i;
 	int j;
 	int x;
 	int y;
+	int role;
 	
 	pgm2log("%s()\n",__FUNCTION__);
 
@@ -221,15 +249,16 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
   sub_100827F4();
 
 		
-//		for (i = 0; i < 124 ; i++)
-//		{	
-//			V8(0x2003DC8C+i) =  V8(0x2000E00 + byte_20020170 * 124 +i);//从NVRAM里读卡片数据
-//		}
-//
-//		pgm2log("read\n");
 
-	
 
+//---------载入卡片数据-------------------------------
+		memcpy((void*)P32(0x2003DC8C), &CardTest,sizeof(CardTest));//这里写入卡片数据
+		role = V8(0x20020170);
+//		pgm2log("role:%d\n");
+		V8(0x2003DC8C + 84 + 3  ) = role * 9 + 1;//这里补充人物的初始武器
+		V8(0x2003DC8C + 93 + 3  ) = 1;
+		V8(0x2003DC8C + 102 + 3 *2  ) = 100;
+//-----------------------------------------------------
 
 	
 	return sub_1006514A(0x2005F69C,byte_20020170);//这个函数是SetPlayer，把选人结果传递给系统。参数1：1P的内存基址，参数2：ROLEID。

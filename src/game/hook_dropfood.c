@@ -51,7 +51,7 @@ void __fastcall hook_dropitem(__int16 x, __int16 y, __int16 a3, int id, int a5, 
 void __fastcall hook_dropfood(__int16 x, __int16 y, __int16 a3, int id, __int16 a5, __int16 a6)
 {
   int p; // [sp+8h] [bp-28h]@11
-	int i;
+
   if ( main_fsm != 2 && id > 0x8000 && id < 0x8020 )
   {
     pgm2log("%s, x=%d,y=%d,id=%x\n", __FUNCTION__,x,y,id);

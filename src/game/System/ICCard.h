@@ -22,5 +22,8 @@ struct IC_CARD{
 	char	EQUIP_ID[9];	//5-8是经书
 	char	EQUIP_NUM[9];	//
 	short	EQUIP_DURA[9];	//
-	int	DWORD_120;	//
+	char	BYTE_120;	//
+	char	BYTE_121;	//
+	char	BYTE_122;	//
+	char	BYTE_123;	//
 };			

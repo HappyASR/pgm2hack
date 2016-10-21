@@ -1,14 +1,33 @@
-//将前两位角色替换为援军角色测试
-	.extern HuangMei_0
-	.extern HuangFeng_0
-	XXPATCH16(0x1012EFB4)
-	//.long HuangFeng_0
-	.long HuangMei_0
-	.long HuangFeng_0
+//接关可选人数，似乎未完全
+	//XXPATCH16(0x1006055E)
+	//MOVS            R5, #30
+
+
+//暂时修改获取人物指针函数对应自定义指针表
+	//XXPATCH16JMP16(0x100298BC,GetRolePtrById)
+
+//暂时修改获取人物真实ID函数对应自定义指针表
+	//XXPATCH16JMP16(0x100298C6,GetRealRoleId)
 
 //PATCH返回最大可选人数函数
-	.extern GetMaxRoleNum
 	XXPATCH16JMP16(0x10029896,GetMaxRoleNum)
+
+//暂时PATCH所有的人物指针表引用
+
+	//多处引用
+	//XXPATCH16PTR32(0x10029AAC,RolePtrTbl)         
+
+	//MAIN MENU调用	Init_Role
+       	//XXPATCH16PTR32(0x10029EE0,RolePtrTbl)            
+
+	//正常流程调用 Init_Role	PATCH造成选人后崩溃
+       	//XXPATCH16PTR32(0x1002A3FC,RolePtrTbl)           
+
+	//人物武器载入相关程序，不添加带武器新人应该不用PATCH处理
+       	//XXPATCH16PTR32(0x1002DA1C,RolePtrTbl)    
+
+//选同人颜色设置    必须HOOK才能开启上面PATCH1
+	XXPATCH16JMP16(0x10029920,SetSameRolePalNo)
 
 
 //这里是所有最大人数和游戏版本关联的PATCH，但目前暂时没用。

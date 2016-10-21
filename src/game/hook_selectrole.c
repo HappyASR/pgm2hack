@@ -196,27 +196,10 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 
 		if (press_key(5))//1P A
 		{
-				if (x / 2 == 0)
-				{	
-					if (!x % 2)
-						byte_20020170 = y*2 ;
-					else
-						byte_20020170 = y*2 +1;
-				}
-				else if (x / 2  == 1)
-				{
-					if (!x % 2)
-						byte_20020170 = y*2 + 10;
-					else
-						byte_20020170 = y*2 +1 +10;
-				}
-				else 
-				{
-					if (!x % 2)
-						byte_20020170 = y*2 + 20;
-					else
-						byte_20020170 = y*2 +1 +20;
-				}
+				if (x % 2)
+					byte_20020170 =(x-(x%2))*5+y+(x%2);
+				else
+					byte_20020170 = (x)*5+y;
 				pgm2log("selectid=%d,x=%d,y=%d\n",byte_20020170,x,y);
 				break;
 		}

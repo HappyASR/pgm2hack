@@ -1,6 +1,6 @@
 //接关可选人数，似乎未完全
 	//XXPATCH16(0x1006055E)
-	//MOVS            R5, #30
+	MOVS            R5, #30
 
 
 //暂时修改获取人物指针函数对应自定义指针表
@@ -27,7 +27,7 @@
        	XXPATCH16PTR32(0x1002DA1C,RolePtrTbl)    
 
 //选同人颜色设置    必须HOOK才能开启上面PATCH1
-	XXPATCH16JMP16(0x10029920,SetSameRolePalNo)
+	XXPATCH16JMP16(0x10029920,InitSameRolePalNo)
 
 
 //这里是所有最大人数和游戏版本关联的PATCH，但目前暂时没用。
@@ -43,3 +43,31 @@
 	//这个是选人程序
 	XXPATCH16(0x10086850)
                 MOVS            R0, #10
+
+
+
+
+//ID相关表扩展PATCH，暂
+	//等级限制相关
+       	XXPATCH16PTR32(0x1005C7F0,LevelLimitTbl1) 
+       	XXPATCH16PTR32(0x1005C7FC,LevelLimitTbl2)    
+       	XXPATCH16PTR32(0x1005C800,LevelLimitTbl3)   
+       	XXPATCH16PTR32(0x1005C804,LevelLimitTbl4)
+       	XXPATCH16PTR32(0x1005C808,LevelLimitTbl5)
+
+       	XXPATCH16PTR32(0x1005AF4C,IdRelTbl1)
+
+	//人名表
+	XXPATCH16PTR32(0x10057D3C,RoleNameTbl)
+	XXPATCH16PTR32(0x1005BBD8,RoleNameTbl)
+	XXPATCH16PTR32(0x100779FC,RoleNameTbl)
+	XXPATCH16PTR32(0x100817F8,RoleNameTbl)
+	XXPATCH16PTR32(0x10083504,RoleNameTbl)
+	XXPATCH16PTR32(0x10085714,RoleNameTbl)
+
+	XXPATCH16PTR32(0x10085F34,RoleNameTbl)
+	XXPATCH16PTR32(0x100862F8,RoleNameTbl)
+	XXPATCH16PTR32(0x1008EF58,RoleNameTbl)
+	XXPATCH16PTR32(0x1008F7AC,RoleNameTbl)
+
+

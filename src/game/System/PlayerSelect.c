@@ -4,7 +4,10 @@
 #include "../Include/Role.h"
 
 
-
+extern Role JinJiao_0;
+extern Role YinJiao_0;
+extern Role BaiGuJing_0;
+extern Role HuangPao_0;
 extern Role HuangFeng_0;
 extern Role HuangMei_0;
 
@@ -20,13 +23,13 @@ Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		(Role*)0x10244660,
 		(Role*)0x1024FA20,
 		(Role*)0x1025C420,
-
-		(Role*)0x101EBA40,			//暂时替换
-		(Role*)0x101F8164,
-		(Role*)0x10206F88,
-		(Role*)0x10211EE8,
-		(Role*)0x1021DE14,
-		(Role*)0x1022B80C,
+//添加人物   注意前面必须用&取指针，否则编译错误
+		&JinJiao_0,
+		&YinJiao_0,
+		&BaiGuJing_0,
+		&HuangPao_0,
+		&HuangMei_0,
+		&HuangFeng_0,
 		(Role*)0x10239C04,
 		(Role*)0x10244660,
 		(Role*)0x1024FA20,
@@ -43,8 +46,7 @@ Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		(Role*)0x1024FA20,
 		(Role*)0x1025C420
 
-		//&HuangMei_0,				//添加人物   注意前面必须用&取指针，否则编译错误
-		//&HuangFeng_0,
+
 
 
 
@@ -66,9 +68,9 @@ int GetRealRoleId(int id)
 
 }
 
-// 0x10029920    根据所选同人数量设置全局色盘NO 不应该放在此处，后续调整
+// 0x10029920    根据所选同人数量初始化全局色盘NO 不应该放在此处，后续调整
 //本函数原寻址方式引用到了人物指针内存，会造成PATCH后接关人物颜色出错，故必须独立HOOK
-int SetSameRolePalNo()
+int InitSameRolePalNo()
 {
 	int bPlayerNo; // r0@1
 

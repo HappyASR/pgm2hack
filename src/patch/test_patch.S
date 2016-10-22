@@ -15,16 +15,16 @@
 //暂时PATCH所有的人物指针表引用
 
 	//多处引用
-	//XXPATCH16PTR32(0x10029AAC,RolePtrTbl)         
+	XXPATCH16PTR32(0x10029AAC,RolePtrTbl)         
 
 	//MAIN MENU调用	Init_Role
-       	//XXPATCH16PTR32(0x10029EE0,RolePtrTbl)            
+       	XXPATCH16PTR32(0x10029EE0,RolePtrTbl)            
 
 	//正常流程调用 Init_Role	PATCH造成选人后崩溃
-       	//XXPATCH16PTR32(0x1002A3FC,RolePtrTbl)           
+       	XXPATCH16PTR32(0x1002A3FC,RolePtrTbl)           
 
 	//人物武器载入相关程序，不添加带武器新人应该不用PATCH处理
-       	//XXPATCH16PTR32(0x1002DA1C,RolePtrTbl)    
+       	XXPATCH16PTR32(0x1002DA1C,RolePtrTbl)    
 
 //选同人颜色设置    必须HOOK才能开启上面PATCH1
 	XXPATCH16JMP16(0x10029920,SetSameRolePalNo)

@@ -5,7 +5,6 @@
 #include "../xyj2_func.h"
 
 extern Role Role_SunWuKong_0;
-extern Role Role_SunWuKong_1;
 extern Role Role_JinJiao_0;
 extern Role Role_YinJiao_0;
 extern Role Role_BaiGuJing_0;
@@ -26,11 +25,13 @@ extern Role Role_BaiShuJing_0;
 extern Role Role_HuangFeng_0;
 extern Role Role_HuangMei_0;
 
+extern Role Role_SunWuKong_1;
+
 
 //定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个,里人物30个
 Role* RolePtrTbl[MAX_ROLE_NUM*2] ={
 		&Role_SunWuKong_0,
-		(Role*)0x101EBA40,
+		(Role*)0x101F8164,
 		(Role*)0x10206F88,
 		(Role*)0x10211EE8,
 		(Role*)0x1021DE14,
@@ -60,12 +61,42 @@ Role* RolePtrTbl[MAX_ROLE_NUM*2] ={
 		&Role_HuangFeng_0,
 		&Role_HuangMei_0,
 		&Role_HuangMei_0,
-		&Role_HuangMei_0,
+		&Role_HuangMei_0,					//可用作添加如来
 
 
 //里人物
 		&Role_SunWuKong_1,
+		(Role*)0x101F8164,
+		(Role*)0x10206F88,
+		(Role*)0x10211EE8,
+		(Role*)0x1021DE14,
+		(Role*)0x1022B80C,
+		(Role*)0x10239C04,
+		(Role*)0x10244660,
+		(Role*)0x1024FA20,
+		(Role*)0x1025C420,
 
+		&Role_JinJiao_0,
+		&Role_YinJiao_0,
+		&Role_BaiGuJing_0,
+		&Role_HuangPao_0,
+		&Role_HuLi_0,
+		&Role_YangLi_0,
+		&Role_LuLi_0,
+		&Role_JinYuJing_0,
+		&Role_LiuEr_0,
+		&Role_HongHaiEr_0,
+
+		&Role_NiuMoWang_0,
+		&Role_DaPengWang_0,
+		&Role_BaiXiangWang_0,
+		&Role_QingShiWang_0,
+		&Role_XieZiJing_0,
+		&Role_BaiShuJing_0,
+		&Role_HuangFeng_0,
+		&Role_HuangMei_0,
+		&Role_HuangMei_0,
+		&Role_HuangMei_0,
 
 
 

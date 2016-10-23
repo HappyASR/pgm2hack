@@ -1,6 +1,6 @@
 
 	XXPATCH16(0x1002F9F0)
-#if 1
+#if 0
 	BL	DebugMainMenu
 #endif
 

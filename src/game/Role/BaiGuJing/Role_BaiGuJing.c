@@ -5,7 +5,7 @@
 
 
 //人物结构体填充	新增人物其他版本命名后的编号递增
-const Role BaiGuJing_0={
+const Role Role_BaiGuJing_0={
 			FLAG_ROLE, 
 			11,		//0x1D, 
 			0,

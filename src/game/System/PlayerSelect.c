@@ -4,15 +4,28 @@
 #include "../Include/Role.h"
 #include "../xyj2_func.h"
 
-extern Role JinJiao_0;
-extern Role YinJiao_0;
-extern Role BaiGuJing_0;
-extern Role HuangPao_0;
-extern Role HuangFeng_0;
-extern Role HuangMei_0;
+extern Role Role_JinJiao_0;
+extern Role Role_YinJiao_0;
+extern Role Role_BaiGuJing_0;
+extern Role Role_HuangPao_0;
+extern Role Role_HuLi_0;
+extern Role Role_YangLi_0;
+extern Role Role_LuLi_0;
+extern Role Role_JinYuJing_0;
+extern Role Role_LiuEr_0;
+extern Role Role_HongHaiEr_0;
+
+extern Role Role_NiuMoWang_0;
+extern Role Role_DaPengWang_0;
+extern Role Role_BaiXiangWang_0;
+extern Role Role_QingShiWang_0;
+extern Role Role_XieZiJing_0;
+extern Role Role_BaiShuJing_0;
+extern Role Role_HuangFeng_0;
+extern Role Role_HuangMei_0;
 
 
-//定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个
+//定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个,里人物30个
 Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		(Role*)0x101EBA40,			//原有可选，用ROM指针必须强制转换为ROLE*类型
 		(Role*)0x101EBA40,
@@ -24,28 +37,30 @@ Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		(Role*)0x10244660,
 		(Role*)0x1024FA20,
 		(Role*)0x1025C420,
-//添加人物   注意前面必须用&取指针，否则编译错误
-		&JinJiao_0,
-		&YinJiao_0,
-		&BaiGuJing_0,
-		&HuangPao_0,
-		&HuangMei_0,
-		&HuangFeng_0,
-		(Role*)0x10239C04,
-		(Role*)0x10244660,
-		(Role*)0x1024FA20,
-		(Role*)0x1025C420,
+//添加人物   注意前面必须用&Role_取指针，否则编译错误
+		&Role_JinJiao_0,
+		&Role_YinJiao_0,
+		&Role_BaiGuJing_0,
+		&Role_HuangPao_0,
+		&Role_HuLi_0,
+		&Role_YangLi_0,
+		&Role_LuLi_0,
+		&Role_JinYuJing_0,
+		&Role_LiuEr_0,
+		&Role_HongHaiEr_0,
 
-		(Role*)0x101EBA40,			//暂时替换
-		(Role*)0x101F8164,
-		(Role*)0x10206F88,
-		(Role*)0x10211EE8,
-		(Role*)0x1021DE14,
-		(Role*)0x1022B80C,
-		(Role*)0x10239C04,
-		(Role*)0x10244660,
-		(Role*)0x1024FA20,
-		(Role*)0x1025C420
+		&Role_NiuMoWang_0,
+		&Role_DaPengWang_0,
+		&Role_BaiXiangWang_0,
+		&Role_QingShiWang_0,
+		&Role_XieZiJing_0,
+		&Role_BaiShuJing_0,
+		&Role_HuangMei_0,
+		&Role_HuangFeng_0,
+
+
+
+
 
 
 

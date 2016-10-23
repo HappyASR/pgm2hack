@@ -4,7 +4,7 @@
 //extern InputElem InputTbl_JinJiao_0[];
 
 //人物结构体填充	新增人物其他版本命名后的编号递增
-const Role JinJiao_0={
+const Role Role_JinJiao_0={
 			FLAG_ROLE, 
 			11,				//0x1B,
 			0,

@@ -10,7 +10,7 @@ extern Role BaiGuJing_0;
 extern Role HuangPao_0;
 extern Role HuangFeng_0;
 extern Role HuangMei_0;
-extern Role	Role_0_0;
+
 
 //定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个
 Role* RolePtrTbl[MAX_ROLE_NUM] ={
@@ -25,7 +25,7 @@ Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		(Role*)0x1024FA20,
 		(Role*)0x1025C420,
 //添加人物   注意前面必须用&取指针，否则编译错误
-		&Role_0_0,
+		&JinJiao_0,
 		&YinJiao_0,
 		&BaiGuJing_0,
 		&HuangPao_0,

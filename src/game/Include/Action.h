@@ -41,21 +41,21 @@ typedef struct
 //动作类型指针表结构
 typedef struct ActTypePtrTbl
 {
-	ActElem* ActWait;
-	ActElem* ActStart;
-	ActElem* ActMotion;
-	ActElem* ActAttack;
+	int ActWait;
+	int ActStart;
+	int ActMotion;
+	int ActAttack;
 
-	ActElem* ActType4;
-	ActElem* ActType5;
+	int ActType4;
+	int ActType5;
 
-	ActElem* ActKill;
-	ActElem* ActType7;
-	ActElem* ActCaning;
-	ActElem* ActVictor;
+	int ActKill;
+	int ActType7;
+	int ActCaning;
+	int ActVictor;
 
-	ActElem* ActType10;		//0
-	ActElem* ActType11;		//0	
+	int ActType10;		//0
+	int ActType11;		//0	
 
 }ActTypePtrTbl;
 

@@ -6,6 +6,9 @@
 
 #include "../../Include/Role.h"
 
+extern ActTypePtrTbl Role_SunWuKong_ActPtrTbl_0;
+extern ActTypePtrTbl Role_SunWuKong_ActPtrTbl_1;
+
 const Role Role_SunWuKong_0={
 
 				0,			//short ROLE_FLAG
@@ -16,7 +19,8 @@ const Role Role_SunWuKong_0={
 
 				0,			//int NULL
 
-				0x101EB8E0,		//int ActionPtr
+				//0x101EB8E0,		//int ActionPtr
+				(int)&Role_SunWuKong_ActPtrTbl_0,
 
 				0x00000000,		//int 
 
@@ -98,8 +102,8 @@ const Role Role_SunWuKong_1={
 	0,			//int NULL
 
 	//0x101EB8E0,		//int ActionPtr
-	0x102C8CC8,		//int ActionPtr
-
+	//0x102C8CC8,		//int ActionPtr
+	(int)&Role_SunWuKong_ActPtrTbl_1,
 	0x00000000,		//int 
 
 	0x101EB876,		//int pImageIdTbl

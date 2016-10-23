@@ -163,7 +163,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				y = 4 ;
 			else
 				y = y - 1;
-			sub_1002F288(624, 112); //这是个播放音效的函数
+			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
 		if (press_key(2)) //1P down
@@ -172,7 +172,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				y = 0 ;
 			else
 				y = y + 1;
-			sub_1002F288(624, 112);
+			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
 		if (press_key(3)) //1P left
@@ -181,7 +181,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				x = 5 ;
 			else
 				x = x - 1;
-			sub_1002F288(624, 112);
+			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
 		if (press_key(4)) //1P right
@@ -191,14 +191,17 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 			else
 				x = x + 1;
 
-			sub_1002F288(624, 112);
+			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
 		if (press_key(5))//1P A
 		{
 				byte_20020170 = y *2 + (x/2)*10 + x%2;
 				
+				if (sub_100000B2(41))
+					byte_20020170 = byte_20020170 + 30;
 				pgm2log("selectid=%d,x=%d,y=%d\n",byte_20020170,x,y);
+				sub_1002F288(659, 112);//播放音效 原版625
 				break;
 		}
 //		0 1 10 11 20 21          x = 1  y = 0  id = 1

@@ -4,6 +4,8 @@
 #include "../Include/Role.h"
 #include "../xyj2_func.h"
 
+extern Role Role_SunWuKong_0;
+extern Role Role_SunWuKong_1;
 extern Role Role_JinJiao_0;
 extern Role Role_YinJiao_0;
 extern Role Role_BaiGuJing_0;
@@ -26,8 +28,8 @@ extern Role Role_HuangMei_0;
 
 
 //定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个,里人物30个
-Role* RolePtrTbl[MAX_ROLE_NUM] ={
-		(Role*)0x101EBA40,			//原有可选，用ROM指针必须强制转换为ROLE*类型
+Role* RolePtrTbl[MAX_ROLE_NUM*2] ={
+		&Role_SunWuKong_0,
 		(Role*)0x101EBA40,
 		(Role*)0x10206F88,
 		(Role*)0x10211EE8,
@@ -55,11 +57,14 @@ Role* RolePtrTbl[MAX_ROLE_NUM] ={
 		&Role_QingShiWang_0,
 		&Role_XieZiJing_0,
 		&Role_BaiShuJing_0,
-		&Role_HuangMei_0,
 		&Role_HuangFeng_0,
+		&Role_HuangMei_0,
+		&Role_HuangMei_0,
+		&Role_HuangMei_0,
 
 
-
+//里人物
+		&Role_SunWuKong_1,
 
 
 

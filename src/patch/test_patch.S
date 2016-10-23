@@ -28,6 +28,19 @@
 
 //选同人颜色设置    必须HOOK才能开启上面PATCH1
 	XXPATCH16JMP16(0x10029920,InitSameRolePalNo)
+	XXPATCH16JMP16(0x1002993A,hook_sub_1002993A)
+	XXPATCH16JMP16(0x1002998C,hook_sub_1002998C)//修复颜色阴影什么的，这个函数游戏经常调用
+	XXPATCH16JMP16(0x100299C0,hook_sub_100299C0)//
+	
+
+
+
+
+
+
+
+
+
 
 
 //这里是所有最大人数和游戏版本关联的PATCH，但目前暂时没用。

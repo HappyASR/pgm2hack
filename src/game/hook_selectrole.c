@@ -8,8 +8,8 @@
 extern void pgm2log(const char *fmt, ...);
 
 
-#define sub_10038F18		(*(int (*)())(0x10038F18+1))
-#define sub_1002F394		(*(int (*)())(0x1002F394+1))
+
+
 #define update_1002F81A		(*(int (*)())(0x1002F81A+1))
 #define GetDipsw_1002F5F4	(*(int (*)())(0x1002F5F4+1))
 #define printf_1000063C		(*(int (*)())(0x1000063C+1))
@@ -204,11 +204,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				sub_1002F288(659, 112);//播放音效 原版625
 				break;
 		}
-//		0 1 10 11 20 21          x = 1  y = 0  id = 1
-//		2 3 12 13 22 23          x = 2  y = 0  id = 11
-//		4 5 14 15 24 25          x = 1  y = 5  id = 9
-//		6 7 16 17 26 27          
-//		8 9 18 19 28 29
+
 
 		if (P32(0x20061ADC)[bPlayerNo])
 		{

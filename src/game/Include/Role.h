@@ -31,7 +31,7 @@ typedef struct {
 	short	DeadSound4;	//死亡声音4
 	int	Off_40;	//
 	int	Off_44;	//
-	int	Off_48;	//
+	int	Off_48;	// 这里应为2个short 为了不影响编译，现在暂时不做结构体修改
 	int	Off_4C;	//
 	int	Off_50;	//
 	int	Off_54;	//
@@ -41,7 +41,7 @@ typedef struct {
 	int	Off_64;	//
 	int	Off_68;	//
 	int	Off_6C;	//
-	int	Off_70;	//
+	int	Off_70;	//		这里被0x20056FBD4的off_128引用了
 	int	Off_74;	//
 	int	Off_78;	//
 	int	OrgWeaponId;	//初始武器ID

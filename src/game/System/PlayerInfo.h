@@ -16,14 +16,14 @@ struct Player{
 	short	Off_34;
 	short	Off_36;	//
 	short	Off_38;
-	int	Off_40;	//
+	int	Off_40;	//CMD指针
 	int	Off_44;	//
 	int	pImageAxisTbl;	//off_48 图片坐标指针
 	int	pCollIndexTbl;	//off_52 碰撞判定索引指针
 	int	Off_56;	//这里是一个指针，指向具体的碰撞判定
 	short	Off_60;	//这里应该是实际的碰撞盒子
 	short	Off_62;
-	short	Off_64;	//
+	short	Off_64;	//CMD offt 当前seek位置
 	short	Off_66;//这个可能是当前图片编号
 	int	Off_68;	//
 	int	Off_72;	//
@@ -233,7 +233,7 @@ struct Player{
 	int	Off_564;	//
 	int	Off_568;	//
 	int	Off_572;	//
-	short	Off_576;	//
+	short	Off_576;	//跟F0 01 有关
 	short	Off_578;	//
 	int	Off_580;	//
 	int	Off_584;	//
@@ -250,7 +250,7 @@ struct Player{
 	short	Off_614;
 	short	Off_616;	//
 	short	Off_618;	//
-	short	Off_620;	//
+	short	Off_620;	//跟F0 01 有关
 	short	Off_622;
 	short	Off_624;	//
 	short	Off_626;
@@ -293,10 +293,12 @@ struct Player{
 	short	Off_704;	//
 	short	Off_706;
 	int	Off_708;	//
-	int	Off_712;	//
+	short	Off_712;	//
+	short	Off_714;
 	short	Off_716;	//
 	short	WeaponPalBaseOfft;//off_718武器色盘偏移
-	int	Off_720;	//
+	short	Off_720;	//
+	short	Off_722;
 	int	Off_724;	//
 	int	Off_728;	//
 };			

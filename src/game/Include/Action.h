@@ -63,7 +63,7 @@ typedef struct ActTypePtrTbl
 //动作脚本处理
 
 //脚本结束标志
-#define SCR_END 0x80000000
+#define SCR_END 0x8000
 
 
 

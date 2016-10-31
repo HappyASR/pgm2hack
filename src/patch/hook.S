@@ -23,5 +23,5 @@
 	XXPATCH16JMP16(0x10098BBE,hook_dropitem)
 	//测试hook掉落FOOD 还不完美
 	XXPATCH16JMP16(0x1004E85A,hook_dropfood)
-
-
+	//测试hook出兵量 强制改为4人量
+	XXPATCH16JMP16(0x1005852E,hook_PlayerCnt)

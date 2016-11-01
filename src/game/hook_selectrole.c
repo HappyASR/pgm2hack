@@ -199,7 +199,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				byte_20020170 = y *2 + (x/2)*10 + x%2;
 				
 				if (sub_100000B2(41))
-					byte_20020170 = byte_20020170 + 30;
+					byte_20020170 = byte_20020170 + 60;
 				pgm2log("selectid=%d,x=%d,y=%d\n",byte_20020170,x,y);
 				sub_1002F288(659, 112);//播放音效 原版625
 				break;
@@ -235,9 +235,12 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 		memcpy((void*)P32(0x2003DC8C), &CardTest,sizeof(CardTest));//这里写入卡片数据
 		role = V8(0x20020170);
 //		pgm2log("role:%d\n");
-		V8(0x2003DC8C + 84 + 3  ) = role * 9 + 1;//这里补充人物的初始武器
-		V8(0x2003DC8C + 93 + 3  ) = 1;
-		V8(0x2003DC8C + 102 + 3 *2  ) = 100;
+		if((role%30)<10)
+		{
+			V8(0x2003DC8C + 84 + 3  ) = (role%30) * 9 + 1;//这里补充人物的初始武器
+			V8(0x2003DC8C + 93 + 3  ) = 1;
+			V8(0x2003DC8C + 102 + 3 *2  ) = 100;
+		}
 //-----------------------------------------------------
 
 	

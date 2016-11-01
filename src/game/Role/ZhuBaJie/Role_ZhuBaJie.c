@@ -96,7 +96,7 @@ const Role Role_ZhuBaJie_1={
 
 	0,			//int NULL
 
-	0x101F8004,		//int ActionPtr
+	0x107000A0,		//int ActionPtr 这里修改成雪总的HEX地址
 
 	0x00000000,		//int 
 

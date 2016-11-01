@@ -30,7 +30,7 @@ def patch_file(fileelf,filemap,fileori,fileout):
 		if(pat_end!=pat_start):
 			#print "%x-%x" % (pat_start,pat_end)
 			dat_ori = dat_ori[:pat_start]+dat_pat[pat_start:pat_end]+dat_ori[pat_end:]
-	dat_ori = dat_ori[:map_list[-1][0]]+dat_pat[map_list[-1][0]:]
+	dat_ori = dat_ori[:map_list[-1][0]]+dat_pat[map_list[-1][0]:]+dat_ori[len(dat_pat):]
 	len_now = len(dat_ori)
 	dat_ori += '\xFF'*(len_ori-len_now)
 	open(fileout,'wb').write(dat_ori)

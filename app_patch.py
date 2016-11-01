@@ -40,5 +40,5 @@ if __name__=='__main__':
 	if len(sys.argv)>4:
 		patch_file(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 	else:
-		print "%s " % sys.argv[0]
+		print "%s <ELF> <MAP> <ORI_BIN> <OUTPUT>" % sys.argv[0]
 		sys.exit(1)

@@ -8,7 +8,7 @@
 #define ChkKeySt_100000B2				FUNC16(0x100000B2)//检查按键状态
 
 //--Game Init -----
-
+extern void mainmenu();
 //------------------
 //--Main Title-----
 #define SetAudio_1002F36C					FUNC16(0x1002F36C)
@@ -284,7 +284,7 @@ void hook_Init(int a1,int a2,int a3,int a4)//sub_1002F9C0
 			case 0:
 //				main_menu_mode();//这里取消屏蔽可以进DEBUG
 				sub_10042C6C();//原版标题画面
-//				hook_Main_Title();
+//				mainmenu();
 				break;
 			case 3:
 				test_mode_main();

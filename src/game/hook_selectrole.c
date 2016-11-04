@@ -157,7 +157,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 	while (1) //进入主循环
 	{
 	
-		if (press_key(1)) //1P up
+		if (uwInputPressKeyLong(1)) //1P up
 		{
 			if (y -1 < 0 )
 				y = 4 ;
@@ -166,7 +166,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
-		if (press_key(2)) //1P down
+		if (uwInputPressKeyLong(2)) //1P down
 		{
 			if (y + 1 > 4 )
 				y = 0 ;
@@ -175,7 +175,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
-		if (press_key(3)) //1P left
+		if (uwInputPressKeyLong(3)) //1P left
 		{
 			if (x - 1 < 0 )
 				x = 5 ;
@@ -184,7 +184,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
-		if (press_key(4)) //1P right
+		if (uwInputPressKeyLong(4)) //1P right
 		{
 			if (x + 1 > 5 )
 				x = 0 ;
@@ -194,11 +194,11 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 			sub_1002F288(657, 112);//播放音效 原版624
 		}
 
-		if (press_key(5))//1P A
+		if (uwInputPressKeyLong(5))//1P A
 		{
 				byte_20020170 = y *2 + (x/2)*10 + x%2;
 				
-				if (sub_100000B2(41))
+				if (uwInputPressKey(41))
 					byte_20020170 = byte_20020170 + 60;
 				pgm2log("selectid=%d,x=%d,y=%d\n",byte_20020170,x,y);
 				sub_1002F288(659, 112);//播放音效 原版625

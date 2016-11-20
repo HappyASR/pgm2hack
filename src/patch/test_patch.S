@@ -1,7 +1,6 @@
 //接关可选人数，似乎未完全
 	//XXPATCH16(0x1006055E)
-	MOVS            R5, #30
-
+	//MOVS            R5, #30
 
 //暂时修改获取人物指针函数对应自定义指针表
 	//XXPATCH16JMP16(0x100298BC,GetRolePtrById)
@@ -82,5 +81,10 @@
 	XXPATCH16PTR32(0x100862F8,RoleNameTbl)
 	XXPATCH16PTR32(0x1008EF58,RoleNameTbl)
 	XXPATCH16PTR32(0x1008F7AC,RoleNameTbl)
+
+
+//测试脚本PATCH
+       XXPATCH16(0x102C7330)
+	.long Act_HuangMei_0_Start_0
 
 

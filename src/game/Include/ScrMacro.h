@@ -226,6 +226,7 @@
 //2,SO_BLOOD 10
 //3,SO_EFFECT 29
 //4,SO_QUAKET 6
+/*
 .macro	SCR_CallSysObj sys,id,param1,xPos,yPos			
 	.word 0xF014
 	.byte \sys					//
@@ -234,8 +235,10 @@
  	.byte \xPos					//水平位置
  	.byte \yPos					//垂直位置
 .endm
+*/
 
 //调用非公用OBJ
+/*
 .macro	SCR_CallObj param,objPtr,xPos,yPos		
 	.word 0xF015
 	.word \param				//PAL相关
@@ -243,6 +246,7 @@
 	.word \xPos				//x
 	.word \yPos				//y
 .endm
+*/
 
 //脚本指针加4,相当于NOP?
 .macro	SCR_AddScrPtr4			        //0x34(a4)++
@@ -477,7 +481,7 @@
 	.byte 0
 .endm
 
-.macro SCR_F044 param
+.macro SCR_F045 param
 	.word 0xF045
 	.byte \param
 	.byte 0
@@ -593,7 +597,7 @@
 
 
 //未知
-.macro	SCR_F049 param
+.macro	SCR_F065 param
 	.word 0xF065
 	.word \param
 

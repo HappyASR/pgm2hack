@@ -2,8 +2,8 @@
 #include "../../Include/ScrMacro.h"
 
 .global Act_HuangMei_0_Start_0
-Act_HuangMei_0_Start_0:	SCR_SetInvincible	@ DATA XREF: ROM:101EEA48o
-					@ 设置无敌
+Act_HuangMei_0_Start_0:	
+		SCR_SetInvincible	@ 设置无敌
 		SCR_F056 0		@ 未知开关
 		SCR_SetZoff 15		@ 设置空中可按A高度
 		SCR_PicElem 66,0,5	@ Pic_No,x,y
@@ -25,5 +25,5 @@ Act_HuangMei_0_Start_0:	SCR_SetInvincible	@ DATA XREF: ROM:101EEA48o
 		SCR_PicElem 63,0,0	@ Pic_No,x,y
 		SCR_PicElem 0,0,0	@ Pic_No,x,y
 		SCR_F056 1		@ 未知开关
-		//SCR_ClearInvincible	@ 取消无敌
+		SCR_ClearInvincible	@ 取消无敌
 		SCR_End			@ SCRIPT END

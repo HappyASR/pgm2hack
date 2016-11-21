@@ -5,22 +5,22 @@ set(CMAKE_USE_RELATIVE_PATHS ON)
 file(GLOB_RECURSE c_source_files "${CMAKE_CURRENT_SOURCE_DIR}/src/*.c")
 file(GLOB_RECURSE asm_source_files "${CMAKE_CURRENT_SOURCE_DIR}/src/*.S")
 FOREACH(src ${asm_source_files})
-	IF(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/*.S")
+	IF(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/.+\\.S")
 		set(p_source_files ${p_source_files} ${src})
-	ELSE(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/*.S")
+	ELSE(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/.+\\.S")
 		set(s_source_files ${s_source_files} ${src})
-	ENDIF(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/*.S")
+	ENDIF(src MATCHES "${CMAKE_CURRENT_SOURCE_DIR}/src/patch/.+\\.S")
 ENDFOREACH(src)
 
 #this would be text->.h
 add_custom_command( OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S
-                    DEPENDS ${s_source_files}
-                    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/gen_patch.py ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S ${s_source_files}
+                    DEPENDS ${p_source_files}
+                    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/gen_patch.py ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S ${p_source_files}
 )
 	set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S)
-add_custom_target( generate_patch DEPENDS ${s_source_files} )
+add_custom_target( generate_patch DEPENDS ${p_source_files} )
 
-set(SRC_LIST ${c_source_files} ${p_source_files} ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S)
+set(SRC_LIST ${c_source_files} ${s_source_files} ${CMAKE_CURRENT_SOURCE_DIR}/src/patch.S)
 add_executable(pgm2 ${SRC_LIST})
 add_dependencies( pgm2 generate_patch )
 target_link_libraries(pgm2 c_s nosys gcc g m)

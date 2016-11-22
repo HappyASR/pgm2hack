@@ -1,16 +1,9 @@
-#ifndef _USE_SIMPLE_TYPE_
-#define _USE_SIMPLE_TYPE_
-typedef unsigned char	BYTE;
-typedef unsigned short	WORD;
-typedef unsigned long	LONG;
-#endif 
-
-//#include "action.h"
-#include "collision.h"
-#include "pic.h"
+//#include "Action.h"
+//#include "Collision.h"
+//#include "pic.h"
 
 //#pragma pack(push, 2)
-//KOV OBJ结构,0x74字节
+//OBJ结构,0x54字节
 typedef struct{
 	const BYTE* ScriptPtr1;				//脚本指针1
 	const WORD* Origin_Array;				//图片原点数据指针

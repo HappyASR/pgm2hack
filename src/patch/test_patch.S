@@ -85,6 +85,11 @@
 
 //≤‚ ‘Ω≈±æPATCH
        XXPATCH16(0x102C7330)
-	.long Act_HuangMei_0_Start_0
+	.long Act_HuangMei_Start_0
+
+       XXPATCH16(0x102C733C)
+	.long Act_HuangMei_Start_1
+
+
 
 

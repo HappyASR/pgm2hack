@@ -4,6 +4,7 @@
 .macro ACT_Elem type,actid,scrptr,param1,param2
 	.byte \type
 	.byte \actid
+	.short 0			//保留
 	.long \scrptr			//脚本指针
 	.short \param1
 	.short \param2
@@ -88,37 +89,35 @@
 	.byte \actId					//动作ID
 .endm
 
-.macro	SCR_F005 param1,param2				//未知
-	.short 0xF005
-	.byte \param1					//参数1
-	.byte \param2					//参数2
-.endm
-
-//调用程序
-.macro	SCR_F006 param1 func				
-	.short 0xF006
-	.short \param1					//参数1
-	.long \func					//参数2
-.endm
-
-
-
-//-------------------------------------------------------------------------------
 //人物死亡脚本跳转
 .macro SCR_IfDeadJmpTo dest_addr,flag	//比较HP是否为0,一般直接跳转到SCR_End
-	.short 0xF006						//脚本头
+	.short 0xF005						//脚本头
 	.byte (\dest_addr-2-.)/4			//跳转距离,和F04F相同
 	.byte \flag							//调试用？一般为0 
 .endm
 
-.macro	SCR_CallFunc param,progPtr	//调用程序CALL
+//调用程序
+.macro	SCR_CallFunc p1,p2,func				
+	.short 0xF006
+	.byte \p1					
+	.byte \p2
+	.long \func					//函数指针+1
+.endm
+
+.macro	SCR_F007 p1				//未知
 	.short 0xF007
-	.short \param					//参数
-	.long \progPtr					//程序指针
+	.byte \p1					//参数1
+	.byte 0				
+.endm
+
+.macro	SCR_F008 p1				//未知
+	.short 0xF008
+	.byte \p1				//参数1
+	.byte 0					//参数2
 .endm
 
 
-
+//-------------------------------------------------------------------------------
 //声音播放
 .macro	SCR_PlaySound	param1,param2,sndId,off			
 	.short 0xF009
@@ -128,8 +127,8 @@
 	.short \off						
 .endm
 
-//设置人物内存12D
-.macro	SCR_SetM_12D param,reserved				
+//
+.macro	SCR_F00A param,reserved				
 	.short 0xF00A
 	.byte \param					//设置参数
 	.byte \reserved					//保留
@@ -174,31 +173,25 @@
 
 //-----------------------------------------------------------------------------------
 //调用系统OBJ，火花等
-.macro	SCR_CallSysObj param1，param2,id,x,y		//			
+.macro	SCR_CallSysObj param1,param2,id,x,y		//			
 	.short 0xF011
-	.byte param1
-	.byte param2
+	.byte \param1
+	.byte \param2
 	.short \id
 	.byte \x
 	.byte \y					
 .endm
 
 //调用OBJ
-.macro	SCR_CallObj param1，param2,ptr		//			
+.macro	SCR_CallObj param1,param2,ptr,p3,x,y	//			
 	.short 0xF012
-	.byte param1
-	.byte param2
+	.byte \param1
+	.byte \param2
 	.long \ptr
-	.short \x
-	.short \y
+	.short \p3
+	.byte \x
+	.byte \y
 					
-.endm
-
-//设置人物颜色,可用于残影调用？
-.macro	SCR_SetCharPal palnum				//设置55(A4)
-	.short 0xF012
-	.byte \palnum					        //00基础色，09金色
-    .byte 0
 .endm
 
 //使一段动作无敌//嵌套invincible
@@ -435,7 +428,7 @@
 //设置人物亮度，场景切换时候动作常用
 .macro SCR_SetRoleBright bright
 	.short 0xF038
-	.byte \bright		//值越大越暗
+	.byte \bright		//值越大越白
 	.byte 0
 .endm
 

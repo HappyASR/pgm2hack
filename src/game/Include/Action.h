@@ -32,7 +32,7 @@ typedef struct
 	char ActType;				//动作类型
 	char ActId;				//动作ID(当前类型)
 	short Reversed;				//保留 0 
-	void* ActScr;				//动作脚本指针
+	int ActScr;				//动作脚本指针
 	short Param1;				//参数1
 	short Param2;				//参数2
 
@@ -41,21 +41,21 @@ typedef struct
 //动作类型指针表结构
 typedef struct ActTypePtrTbl
 {
-	int ActWait;
-	int ActStart;
-	int ActMotion;
-	int ActAttack;
+	const ActElem* ActWait;
+	const ActElem*  ActStart;
+	const ActElem*  ActMotion;
+	const ActElem*  ActAttack;
 
-	int ActType4;
-	int ActType5;
+	const ActElem* ActType4;
+	const ActElem* ActType5;
 
-	int ActKill;
-	int ActType7;
-	int ActCaning;
-	int ActVictor;
+	const ActElem* ActKill;
+	const ActElem* ActType7;
+	const ActElem* ActCaning;
+	const ActElem* ActVictor;
 
-	int ActType10;		//0
-	int ActType11;		//0	
+	const ActElem* ActType10;		//0
+	const ActElem* ActType11;		//0	
 
 }ActTypePtrTbl;
 

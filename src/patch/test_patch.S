@@ -82,7 +82,9 @@
 	XXPATCH16PTR32(0x1008EF58,RoleNameTbl)
 	XXPATCH16PTR32(0x1008F7AC,RoleNameTbl)
 
-
+//MAIN MENU ROLE 增加新人选择
+	XXPATCH16(0x1003AB80)                
+	CMP             R0, #59
 
 
 

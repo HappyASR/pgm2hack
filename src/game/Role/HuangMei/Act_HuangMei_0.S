@@ -97,6 +97,7 @@ Act_HuangMei_Start_0:
 		SCR_F056 1		@ 未知开关
 		SCR_ClearInvincible	@ 取消无敌
 		SCR_End			@ SCRIPT END
+//元神出窍
 Act_HuangMei_Start_1:
 		SCR_SetInvincible@ 设置无敌
 		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
@@ -149,11 +150,61 @@ Act_HuangMei_Start_1:
 		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
 		SCR_PicElem 169,0,0	@ Pic_No,x,y
 		SCR_SetRoleBright 20
-byte_101ECB40:	//SCR_SetColorMask 0x7FFF @ 设置颜色遮罩
+byte_101ECB40:	SCR_SetColorMask 0x7FFF
 		SCR_PicElem 169,0,0	@ Pic_No,x,y
 		SCR_JmpTo byte_101ECB40,Act_HuangMei_Start_1
-
-Act_HuangMei_Start_2:SCR_End
+//元神回窍
+Act_HuangMei_Start_2:
+		SCR_SetInvincible	@ 设置无敌
+		SCR_SetColorMask 0x7FFF
+		SCR_ShowLoopPic	20	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 20
+		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 24
+		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 28
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 32
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 28
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 24
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 20
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 16
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 12
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 8
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 4
+		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_SetRoleBright 0
+		SCR_ShowLoopPic	2	@ 循环播放图片 帧数
+		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
+		SCR_PicElem 168,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
+		SCR_PicElem 167,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
+		SCR_PicElem 166,0,0	@ Pic_No,x,y
+		SCR_ClearInvincible	@ 取消无敌
+		SCR_End			@ SCRIPT END
 Act_HuangMei_Start_3:SCR_End
 Act_HuangMei_Start_4:SCR_End
 Act_HuangMei_Start_5:SCR_End

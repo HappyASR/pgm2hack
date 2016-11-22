@@ -377,7 +377,7 @@
 //设置颜色遮罩
 .macro	SCR_SetColorMask param1
 	.short 0xF030
-	.short /param1
+	.short \param1
 .endm
 
 //同时显示两张图嵌套符号

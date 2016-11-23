@@ -4,6 +4,8 @@
 //开放给ACTION.C引用的全局指针
 .global Act_HuangMei_Start
 
+.global Act_HuangMei_Motion_28
+
 
 //动作结构数组定义
 Act_HuangMei_Start:
@@ -69,6 +71,49 @@ ACT_Elem 1,58,Act_HuangMei_Start_58,1,1
 ACT_Elem 1,59,Act_HuangMei_Start_59,1,1
 ACT_Elem 1,60,Act_HuangMei_Start_60,1,1
 
+ACT_Elem 2,0,Act_HuangMei_Motion_0,1,0
+ACT_Elem 2,1,Act_HuangMei_Motion_1,1,0
+ACT_Elem 2,2,Act_HuangMei_Motion_2,1,0
+ACT_Elem 2,3,Act_HuangMei_Motion_3,1,0
+ACT_Elem 2,4,Act_HuangMei_Motion_4,1,0
+ACT_Elem 2,5,Act_HuangMei_Motion_5,1,0
+ACT_Elem 2,6,Act_HuangMei_Motion_6,1,0
+ACT_Elem 2,7,Act_HuangMei_Motion_7,1,0
+ACT_Elem 2,8,Act_HuangMei_Motion_8,1,0
+ACT_Elem 2,9,Act_HuangMei_Motion_9,1,0
+ACT_Elem 2,10,Act_HuangMei_Motion_10,1,0
+ACT_Elem 2,11,Act_HuangMei_Motion_11,1,0
+ACT_Elem 2,12,Act_HuangMei_Motion_12,1,0
+ACT_Elem 2,13,Act_HuangMei_Motion_13,1,0
+ACT_Elem 2,14,Act_HuangMei_Motion_14,1,0
+ACT_Elem 2,15,Act_HuangMei_Motion_15,1,0
+ACT_Elem 2,16,Act_HuangMei_Motion_16,1,0
+ACT_Elem 2,17,Act_HuangMei_Motion_17,1,0
+ACT_Elem 2,18,Act_HuangMei_Motion_18,1,0
+ACT_Elem 2,19,Act_HuangMei_Motion_19,2,0
+ACT_Elem 2,20,Act_HuangMei_Motion_20,2,0
+ACT_Elem 2,21,Act_HuangMei_Motion_21,2,0
+ACT_Elem 2,22,Act_HuangMei_Motion_22,2,0
+ACT_Elem 2,23,Act_HuangMei_Motion_23,2,0
+ACT_Elem 2,24,Act_HuangMei_Motion_24,2,0
+ACT_Elem 2,25,Act_HuangMei_Motion_25,2,0
+ACT_Elem 2,26,Act_HuangMei_Motion_26,2,0
+ACT_Elem 2,27,Act_HuangMei_Motion_27,0,0
+ACT_Elem 2,28,0,2,0
+ACT_Elem 2,29,Act_HuangMei_Motion_29,1,0
+ACT_Elem 2,30,Act_HuangMei_Motion_30,0,0
+ACT_Elem 2,31,Act_HuangMei_Motion_31,0,0
+ACT_Elem 2,32,Act_HuangMei_Motion_32,1,1
+ACT_Elem 2,33,Act_HuangMei_Motion_33,1,1
+ACT_Elem 2,34,Act_HuangMei_Motion_34,1,1
+ACT_Elem 2,35,Act_HuangMei_Motion_35,1,1
+ACT_Elem 2,36,Act_HuangMei_Motion_36,1,1
+ACT_Elem 2,37,Act_HuangMei_Motion_37,1,1
+ACT_Elem 2,38,Act_HuangMei_Motion_38,1,0
+ACT_Elem 2,39,Act_HuangMei_Motion_39,1,0
+ACT_Elem 2,40,Act_HuangMei_Motion_40,1,0
+ACT_Elem 2,41,Act_HuangMei_Motion_41,1,0
+
 
 
 //出世动作
@@ -76,137 +121,242 @@ Act_HuangMei_Start_0:
 		SCR_SetInvincible	@ 设置无敌
 		SCR_F056 0		@ 未知开关
 		SCR_SetZoff 15		@ 设置空中可按A高度
-		SCR_PicElem 66,0,5	@ Pic_No,x,y
-		SCR_PicElem 68,0,5	@ Pic_No,x,y
-		SCR_PicElem 68,0,7	@ Pic_No,x,y
-		SCR_PicElem 68,0,9	@ Pic_No,x,y
-		SCR_PicElem 68,0,8	@ Pic_No,x,y
-		SCR_PicElem 68,0,8	@ Pic_No,x,y
-		SCR_PicElem 68,0,9	@ Pic_No,x,y
-		SCR_PicElem 68,0,9	@ Pic_No,x,y
-		SCR_PicElem 68,0,10	@ Pic_No,x,y
-		SCR_PicElem 68,0,10	@ Pic_No,x,y
+		SCR_PicElem 66,0,5	
+		SCR_PicElem 68,0,5	
+		SCR_PicElem 68,0,7	
+		SCR_PicElem 68,0,9	
+		SCR_PicElem 68,0,8	
+		SCR_PicElem 68,0,8	
+		SCR_PicElem 68,0,9	
+		SCR_PicElem 68,0,9	
+		SCR_PicElem 68,0,10	
+		SCR_PicElem 68,0,10	
 		SCR_SetZMode		@ F003
-		SCR_PicElem 68,0,12	@ Pic_No,x,y
+		SCR_PicElem 68,0,12	
 		SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
-		SCR_ShowLoopPic	10	@ 循环播放图片 帧数
-		SCR_PicElem 64,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	4	@ 循环播放图片 帧数
-		SCR_PicElem 63,0,0	@ Pic_No,x,y
-		SCR_PicElem 0,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	10	
+		SCR_PicElem 64,0,0	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 63,0,0	
+		SCR_PicElem 0,0,0	
 		SCR_F056 1		@ 未知开关
 		SCR_ClearInvincible	@ 取消无敌
 		SCR_End			@ SCRIPT END
 //元神出窍
 Act_HuangMei_Start_1:
 		SCR_SetInvincible@ 设置无敌
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 0,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 166,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 167,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 0,0,0	
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 166,0,0	
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 167,0,0	
 		SCR_CallSysObj 4,27,-5,0,-40 @ F011 sys,id,param1,xPos,yPos
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 168,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 168,0,0	
 		SCR_CallSysObj 2,15,0,-2,0 @ F011 sys,id,param1,xPos,yPos
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 0
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 4
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 8
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 12
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 16
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 20
 		//这里调用出窍的元神OBJ
 		SCR_CallObj 254,254,0x101ECA14,0,-1,0 @F012 b1,b2,objPtr,w3,xPos,yPos
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 24
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 28
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 32
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 28
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 24
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 20
 byte_101ECB40:	SCR_SetColorMask 0x7FFF
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_PicElem 169,0,0	
 		SCR_JmpTo byte_101ECB40,Act_HuangMei_Start_1
 //元神回窍
 Act_HuangMei_Start_2:
 		SCR_SetInvincible	@ 设置无敌
 		SCR_SetColorMask 0x7FFF
-		SCR_ShowLoopPic	20	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	20	
+		SCR_PicElem 169,0,0	
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 20
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 24
-		SCR_ShowLoopPic	8	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 28
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 32
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 28
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 24
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 20
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 16
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 12
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 8
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 4
-		SCR_ShowLoopPic	6	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	6	
+		SCR_PicElem 169,0,0	
 		SCR_SetRoleBright 0
-		SCR_ShowLoopPic	2	@ 循环播放图片 帧数
-		SCR_PicElem 169,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
-		SCR_PicElem 168,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
-		SCR_PicElem 167,0,0	@ Pic_No,x,y
-		SCR_ShowLoopPic	3	@ 循环播放图片 帧数
-		SCR_PicElem 166,0,0	@ Pic_No,x,y
+		SCR_ShowLoopPic	2	
+		SCR_PicElem 169,0,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 168,0,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 167,0,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 166,0,0	
 		SCR_ClearInvincible	@ 取消无敌
 		SCR_End			@ SCRIPT END
-Act_HuangMei_Start_3:SCR_End
-Act_HuangMei_Start_4:SCR_End
+Act_HuangMei_Start_3:
+SCR_SetInvincible	@ DATA XREF: ROM:101EEA6Co
+					@ 设置无敌
+		SCR_F018 1		@ 未知开关F018
+		SCR_F025 2		@ 未知F025
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 19,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 20,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 21,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 22,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 23,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 24,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 25,65,0	
+		SCR_ShowLoopPic	3	
+		SCR_PicElem 26,65,0	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 63,68,-32	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 64,68,-16	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 65,69,-8	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 66,69,-8	
+		SCR_ShowLoopPic	8	
+		SCR_PicElem 66,69,0	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 67,69,8	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 67,69,8	
+		SCR_ShowLoopPic	4	
+		SCR_PicElem 68,68,16	
+		SCR_SetZMode		@ F003	设置Z轴模式
+		SCR_PicElem 69,68,32	
+		SCR_F018 0		@ 未知开关F018
+		SCR_ClearInvincible	@ 取消无敌
+		SCR_End			@ SCRIPT END
+Act_HuangMei_Start_4:
+		SCR_F018 1
+		SCR_ScrLoopStart 0x1
+		SCR_SetRoleDark	0
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 19,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	3
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 20,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	7
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 21,0,0	
+		SCR_F023		@ cmd,param
+		SCR_F027 0
+		SCR_F007 129
+		SCR_CloseRoleShadow	@ 人物影子
+		SCR_SetRoleDark	12
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 22,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	18
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 23,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	18
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 24,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	25
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 25,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	25
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 26,0,0	
+		SCR_F023		@ cmd,param
+		SCR_ScrLoopStart 0x0
+		SCR_SetRoleDark	25
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 19,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	22
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 20,0,0	
+		SCR_F023		@ cmd,param
+		SCR_SetRoleDark	20
+		SCR_F022 6		@ cmd,param
+		SCR_CallFunc 0,0,0x1009DD45
+		SCR_PicElem 21,0,0	
+		SCR_F023		@ cmd,param
+		SCR_F018 0		@ 未知开关F018
+byte_101EBCF4:	SCR_PicElemNone	0,0,0	
+		SCR_JmpTo byte_101EBCF4,Act_HuangMei_Start_4
 Act_HuangMei_Start_5:SCR_End
 Act_HuangMei_Start_6:SCR_End
 Act_HuangMei_Start_7:SCR_End
@@ -263,3 +413,55 @@ Act_HuangMei_Start_57:SCR_End
 Act_HuangMei_Start_58:SCR_End
 Act_HuangMei_Start_59:SCR_End
 Act_HuangMei_Start_60:SCR_End
+
+
+Act_HuangMei_Motion_0:SCR_End
+Act_HuangMei_Motion_1:SCR_End
+Act_HuangMei_Motion_2:SCR_End
+Act_HuangMei_Motion_3:SCR_End
+Act_HuangMei_Motion_4:SCR_End
+Act_HuangMei_Motion_5:SCR_End
+Act_HuangMei_Motion_6:SCR_End
+Act_HuangMei_Motion_7:SCR_End
+Act_HuangMei_Motion_8:SCR_End
+Act_HuangMei_Motion_9:SCR_End
+Act_HuangMei_Motion_10:SCR_End
+Act_HuangMei_Motion_11:SCR_End
+Act_HuangMei_Motion_12:SCR_End
+Act_HuangMei_Motion_13:SCR_End
+Act_HuangMei_Motion_14:SCR_End
+Act_HuangMei_Motion_15:SCR_End
+Act_HuangMei_Motion_16:SCR_End
+Act_HuangMei_Motion_17:SCR_End
+Act_HuangMei_Motion_18:SCR_End
+Act_HuangMei_Motion_19:SCR_End
+Act_HuangMei_Motion_20:SCR_End
+Act_HuangMei_Motion_21:SCR_End
+Act_HuangMei_Motion_22:SCR_End
+Act_HuangMei_Motion_23:SCR_End
+Act_HuangMei_Motion_24:SCR_End
+Act_HuangMei_Motion_25:SCR_End
+Act_HuangMei_Motion_26:SCR_End
+Act_HuangMei_Motion_27:SCR_End
+Act_HuangMei_Motion_28:
+	//SCR_ShowLoopPic 5
+	//SCR_PicElem 69,0,4
+	//SCR_SetZMode
+	//SCR_PicElem 69,0,10
+	//SCR_PlaySound 64,0,540,0
+	//SCR_ShowLoopPic 2
+	//SCR_PicElem 70,0,0 
+	SCR_End
+Act_HuangMei_Motion_29:SCR_End
+Act_HuangMei_Motion_30:SCR_End
+Act_HuangMei_Motion_31:SCR_End
+Act_HuangMei_Motion_32:SCR_End
+Act_HuangMei_Motion_33:SCR_End
+Act_HuangMei_Motion_34:SCR_End
+Act_HuangMei_Motion_35:SCR_End
+Act_HuangMei_Motion_36:SCR_End
+Act_HuangMei_Motion_37:SCR_End
+Act_HuangMei_Motion_38:SCR_End
+Act_HuangMei_Motion_39:SCR_End
+Act_HuangMei_Motion_40:SCR_End
+Act_HuangMei_Motion_41:SCR_End

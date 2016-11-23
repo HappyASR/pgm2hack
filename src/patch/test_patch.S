@@ -83,8 +83,10 @@
 	XXPATCH16PTR32(0x1008F7AC,RoleNameTbl)
 
 //MAIN MENU ROLE 增加新人选择
-	XXPATCH16(0x1003AB80)                
-	CMP             R0, #59
+	//XXPATCH16(0x1003AB80)                
+	//CMP             R0, #59
 
-
+//黄眉落地动作修正测试
+	XXPATCH16(0x102C7594)  
+	.long Act_HuangMei_Motion_28
 

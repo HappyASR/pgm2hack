@@ -275,10 +275,9 @@
 
 .endm
 
-.macro	SCR_F01C	param1,param2			//参数1设置ED(a4)，再跳到F005
-	.short 0xF01C				//set bits D4(a4)
-	.byte \param1				
-	.byte \param2
+.macro	SCR_CloseRoleShadow
+	.short 0xF01C				
+	.short 0
 .endm
 
 //人物坐标相关
@@ -303,12 +302,16 @@
 
 
 //-----------------------------------------------------------------------------------
-//设置人物内存D4的BIT2
-.macro	SCR_SetM_D4_Bit2 param
-	.short 0xF020
+.macro	SCR_F022 param
+	.short 0xF022
 	.byte \param					//设置值
 	.byte 0
 
+.endm
+
+.macro	SCR_F023
+	.short 0xF023
+	.short 0
 .endm
 
 //和F026相关，疑似开关
@@ -326,15 +329,16 @@
 
 .endm
 
-.macro	SCR_F027 param1,param2,picid,xadd,yadd,zadd
+.macro	SCR_F027 b1
 .short 0xF027
-.byte \param1
-.byte \param2
-.short \picid
-.short 0
-.short \xadd
-.byte \yadd
-.byte \zadd
+.byte \b1
+.byte 0
+.endm
+
+.macro	SCR_F028 b1
+.short 0xF028
+.byte \b1
+.byte 0
 .endm
 
 
@@ -419,16 +423,17 @@
 	.byte 0
 .endm
 
-.macro	SCR_PickUpItemEnd param
+//设置人物暗度，场景切换时候动作常用
+.macro SCR_SetRoleDark b
 	.short 0xF037
-	.byte \param
+	.byte \b		//值越大越黑
 	.byte 0
 .endm
 
 //设置人物亮度，场景切换时候动作常用
-.macro SCR_SetRoleBright bright
+.macro SCR_SetRoleBright b
 	.short 0xF038
-	.byte \bright		//值越大越白
+	.byte \b		//值越大越白
 	.byte 0
 .endm
 

@@ -1,9 +1,11 @@
 #include "../../Include/Action.h"
 
-extern const ActElem Act_HuangMei_Start[];
+extern const ActElem HuangMei_ActType_Start[];
+extern const ActElem HuangMei_ActType_Motion[];
+
 const ActTypePtrTbl Role_HuangMei_ActPtrTbl_0 ={
 	0,
-	Act_HuangMei_Start,
+	HuangMei_ActType_Start,
 	(ActElem*)0x102C7440,
 	(ActElem*)0x102C7BC8,
 	(ActElem*)0x102C8A04,
@@ -18,7 +20,7 @@ const ActTypePtrTbl Role_HuangMei_ActPtrTbl_0 ={
 
 const ActTypePtrTbl const Role_HuangMei_ActPtrTbl_1 ={
 	0,
-	Act_HuangMei_Start,
+	HuangMei_ActType_Start,
 	(ActElem*)0x102C7440,
 	(ActElem*)0x102C7BC8,
 	(ActElem*)0x102C8A04,

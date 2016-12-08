@@ -1,13 +1,26 @@
 //西游2脚本宏扩展定义
 //--------------------------------------------------------------------------------------
 //动作结构体
-.macro ACT_Elem type,actid,scrptr,param1,param2
+
+.macro ACT_Elem type,actid,scrptr,param1,param2,param3
+	.byte \type
+	.byte \actid
+	.short 0			//保留
+	.long \scrptr			//脚本指针
+	.short \param1
+	.byte \param2
+	.byte \param3
+.endm
+
+
+.macro ACT_Elem2 type,actid,scrptr,param1,param2
 	.byte \type
 	.byte \actid
 	.short 0			//保留
 	.long \scrptr			//脚本指针
 	.short \param1
 	.short \param2
+
 .endm
 //--------------------------------------------------------------------------------------
 //单张图像显示结构
@@ -135,29 +148,25 @@
 .endm
 
 
-
-.macro	SCR_F00C param1,param2				//未知
+//帧数延迟
+.macro	SCR_DelayFrame frame				
 	.short 0xF00C
-	.byte \param1					//参数1
-	.byte \param2					//参数2
+	.byte \frame					//参数1
+	.byte 0						
 .endm
 
-.macro	SCR_F00D	param1,param2				//缩放,设置X和Zoom
+//屏幕抖动
+.macro	SCR_ScreenShake	param1,param2
 	.short 0xF00D
-	.byte \param1					//X
-	.byte \param2					//ZOOM
-.endm
-
-//使图延迟param1决定的帧数
-.macro	SCR_DelayFrame param1				
-	.short 0xF00E
 	.byte \param1
-	.byte 0											//保留
+	.byte \param2
 .endm
 
-.macro	ScrF00F	param1,param2				//PATH IMGCHG
-	.short 0xF00F					//如果参数1不等于0，1，则显示
-	.byte \param1					//信息；否则跳到F005				.byte \param2
+//设置人物色盘
+.macro	Scr_SetRolePal palno
+	.short 0xF00F
+	.byte \palno
+	.byte 0
 .endm
 
 //设置无敌
@@ -190,59 +199,17 @@
 	.long \ptr
 	.short \p3
 	.byte \x
-	.byte \y
-					
+	.byte \y				
 .endm
 
-//使一段动作无敌//嵌套invincible
-.macro	SCR_SetUnBeat_Start param				
-	.short 0xF013
-	.byte \param
-	.byte 0					    //保留
-.endm
-
-.macro	SCR_SetUnBeat_End				
-	.short 0xF013
-	.byte 0	
-	.byte 0					    //保留
-.endm
-
-
-
-
-//调用系统OBJ
-//SYS       id
-//0,SO_DUST 5
-//1,SO_BON 36
-//2,SO_BLOOD 10
-//3,SO_EFFECT 29
-//4,SO_QUAKET 6
-/*
-.macro	SCR_CallSysObj sys,id,param1,xPos,yPos			
-	.short 0xF014
-	.byte \sys					//
-	.byte \id
-	.short \param1					//
- 	.byte \xPos					//水平位置
- 	.byte \yPos					//垂直位置
-.endm
-*/
-
-//调用非公用OBJ
-/*
-.macro	SCR_CallObj param,objPtr,xPos,yPos		
-	.short 0xF015
-	.short \param				//PAL相关
-	.long \objPtr				//OBJ指针
-	.short \xPos				//x
-	.short \yPos				//y
-.endm
-*/
-
-//脚本指针加4,相当于NOP?
-.macro	SCR_AddScrPtr4			        //0x34(a4)++
+//未知
+.macro	SCR_F016 b1,b2,w1,b3,b4
 	.short 0xF016
-	.short 0			
+	.byte \b1
+	.byte \b2
+	.short \w1
+	.byte \b3
+	.byte \b4			
 .endm
 
 //设置人物Z轴可输入A高度
@@ -275,18 +242,23 @@
 
 .endm
 
+//开启影子
+.macro	SCR_OpenRoleShadow
+	.short 0xF01C				
+	.short 1
+.endm
+
+//关闭影子
 .macro	SCR_CloseRoleShadow
 	.short 0xF01C				
 	.short 0
 .endm
 
 //人物坐标相关
-.macro	SCR_F01D param1,param2,param3,param4
+.macro	SCR_ScreenFlash param1
 	.short 0xF01D
 	.byte \param1
-	.byte \param2
-	.byte \param3
-	.byte \param4
+	.byte 0
 .endm
 
 //人物坐标相关
@@ -302,16 +274,46 @@
 
 
 //-----------------------------------------------------------------------------------
-.macro	SCR_F022 param
+//组合图片定义开始
+.macro	SCR_F020 picnum
+.short 0xF020
+.byte \picnum
+.byte 0
+.endm
+
+//组合图片组
+.macro	SCR_F021 param1,param2,picid,xadd,yadd,zadd
+.short 0xF021
+.byte \param1
+.byte \param2
+.short \picid
+.short 0				//图片的原XY被忽略
+.short \xadd
+.byte \yadd
+.byte \zadd
+.endm
+
+
+//脚本循环开始
+.macro	SCR_ScrLoopStart count
 	.short 0xF022
-	.byte \param					//设置值
+	.byte \count					
 	.byte 0
 
 .endm
 
-.macro	SCR_F023
+//脚本循环结束
+.macro	SCR_ScrLoopEnd
 	.short 0xF023
 	.short 0
+.endm
+
+//设置残影个数
+.macro	SCR_SetAfterImage p1,p2
+	.short 0xF024
+	.byte \p1
+        .byte \p2
+
 .endm
 
 //和F026相关，疑似开关
@@ -321,11 +323,11 @@
 .endm
 
 
-//缩小相关
-.macro	SCR_ZoomOut	param1,param2		
+//缩放图片相关
+.macro	SCR_ZoomPic	w,h	
 	.short 0xF026
-	.byte \param1
-        .byte \param2
+	.byte \w
+        .byte \h
 
 .endm
 
@@ -335,7 +337,8 @@
 .byte 0
 .endm
 
-.macro	SCR_F028 b1
+//设置面向 右0左1
+.macro	SCR_SetFaceTo b1
 .short 0xF028
 .byte \b1
 .byte 0
@@ -343,37 +346,51 @@
 
 
 
-//脚本循环开始设置
-.macro	SCR_ScrLoopStart count
-	.short 0xF028
-	.byte \count				//循环次数
-	.byte 0
+//强制移动人物坐标
+.macro	SCR_SetRolePos x,y,z
+	.short 0xF029 
+	.short \x
+	.short \y
+	.short \z
 .endm
 
-//脚本循环结束设置
-.macro	SCR_ScrLoopEnd
-	.short 0xF029
-	.short 0
+//组合图片定义开始
+.macro	SCR_F02A picnum
+.short 0xF02A
+.byte \picnum
+.byte 0
 .endm
 
-//人物残影设置
-.macro	SCR_SetCharShadow num,palno
-	.short 0xF02A
-	.byte \num		//残影个数
-	.byte \palno		//残影颜色
+//组合图片组
+.macro	SCR_F02B param1,param2,picid,xadd,yadd,zadd
+.short 0xF02B
+.byte \param1
+.byte \param2
+.short \picid
+.short 0				//图片的原XY被忽略
+.short \xadd
+.byte \yadd
+.byte \zadd
 .endm
 
-//缩放，F02C 0505  长宽变成原来的1/2  
-.macro SCR_ZoomPic zoomx,zoomy
+//设置敌方状态，如定身，封招等
+.macro	SCR_SetRoroStatus s
 .short 0xF02C
-.byte \zoomx
-.byte \zoomy
+.byte \s
+.byte 0
 .endm
 
+//恢复敌方状态，如定身，封招等
+.macro	SCR_ClearRoroStatus s
+.short 0xF02D
+.byte \s
+.byte 0
+.endm
 
-.macro	SCR_F02E	id,param2			
+//播放被攻击声音
+.macro	SCR_PlayCaningSound	id,param2			
 	.short 0xF02E
-	.byte \id				//根据ID不同传送不同的参数			
+	.byte \id			
 	.byte \param2
 .endm
 
@@ -384,44 +401,23 @@
 	.short \param1
 .endm
 
-//同时显示两张图嵌套符号
 
-.macro	SCR_Show2Pic_Start param1
-	.short 0xF033
-	.byte \param1
+
+//背景变亮固定开关
+.macro	SCR_SetBGBright param
+	.short 0xF035
+	.byte \param
 	.byte 0
 .endm
 
-.macro	SCR_Show2Pic_End
-	.short 0xF033
-	.short 0
-.endm
-
-//显示新图结构
-.macro	SCR_ShowNewPic param1,param2,picid,xadd,yadd,zadd
-.short 0xF034
-.byte \param1
-.byte \param2
-.short \picid
-.short 0
-.short \xadd
-.byte \yadd
-.byte \zadd
-.endm
-
-//背景颜色改变
-.macro	SCR_SetBGColor color
-	.short 0xF035
-	.short \color
-.endm
-
-//捡东西相关,配合使用
-//捡起某物品
-.macro	SCR_PickUpItemStart param
+//背景变暗固定开关
+.macro	SCR_SetBGDark param
 	.short 0xF036
 	.byte \param
 	.byte 0
 .endm
+
+
 
 //设置人物暗度，场景切换时候动作常用
 .macro SCR_SetRoleDark b
@@ -437,117 +433,113 @@
 	.byte 0
 .endm
 
-//播放受创声音，TYPE8用，和ROLE结构OFF60-66有关
-.macro SCR_PlayCaningSound idx param
-	.short 0xF03C
-	.byte \idx		//声音索引0:OFF66;1:0FF64;2:OFF62;3:OFF60
-	.byte \param		//参数
-.endm
-
-//设置残影颜色
-.macro SCR_SetShadowColor palno param
-	.short 0xF03E
-	.byte \palno		//PAL编号
-	.byte \param		//颜色程序相关参数
-.endm
-//-------------------------------------------------------------------------------------
-//
-.macro SCR_F041 param1 param2
-	.short 0xF041
+//控制攻击是否有判定，待测试
+.macro	SCR_F039 param1,param2
+	.short 0xF039
 	.byte \param1
 	.byte \param2
 .endm
 
-//招式取消FO42  0101表示不打到人也可以取消
-.macro SCR_CancelAction_Start param2
-	.short 0xF042
-	.byte 1
-	.byte \param2
+//
+.macro	SCR_SetCaningAct actid
+.short 0xF03C
+.byte \actid
+.byte 0
 .endm
 
-.macro	SCR_CancelAction_End
-	.short 0xF042
-	.byte 0
-	.byte 0
+
+//-------------------------------------------------------------------------------------
+//调用攻击火花
+.macro SCR_CallSpark p1 p2
+	.short 0xF041
+	.byte \p1
+	.byte \p2
 .endm
 
-.macro SCR_F044 param
+
+
+//设置攻击硬直
+.macro SCR_SetAttackDelay param
 	.short 0xF044
 	.byte \param
 	.byte 0
 .endm
 
-.macro SCR_F045 param
+//判断连续按键开始
+.macro SCR_CheckPressAStart param
 	.short 0xF045
 	.byte \param
 	.byte 0
 .endm
 
-
-//-----------------------------------------
-//设置敌人受击参数
-.macro	SCR_SetOppntCaning id,delay
+//按A跳转到指定位置
+.macro	SCR_IfPressAJmpTo dest_addr,param
 	.short 0xF046
-	.byte \id
-	.byte \delay
+	.byte (\dest_addr-2-.)/4
+	.byte \param
 .endm
 
-//设置特殊受击效果
-.macro	SCR_SetSpCaning param,ptr
-	.short 0xF047
+//按A跳转到指定动作
+.macro	SCR_IfPressAJmpAct	acttype,actid				
+	.short 0xF047					//脚本头
+	.byte \acttype					//动作类型
+	.byte \actid					//动作ID
+.endm
+
+//招式取消FO48  0101表示不打到人也可以取消
+.macro SCR_CancelActionStart param2
+	.short 0xF048
+	.byte 1
+	.byte \param2
+.endm
+
+.macro	SCR_CancelActionEnd
+	.short 0xF048
+	.byte 0
+	.byte 0
+.endm
+
+//设置定身时间
+.macro SCR_SetRoroNoMoveTime param
+	.short 0xF049
 	.byte \param
 	.byte 0
-	.long \ptr			//脚本指针
+.endm
+//
+.macro	SCR_F04C b1
+	.short 0xF04C	
+	.byte \b1			
+	.byte 0
 .endm
 
-//未知
-.macro	SCR_F049 param
-	.short 0xF049
-	.short \param
-
-.endm
-
-//根据17E的值调整人物跳跃后的Y OFFSET，用于上下跳(TYPE2专用)
-.macro	SCR_SetYoffset
-	.short 0xF04C				
-	.short 0
-.endm
-
-//设置连招FLAG
-.macro	SCR_SetCombo param1
+//和空中下落有关
+.macro	SCR_F04E param1
 	.short 0xF04E
 	.byte \param1				
 	.byte 0
 .endm
 
-//按A就跳转，一般连技
-.macro	SCR_IfPressAJmpTo dest_addr,param
-.short 0xF04F
-.byte (\dest_addr-2-.)/4
-.byte \param
-.endm
+
 
 //-----------------------------------------------------------------------------------
-//未知，设置全局变量
-
-.macro	SCR_F050 param
+//调用OBJ2
+.macro	SCR_CallObj2 param1,param2,ptr,p3,x,y			
 	.short 0xF050
-    	.byte \param
-	.byte 0
+	.byte \param1
+	.byte \param2
+	.long \ptr
+	.short \p3
+	.byte \x
+	.byte \y				
 .endm
 
-//未知，设置D4(A4),BIT7
+//未知
 .macro	SCR_F051
 	.short 0xF051
-    .short 0
+    	.short 0
 .endm
 
-//敌人被攻击特效显示
-.macro	SCR_PlayEffect bonid,bloodid
-	.short 0xF052
-    	.byte \bonid			//特效参数
-	.byte \bloodid
-.endm
+
 
 //增加当前攻击力，连招常用
 .macro	SCR_AddAtkPower power
@@ -556,18 +548,14 @@
     	.byte 0
 .endm
 
-//调用人物结构中FUNCLIST中的函数
-.macro	SCR_CallCharFunc func_idx param
+//
+.macro	SCR_F054 b
 	.short 0xF054
-	.byte \func_idx
-	.byte \param
+	.byte \b
+	.byte 0
 .endm
 
-//设置人物颜色为中毒，中毒动作专用
-.macro	SCR_SetCharPalPoison
-	.short 0xF055
-	.short 0
-.endm
+
 
 //未知开关
 .macro	SCR_F056 param1
@@ -590,14 +578,9 @@
 	.byte 0
 .endm
 
-
-
-
-//未知
-.macro	SCR_F065 param
-	.short 0xF065
-	.short \param
-
+.macro	SCR_F059 w1
+	.short 0xF059
+    	.short \w1
 .endm
 
 //未知开关
@@ -606,4 +589,29 @@
 	.byte \param
 	.byte 0
 .endm
+
+.macro	SCR_F063 b1,b2
+	.short 0xF063
+	.byte \b1
+	.byte \b2
+.endm
+
+
+//背景变暗再恢复
+.macro	SCR_SetBgDarkRecover
+	.short 0xF065
+	.short 0
+.endm
+
+.macro	SCR_F066 b
+	.short 0xF066
+	.short \b
+.endm
+
+.macro	SCR_F068 b1,b2
+	.short 0xF068
+	.byte \b1
+	.byte \b2
+.endm
+
 

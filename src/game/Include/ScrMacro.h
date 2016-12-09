@@ -202,8 +202,8 @@
 	.byte \y				
 .endm
 
-//未知
-.macro	SCR_F016 b1,b2,w1,b3,b4
+//使用道具相关
+.macro	SCR_UseItem b1,b2,w1,b3,b4
 	.short 0xF016
 	.byte \b1
 	.byte \b2

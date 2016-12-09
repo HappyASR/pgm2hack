@@ -162,6 +162,13 @@
 	.byte \param2
 .endm
 
+//设置面向 右0左1
+.macro	SCR_SetFaceTo b1
+	.short 0xF00E
+	.byte \b1
+	.byte 0
+.endm
+
 //设置人物色盘
 .macro	Scr_SetRolePal palno
 	.short 0xF00F
@@ -337,12 +344,7 @@
 .byte 0
 .endm
 
-//设置面向 右0左1
-.macro	SCR_SetFaceTo b1
-.short 0xF028
-.byte \b1
-.byte 0
-.endm
+
 
 
 

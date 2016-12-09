@@ -1159,7 +1159,7 @@ byte_107014CC:	SCR_PicElemNone	63,0,2
 		SCR_JmpTo byte_107014CC,Act_SunWuKong_Start_21
 		SCR_End
 Act_SunWuKong_Start_22:SCR_CallFunc 0,3,0x1009DECF
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_SetFaceTo 0
 		SCR_F025 1		@ δ֪F025
 		SCR_ShowLoopPic	5
 		SCR_PicElem 63,0,0
@@ -2807,7 +2807,7 @@ byte_10702E3C:	SCR_PicElemNone	0,0,0
 		SCR_ShowLoopPic	8
 		SCR_PicElem 7,0,0
 		SCR_JmpTo Act_SunWuKong_Start_52,Act_SunWuKong_Start_52
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_SetFaceTo 0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 16,0,0
 		SCR_End
@@ -2871,11 +2871,11 @@ Act_SunWuKong_Motion_0:SCR_ShowLoopPic 8
 		SCR_ShowLoopPic	8
 		SCR_PicElem 7,0,0
 		SCR_JmpTo Act_SunWuKong_Motion_0,Act_SunWuKong_Motion_0
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_SetFaceTo 0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 16,0,0
 		SCR_End
-Act_SunWuKong_Motion_1:SCR_DelayFrame 0	@ SCR_DelayFrame
+Act_SunWuKong_Motion_1:SCR_SetFaceTo 0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 16,0,0
 		SCR_End
@@ -11202,9 +11202,9 @@ Act_SunWuKong_Kill_24:SCR_SetInvincible
 		SCR_PicElem 168,0,0
 		SCR_CallSysObj 3,21,-6,-12,-68 @ F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 3,32,0,-5,-75 @ F011 sys,id,param1,xPos,yPos
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_SetFaceTo 0
 		SCR_CallSysObj 3,32,-6,-4,-77 @	F011 sys,id,param1,xPos,yPos
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_SetFaceTo 0
 		SCR_ShowLoopPic	20
 		SCR_PicElemNone	168,0,0
 		SCR_PicElemNone	168,0,0
@@ -14157,4 +14157,3 @@ Act_SunWuKong_Victor_1:SCR_PicElem 63,0,0
 		SCR_PicElem 99,0,0
 		SCR_ScrLoopEnd
 		SCR_End
-

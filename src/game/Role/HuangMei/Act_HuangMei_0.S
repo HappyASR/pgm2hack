@@ -70,7 +70,7 @@ HuangMei_ActType_Start:ACT_Elem 1,0,  Act_HuangMei_Start_0  ,2,1,0
 		ACT_Elem 1,60,	0  ,1,1,0
 Act_HuangMei_Start_0:SCR_SetInvincible
 		SCR_F056 0		@ 未知开关
-		SCR_SetZoff 15		@ F017
+		SCR_TestJmp byte_10700348,Act_HuangMei_Start_0
 		SCR_PicElem 66,0,5
 		SCR_PicElem 68,0,5
 		SCR_PicElem 68,0,7
@@ -83,7 +83,7 @@ Act_HuangMei_Start_0:SCR_SetInvincible
 		SCR_PicElem 68,0,10
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 68,0,12
-		SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
+byte_10700348:	SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
 		SCR_ShowLoopPic	10
 		SCR_PicElem 64,0,0
 		SCR_ShowLoopPic	4
@@ -123,7 +123,7 @@ Act_HuangMei_Start_1:SCR_SetInvincible
 		SCR_ShowLoopPic	6
 		SCR_PicElem 169,0,0
 		SCR_SetRoleBright 20
-		SCR_CallObj 254,254,0x101ECA14,0,-1,0 @	F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_CallObj -2,0,0x101ECA14,0,-1,0 @ F012 b1,b2,objPtr,w3,xPos,yPos
 		SCR_ShowLoopPic	6
 		SCR_PicElem 169,0,0
 		SCR_SetRoleBright 24
@@ -236,7 +236,7 @@ Act_HuangMei_Start_3:SCR_SetInvincible
 		SCR_ClearInvincible
 		SCR_End
 Act_HuangMei_Start_4:SCR_F018 1	@ F018
-		SCR_SetFaceTo 1
+		SCR_FaceToLeft
 		SCR_SetRoleDark	0
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x1009DD45
@@ -280,7 +280,7 @@ Act_HuangMei_Start_4:SCR_F018 1	@ F018
 		SCR_CallFunc 0,0,0x1009DD45
 		SCR_PicElem 26,0,0
 		SCR_ScrLoopEnd
-		SCR_SetFaceTo 0
+		SCR_FaceToRight
 		SCR_SetRoleDark	25
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x1009DD45
@@ -300,7 +300,7 @@ Act_HuangMei_Start_4:SCR_F018 1	@ F018
 byte_107006E0:	SCR_PicElemNone	0,0,0
 		SCR_JmpTo byte_107006E0,Act_HuangMei_Start_4
 Act_HuangMei_Start_5:SCR_F018 1	@ F018
-		SCR_SetFaceTo 1
+		SCR_FaceToLeft
 		SCR_CallFunc 0,0,0x1009DD6D
 		SCR_ShowLoopPic	6
 		SCR_PicElem 19,1,-1
@@ -403,7 +403,7 @@ Act_HuangMei_Start_6:SCR_F018 1	@ F018
 		SCR_ShowLoopPic	6
 		SCR_PicElem 25,0,-1
 		SCR_SetRoleDark	0
-		SCR_SetFaceTo 1
+		SCR_FaceToLeft
 		SCR_CloseRoleShadow	@ 人物影子
 		SCR_ShowLoopPic	6
 		SCR_PicElem 26,1,-1
@@ -494,7 +494,7 @@ Act_HuangMei_Start_7:SCR_CallFunc 0,0,0x1009DD7F
 		SCR_PicElem 3,65,-40
 		SCR_PicElem 3,127,-40
 		SCR_PicElem 3,65,-40
-		SCR_SetZoff 97		@ F017
+		SCR_TestJmp byte_10700A70,Act_HuangMei_Start_7
 byte_10700A2C:	SCR_ShowLoopPic	6
 		SCR_PicElem 0,65,24
 		SCR_ShowLoopPic	6
@@ -512,6 +512,13 @@ byte_10700A2C:	SCR_ShowLoopPic	6
 		SCR_ShowLoopPic	6
 		SCR_PicElem 7,65,24
 		SCR_JmpTo byte_10700A2C,Act_HuangMei_Start_7
+byte_10700A70:	SCR_CallFunc 0,2,0x1009DD7F
+		SCR_ShowLoopPic	2
+		SCR_PicElem 7,0,0
+		SCR_ShowLoopPic	2
+		SCR_PicElem 7,0,0
+		SCR_F018 0		@ F018
+		SCR_End
 Act_HuangMei_Start_8:SCR_CallFunc 0,0,0x1009DD7F
 		SCR_F018 1		@ F018
 		SCR_F058 70
@@ -579,8 +586,8 @@ Act_HuangMei_Start_8:SCR_CallFunc 0,0,0x1009DD7F
 		SCR_PicElem 3,65,-40
 		SCR_PicElem 3,127,-40
 		SCR_PicElem 3,65,-40
-		SCR_SetZoff 97		@ F017
-byte_10700BB0:	SCR_ShowLoopPic	6
+		SCR_TestJmp byte_10700C14,Act_HuangMei_Start_8
+byte_10700BD0:	SCR_ShowLoopPic	6
 		SCR_PicElem 0,-63,31
 		SCR_ShowLoopPic	6
 		SCR_PicElem 1,-63,31
@@ -596,7 +603,14 @@ byte_10700BB0:	SCR_ShowLoopPic	6
 		SCR_PicElem 6,-63,31
 		SCR_ShowLoopPic	6
 		SCR_PicElem 7,-63,31
-		SCR_JmpTo byte_10700BB0,Act_HuangMei_Start_8
+		SCR_JmpTo byte_10700BD0,Act_HuangMei_Start_8
+byte_10700C14:	SCR_CallFunc 0,2,0x1009DD7F
+		SCR_ShowLoopPic	2
+		SCR_PicElem 7,0,0
+		SCR_ShowLoopPic	2
+		SCR_PicElem 7,0,0
+		SCR_F018 0		@ F018
+		SCR_End
 Act_HuangMei_Start_9:SCR_F018 1	@ F018
 		SCR_F025 2		@ 未知F025
 		SCR_ShowLoopPic	4
@@ -615,8 +629,8 @@ Act_HuangMei_Start_9:SCR_F018 1	@ F018
 		SCR_PicElem 66,0,0
 		SCR_F018 0		@ F018
 		SCR_CloseRoleShadow	@ 人物影子
-byte_10700C3C:	SCR_PicElemNone	66,0,0
-		SCR_JmpTo byte_10700C3C,Act_HuangMei_Start_9
+byte_10700C7C:	SCR_PicElemNone	66,0,0
+		SCR_JmpTo byte_10700C7C,Act_HuangMei_Start_9
 Act_HuangMei_Start_10:SCR_F018	1	@ F018
 		SCR_F025 2		@ 未知F025
 		SCR_ShowLoopPic	4
@@ -635,8 +649,8 @@ Act_HuangMei_Start_10:SCR_F018	1	@ F018
 		SCR_PicElem 66,0,0
 		SCR_F018 0		@ F018
 		SCR_CloseRoleShadow	@ 人物影子
-byte_10700C8C:	SCR_PicElemNone	66,0,0
-		SCR_JmpTo byte_10700C8C,Act_HuangMei_Start_10
+byte_10700CCC:	SCR_PicElemNone	66,0,0
+		SCR_JmpTo byte_10700CCC,Act_HuangMei_Start_10
 Act_HuangMei_Start_11:SCR_F018	1	@ F018
 		SCR_ShowLoopPic	5
 		SCR_PicElem 63,0,0
@@ -659,7 +673,7 @@ Act_HuangMei_Start_11:SCR_F018	1	@ F018
 		SCR_ShowLoopPic	5
 		SCR_PicElem 69,0,0
 		SCR_PicElem 63,0,0
-byte_10700CEC:	SCR_ShowLoopPic	4
+byte_10700D2C:	SCR_ShowLoopPic	4
 		SCR_PicElem 0,4,-5
 		SCR_ShowLoopPic	4
 		SCR_PicElem 1,4,-5
@@ -675,7 +689,7 @@ byte_10700CEC:	SCR_ShowLoopPic	4
 		SCR_PicElem 6,4,-4
 		SCR_ShowLoopPic	4
 		SCR_PicElem 7,4,-4
-		SCR_JmpTo byte_10700CEC,Act_HuangMei_Start_11
+		SCR_JmpTo byte_10700D2C,Act_HuangMei_Start_11
 Act_HuangMei_Start_12:SCR_F018	1	@ F018
 		SCR_SetInvincible
 		SCR_ShowLoopPic	6
@@ -776,10 +790,10 @@ Act_HuangMei_Start_14:SCR_SetRoleDark 30
 Act_HuangMei_Start_15:SCR_F025	2	@ 未知F025
 		SCR_F018 1		@ F018
 		SCR_SetInvincible
-		SCR_JmpTo byte_10700EF4,Act_HuangMei_Start_15
-byte_10700EEC:	SCR_PicElemNone	19,0,0
-		SCR_JmpTo byte_10700EEC,Act_HuangMei_Start_15
-byte_10700EF4:	SCR_ShowLoopPic	5
+		SCR_JmpTo byte_10700F34,Act_HuangMei_Start_15
+byte_10700F2C:	SCR_PicElemNone	19,0,0
+		SCR_JmpTo byte_10700F2C,Act_HuangMei_Start_15
+byte_10700F34:	SCR_ShowLoopPic	5
 		SCR_PicElem 19,66,0
 		SCR_ShowLoopPic	5
 		SCR_PicElem 20,66,0
@@ -830,7 +844,7 @@ byte_10700EF4:	SCR_ShowLoopPic	5
 		SCR_SetRoleDark	30
 		SCR_ShowLoopPic	2
 		SCR_PicElem 69,0,64
-		SCR_JmpTo byte_10700EEC,Act_HuangMei_Start_15
+		SCR_JmpTo byte_10700F2C,Act_HuangMei_Start_15
 Act_HuangMei_Start_16:SCR_F018	1	@ F018
 		SCR_ShowLoopPic	5
 		SCR_PicElem 0,4,3
@@ -876,8 +890,8 @@ Act_HuangMei_Start_17:SCR_F018	1	@ F018
 		SCR_ShowLoopPic	7
 		SCR_PicElem 65,0,-15
 		SCR_F018 0		@ F018
-byte_10701078:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_10701078,Act_HuangMei_Start_17
+byte_107010B8:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_107010B8,Act_HuangMei_Start_17
 Act_HuangMei_Start_18:SCR_ShowLoopPic 2
 		SCR_PicElem 259,0,0
 		SCR_ShowLoopPic	2
@@ -935,7 +949,7 @@ Act_HuangMei_Start_20:SCR_F025	1	@ 未知F025
 		SCR_PicElem 264,0,0
 		SCR_ZoomPic 17,17	@ 缩放图片
 		SCR_PicElem 265,0,0
-byte_10701164:	SCR_ZoomPic 15,15	@ 缩放图片
+byte_107011A4:	SCR_ZoomPic 15,15	@ 缩放图片
 		SCR_PicElem 266,0,0
 		SCR_ZoomPic 15,15	@ 缩放图片
 		SCR_PicElem 259,0,0
@@ -945,7 +959,7 @@ byte_10701164:	SCR_ZoomPic 15,15	@ 缩放图片
 		SCR_PicElem 261,0,0
 		SCR_ZoomPic 15,15	@ 缩放图片
 		SCR_PicElem 262,0,0
-		SCR_JmpTo byte_10701164,Act_HuangMei_Start_20
+		SCR_JmpTo byte_107011A4,Act_HuangMei_Start_20
 Act_HuangMei_Start_21:SCR_F018	1	@ F018
 		SCR_F058 28
 		SCR_PicElem 66,1,28
@@ -962,10 +976,10 @@ Act_HuangMei_Start_21:SCR_F018	1	@ F018
 		SCR_F058 18
 		SCR_PicElem 63,0,8
 		SCR_F018 0		@ F018
-byte_107011D0:	SCR_PicElemNone	63,0,2
-		SCR_JmpTo byte_107011D0,Act_HuangMei_Start_21
+byte_10701210:	SCR_PicElemNone	63,0,2
+		SCR_JmpTo byte_10701210,Act_HuangMei_Start_21
 Act_HuangMei_Start_22:SCR_CallFunc 0,3,0x1009DECF
-		SCR_DelayFrame 0	@ SCR_DelayFrame
+		SCR_TurnBack
 		SCR_F025 1		@ 未知F025
 		SCR_ShowLoopPic	5
 		SCR_PicElem 63,0,0
@@ -1395,11 +1409,11 @@ Act_HuangMei_Start_28:SCR_ShowLoopPic 8
 Act_HuangMei_Start_29:SCR_PicElemNone 0,0,0
 		SCR_JmpTo Act_HuangMei_Start_29,Act_HuangMei_Start_29
 Act_HuangMei_Start_30:SCR_SetInvincible
-		SCR_JmpTo byte_10701AAC,Act_HuangMei_Start_30
-byte_10701AA0:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_10701AA0,Act_HuangMei_Start_30
+		SCR_JmpTo byte_10701AEC,Act_HuangMei_Start_30
+byte_10701AE0:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_10701AE0,Act_HuangMei_Start_30
 		SCR_End
-byte_10701AAC:	SCR_ShowLoopPic	5
+byte_10701AEC:	SCR_ShowLoopPic	5
 		SCR_PicElem 67,1,-6
 		SCR_PicElem 200,1,-3
 		SCR_PicElem 200,1,-3
@@ -1429,7 +1443,7 @@ byte_10701AAC:	SCR_ShowLoopPic	5
 		SCR_CallSysObj 0,7,0,0,-40 @ F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic	10
 		SCR_PicElem 69,1,9
-		SCR_JmpTo byte_10701AA0,Act_HuangMei_Start_30
+		SCR_JmpTo byte_10701AE0,Act_HuangMei_Start_30
 Act_HuangMei_Start_31:SCR_SetInvincible
 		SCR_CloseRoleShadow	@ 人物影子
 		SCR_F058 120
@@ -1498,7 +1512,7 @@ Act_HuangMei_Start_31:SCR_SetInvincible
 		SCR_ClearInvincible
 		SCR_End
 Act_HuangMei_Start_32:SCR_CallFunc 0,0,0x1009E071
-byte_10701C44:	SCR_PicElem 0,0,0
+byte_10701C84:	SCR_PicElem 0,0,0
 		SCR_PicElem 0,0,-2
 		SCR_PicElem 0,-1,-3
 		SCR_PicElem 0,-1,-3
@@ -1559,17 +1573,17 @@ byte_10701C44:	SCR_PicElem 0,0,0
 		SCR_PicElem 7,0,-5
 		SCR_PicElem 7,-2,-6
 		SCR_CallFunc 0,1,0x1009E071
-		SCR_JmpTo byte_10701C44,Act_HuangMei_Start_32
+		SCR_JmpTo byte_10701C84,Act_HuangMei_Start_32
 Act_HuangMei_Start_33:SCR_SetInvincible
 		SCR_F018 1		@ F018
 		SCR_CallSysObj 4,18,0,0,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_F058 25
-byte_10701D54:	SCR_ScrLoopStart 18
+byte_10701D94:	SCR_ScrLoopStart 18
 		SCR_PicElem 0,0,0
 		SCR_CallFunc 0,13,0x1009E1CF
 		SCR_ScrLoopEnd
 		SCR_CallFunc 0,0,0x1009E149
-		SCR_JmpTo byte_10701D54,Act_HuangMei_Start_33
+		SCR_JmpTo byte_10701D94,Act_HuangMei_Start_33
 Act_HuangMei_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_CallFunc 0,2,0x1009E1E9
 		SCR_ShowLoopPic	20
@@ -1584,7 +1598,7 @@ Act_HuangMei_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_ShowLoopPic	50
 		SCR_PicElem 0,0,0
 		SCR_ScrLoopStart 3
-		SCR_SetZoff 83		@ F017
+		SCR_TestJmp byte_10701F00,Act_HuangMei_Start_34
 		SCR_PicElem 0,0,0
 		SCR_PicElem 0,0,2
 		SCR_PicElem 0,-1,3
@@ -1648,7 +1662,7 @@ Act_HuangMei_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_ScrLoopEnd
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 7,-2,3
-		SCR_CallFunc 0,1,0x1009E1E9
+byte_10701F00:	SCR_CallFunc 0,1,0x1009E1E9
 		SCR_End
 Act_HuangMei_Start_35:SCR_SetInvincible
 		SCR_ScrLoopStart 5
@@ -1741,7 +1755,7 @@ Act_HuangMei_Start_36:SCR_F018	1	@ F018
 		SCR_PicElem 202,4,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 203,4,0
-		SCR_SetZoff 45		@ F017
+		SCR_TestJmp byte_107020C4,Act_HuangMei_Start_36
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,4,1
 		SCR_PicElem 68,9,10
@@ -1760,7 +1774,7 @@ Act_HuangMei_Start_36:SCR_F018	1	@ F018
 		SCR_PicElem 69,3,8
 		SCR_PicElem 70,3,0
 		SCR_F018 0		@ F018
-		SCR_End
+byte_107020C4:	SCR_End
 Act_HuangMei_Start_37:SCR_ScrLoopStart	3
 		SCR_PicElem 17,0,0
 		SCR_ScrLoopEnd
@@ -1771,11 +1785,11 @@ Act_HuangMei_Start_37:SCR_ScrLoopStart	3
 		SCR_PicElem 18,0,2
 		SCR_PicElem 18,0,-2
 		SCR_ScrLoopEnd
-byte_107020B0:	SCR_ScrLoopStart 10
+byte_107020F0:	SCR_ScrLoopStart 10
 		SCR_PicElem 18,0,1
 		SCR_PicElem 18,0,-1
 		SCR_ScrLoopEnd
-		SCR_JmpTo byte_107020B0,Act_HuangMei_Start_37
+		SCR_JmpTo byte_107020F0,Act_HuangMei_Start_37
 Act_HuangMei_Start_38:SCR_F018	1	@ F018
 		SCR_SetInvincible
 		SCR_CallSysObj 0,1,0,1,0 @ F011	sys,id,param1,xPos,yPos
@@ -2036,7 +2050,7 @@ Act_HuangMei_Start_44:SCR_PicElem 63,0,0
 		SCR_PicElem 202,-6,0
 		SCR_PicElem 202,-6,0
 		SCR_PicElem 203,-6,0
-		SCR_SetZoff 41		@ F017
+		SCR_TestJmp byte_10702574,Act_HuangMei_Start_44
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 68,-10,15
@@ -2053,7 +2067,7 @@ Act_HuangMei_Start_44:SCR_PicElem 63,0,0
 		SCR_PicElem 69,-3,7
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,-3,8
-		SCR_PicElem 70,-3,0
+byte_10702574:	SCR_PicElem 70,-3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_HuangMei_Start_46:SCR_ShowLoopPic 3
@@ -2096,11 +2110,11 @@ Act_HuangMei_Start_46:SCR_ShowLoopPic 3
 		SCR_End
 Act_HuangMei_Start_47:SCR_PicElem 18,0,0
 		SCR_JmpTo Act_HuangMei_Start_47,Act_HuangMei_Start_47
-Act_HuangMei_Start_48:SCR_JmpTo byte_1070261C,Act_HuangMei_Start_48
-byte_10702610:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_10702610,Act_HuangMei_Start_48
+Act_HuangMei_Start_48:SCR_JmpTo byte_1070265C,Act_HuangMei_Start_48
+byte_10702650:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_10702650,Act_HuangMei_Start_48
 		SCR_End
-byte_1070261C:	SCR_PicElem 63,0,0
+byte_1070265C:	SCR_PicElem 63,0,0
 		SCR_PicElem 64,0,0
 		SCR_PicElem 97,0,0
 		SCR_PicElem 98,0,0
@@ -2116,9 +2130,9 @@ byte_1070261C:	SCR_PicElem 63,0,0
 		SCR_PicElem 99,0,0
 		SCR_ScrLoopEnd
 		SCR_CallSysObj 4,18,0,0,-30 @ F011 sys,id,param1,xPos,yPos
-		SCR_JmpTo byte_10702610,Act_HuangMei_Start_48
-Act_HuangMei_Start_49:SCR_JmpTo byte_107026AC,Act_HuangMei_Start_49
-		SCR_ClearInvincible
+		SCR_JmpTo byte_10702650,Act_HuangMei_Start_48
+Act_HuangMei_Start_49:SCR_JmpTo byte_107026EC,Act_HuangMei_Start_49
+byte_107026A8:	SCR_ClearInvincible
 		SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
@@ -2134,7 +2148,7 @@ Act_HuangMei_Start_49:SCR_JmpTo byte_107026AC,Act_HuangMei_Start_49
 		SCR_PicElem 26,0,0
 		SCR_JmpAct 8,24		@ JMP to other Action,type,element
 		SCR_End
-byte_107026AC:	SCR_SetInvincible
+byte_107026EC:	SCR_SetInvincible
 		SCR_F018 1		@ F018
 		SCR_CloseRoleShadow	@ 人物影子
 		SCR_F058 50
@@ -2204,7 +2218,7 @@ byte_107026AC:	SCR_SetInvincible
 		SCR_PicElem 44,-1,0
 		SCR_PicElem 44,0,0
 		SCR_ScrLoopEnd
-		SCR_SetZoff 1		@ F017
+		SCR_TestJmp byte_107026A8,Act_HuangMei_Start_49
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,-1,1
@@ -2360,8 +2374,8 @@ Act_HuangMei_Start_52:SCR_SetInvincible
 		SCR_ShowLoopPic	2
 		SCR_PicElem 26,3,0
 		SCR_CloseRoleShadow	@ 人物影子
-byte_10702A5C:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_10702A5C,Act_HuangMei_Start_52
+byte_10702A9C:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_10702A9C,Act_HuangMei_Start_52
 HuangMei_ActType_Motion:ACT_Elem 2,0,	Act_HuangMei_Motion_0	,1,0,0
 					@ DATA XREF: ROM:10700008o
 		ACT_Elem 2,1,  Act_HuangMei_Motion_1  ,1,0,0
@@ -2422,7 +2436,7 @@ Act_HuangMei_Motion_0:SCR_ShowLoopPic 8
 		SCR_ShowLoopPic	8
 		SCR_PicElem 7,0,0
 		SCR_JmpTo Act_HuangMei_Motion_0,Act_HuangMei_Motion_0
-Act_HuangMei_Motion_1:SCR_DelayFrame 0	@ SCR_DelayFrame
+Act_HuangMei_Motion_1:SCR_TurnBack
 		SCR_ShowLoopPic	2
 		SCR_PicElem 16,0,0
 		SCR_End
@@ -2864,7 +2878,7 @@ Act_HuangMei_Motion_19:SCR_ShowLoopPic	2
 		SCR_PicElem 203,0,0
 		SCR_PicElem 203,0,0
 		SCR_PicElem 203,0,0
-		SCR_SetZoff 47		@ F017
+		SCR_TestJmp byte_10703484,Act_HuangMei_Motion_19
 		SCR_PicElem 203,0,1
 		SCR_PicElem 68,0,21
 		SCR_PicElem 68,0,1
@@ -2885,7 +2899,7 @@ Act_HuangMei_Motion_19:SCR_ShowLoopPic	2
 		SCR_PicElem 69,0,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,9
-		SCR_ShowLoopPic	2
+byte_10703484:	SCR_ShowLoopPic	2
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_HuangMei_Motion_20:SCR_PicElem 63,0,0
@@ -2912,7 +2926,7 @@ Act_HuangMei_Motion_20:SCR_PicElem 63,0,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 203,4,0
-		SCR_SetZoff 43		@ F017
+		SCR_TestJmp byte_1070353C,Act_HuangMei_Motion_20
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,4,1
 		SCR_PicElem 68,10,15
@@ -2931,7 +2945,7 @@ Act_HuangMei_Motion_20:SCR_PicElem 63,0,0
 		SCR_PicElem 69,3,8
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,3,8
-		SCR_PicElem 70,3,0
+byte_1070353C:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_HuangMei_Motion_21:SCR_ShowLoopPic	2
@@ -2960,7 +2974,7 @@ Act_HuangMei_Motion_21:SCR_ShowLoopPic	2
 		SCR_PicElem 202,4,-1
 		SCR_PicElem 202,3,0
 		SCR_PicElem 203,3,0
-		SCR_SetZoff 45		@ F017
+		SCR_TestJmp byte_107035FC,Act_HuangMei_Motion_21
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,3,1
 		SCR_PicElem 68,8,14
@@ -2979,7 +2993,7 @@ Act_HuangMei_Motion_21:SCR_ShowLoopPic	2
 		SCR_PicElem 69,3,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,3,9
-		SCR_PicElem 70,3,0
+byte_107035FC:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_HuangMei_Motion_22:SCR_ShowLoopPic	2
@@ -3008,7 +3022,7 @@ Act_HuangMei_Motion_22:SCR_ShowLoopPic	2
 		SCR_PicElem 202,-4,-1
 		SCR_PicElem 202,-3,0
 		SCR_PicElem 203,-3,0
-		SCR_SetZoff 45		@ F017
+		SCR_TestJmp byte_107036BC,Act_HuangMei_Motion_22
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 203,-3,1
 		SCR_PicElem 68,-8,14
@@ -3027,7 +3041,7 @@ Act_HuangMei_Motion_22:SCR_ShowLoopPic	2
 		SCR_PicElem 69,-3,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,-3,9
-		SCR_PicElem 70,3,0
+byte_107036BC:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_HuangMei_Motion_23:SCR_JmpAct 2,19	@ JMP to other Action,type,element
@@ -3042,35 +3056,45 @@ Act_HuangMei_Motion_26:SCR_SetInvincible
 		SCR_PicElem 108,-2,-4
 		SCR_PicElem 108,-2,-3
 		SCR_PicElem 68,-7,0
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 68,-2,-1
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 68,-2,0
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 68,-1,1
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 68,-2,1
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 68,-2,2
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,2
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,3
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,4
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,5
-		SCR_SetZoff 32		@ F017
+		SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,6
-byte_10703708:	SCR_SetZoff 32		@ F017
+byte_10703748:	SCR_TestJmp byte_10703754,Act_HuangMei_Motion_26
 		SCR_PicElem 69,-1,10
-		SCR_JmpTo byte_10703708,Act_HuangMei_Motion_26
-Act_HuangMei_Motion_28:SCR_SetZoff 5	@ F017
+		SCR_JmpTo byte_10703748,Act_HuangMei_Motion_26
+byte_10703754:	SCR_CallSysObj 4,12,0,0,0 @ F011 sys,id,param1,xPos,yPos
+		SCR_ClearInvincible
+		SCR_ShowLoopPic	3
+		SCR_PicElem 70,0,0
+		SCR_PicElem 64,10,0
+		SCR_ShowLoopPic	3
+		SCR_PicElem 64,0,0
+		SCR_ShowLoopPic	3
+		SCR_PicElem 63,0,0
+		SCR_End
+Act_HuangMei_Motion_28:SCR_TestJmp byte_10703794,Act_HuangMei_Motion_28
 		SCR_ShowLoopPic	5
 		SCR_PicElem 69,0,4
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,10
-		SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
+byte_10703794:	SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
 		SCR_ShowLoopPic	2
 		SCR_PicElem 70,0,0
 		SCR_End
@@ -3142,8 +3166,8 @@ Act_HuangMei_Motion_33:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	30
 		SCR_ShowLoopPic	6
 		SCR_PicElem 20,0,1
-byte_10703854:	SCR_PicElemNone	19,0,0
-		SCR_JmpTo byte_10703854,Act_HuangMei_Motion_33
+byte_107038C0:	SCR_PicElemNone	19,0,0
+		SCR_JmpTo byte_107038C0,Act_HuangMei_Motion_33
 Act_HuangMei_Motion_34:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	3
 		SCR_ShowLoopPic	6
@@ -3175,8 +3199,8 @@ Act_HuangMei_Motion_34:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	31
 		SCR_ShowLoopPic	6
 		SCR_PicElem 20,0,-1
-byte_107038DC:	SCR_PicElemNone	21,0,0
-		SCR_JmpTo byte_107038DC,Act_HuangMei_Motion_34
+byte_10703948:	SCR_PicElemNone	21,0,0
+		SCR_JmpTo byte_10703948,Act_HuangMei_Motion_34
 Act_HuangMei_Motion_35:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	30
 		SCR_ShowLoopPic	6
@@ -3236,8 +3260,8 @@ Act_HuangMei_Motion_36:SCR_SetInvincible
 		SCR_ShowLoopPic	4
 		SCR_PicElem 26,3,0
 		SCR_CloseRoleShadow	@ 人物影子
-byte_107039D8:	SCR_PicElemNone	19,0,0
-		SCR_JmpTo byte_107039D8,Act_HuangMei_Motion_36
+byte_10703A44:	SCR_PicElemNone	19,0,0
+		SCR_JmpTo byte_10703A44,Act_HuangMei_Motion_36
 Act_HuangMei_Motion_37:SCR_SetInvincible
 		SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	28

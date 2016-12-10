@@ -162,11 +162,10 @@
 	.byte \param2
 .endm
 
-//设置面向 右0左1
-.macro	SCR_SetFaceTo b1
+//转身
+.macro	SCR_TurnBack
 	.short 0xF00E
-	.byte \b1
-	.byte 0
+	.short 0
 .endm
 
 //设置人物色盘
@@ -219,15 +218,15 @@
 	.byte \b4			
 .endm
 
-//设置人物Z轴可输入A高度
-.macro	SCR_SetZoff zoff
-	.short 0xF017
-	.byte \zoff				
-	.byte 0
+//TestJmp 有条件跳转
+.macro	SCR_TestJmp act_jmp,act_start
+.short 0xF017
+.byte (\act_jmp-\act_start)/4
+.byte 0
 .endm
 
 //未知
-.macro	SCR_F018 param1		    //
+.macro	SCR_F018 param1
 	.short 0xF018
 	.byte \param1				
 	.byte 0
@@ -344,6 +343,18 @@
 .byte 0
 .endm
 
+//设置面向 右0左1
+.macro	SCR_FaceToLeft
+	.short 0xF028
+	.byte 1
+	.byte 0
+.endm
+
+.macro	SCR_FaceToRight
+	.short 0xF028
+	.byte 0
+	.byte 0
+.endm
 
 
 

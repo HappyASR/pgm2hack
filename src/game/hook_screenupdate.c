@@ -64,7 +64,7 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
       ;
   }
 	//  vPrint(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
-	  vPrint(24,27,0,0,(int)"STAGE:%d",V8(0x200201BA));//这里固定显示STAGE
+	  vPrint(5,5,0,0,(int)"ACT:%d ID:%d",V16(0x20056BD4+76),V16(0x20056BD4+78));//这里固定显示ACT
 
 
 	for (i=0;i<sizeof(MemInfo)/sizeof(int) ;i++ )

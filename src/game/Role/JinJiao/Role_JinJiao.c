@@ -3,13 +3,16 @@
 #include "../../Include/Role.h"
 //extern InputElem InputTbl_JinJiao_0[];
 
+extern ActTypePtrTbl Role_JinJiao_ActPtrTbl_0;
+extern ActTypePtrTbl Role_JinJiao_ActPtrTbl_1;
+
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_JinJiao_0={
 			FLAG_ROLE, 
-			11,				//0x1B,
+			10,				//0x1B,
 			0,
 			0,
-			0x1026C150,
+			(int)&Role_JinJiao_ActPtrTbl_0,//0x1026C150,
 			0,
 			0x1026BD78,
 			0x1026BD6C, 

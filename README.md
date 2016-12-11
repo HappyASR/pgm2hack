@@ -16,7 +16,7 @@ https://cmake.org/download/
 - cd pgm2hack
 - mkdir build
 - cd build
-- cmake .. -DCMAKE_TOOLCHAIN_FILE=../pgm2.cmake -G"Unix Makefiles" //MinGW Makefiles
+- cmake .. -DCMAKE_TOOLCHAIN_FILE=../pgm2.cmake -G"Unix Makefiles"
 - make
 
 

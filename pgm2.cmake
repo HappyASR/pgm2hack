@@ -36,7 +36,7 @@ set( GAME_LDS "../game.lds")
 
 # Set the CMAKE C flags (which should also be used by the assembler!
 set( CMAKE_C_FLAGS "-mthumb-interwork -mthumb -std=c99 -fomit-frame-pointer -O2 -Winline -Wall -Werror -mcpu=arm946e-s -I. -Isrc" )
-set( CMAKE_EXE_LINKER_FLAGS "-nostdlib -Wl,-Map,${GAME_MAP},-T,${GAME_LDS},--section-start,.rom=0x10000000,--section-start,.ram=0x80000000")
+set( CMAKE_EXE_LINKER_FLAGS "-nostdlib -Wl,-Map,${GAME_MAP},-T,${GAME_LDS},--section-start,.rom=0x10000000,--section-start,.ram=0xf0000000")
 set( CMAKE_C_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 set( CMAKE_ASM_FLAGS "${CMAKE_C_FLAGS}" CACHE STRING "" )
 set( CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS}" CACHE STRING "" )

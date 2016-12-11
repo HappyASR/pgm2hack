@@ -2,10 +2,7 @@
 #include <stdarg.h>
 #include <string.h>
 
-extern unsigned int __rom_end__[];
-extern unsigned int __ram_start__[];
-extern unsigned int __ram_end__[];
-#define GAME_START			(*(void (*)())(0x1002F90C+1))
+#include "game_type.h"
 
 static char log_buffer[0x1000];
 void pgm2log(const char *fmt, ...)
@@ -16,16 +13,18 @@ void pgm2log(const char *fmt, ...)
 	vsprintf(log_buffer, fmt, p);
 	va_end(p);
 	for (i = 0; i < strlen(log_buffer); i++) {
-		*((volatile unsigned char *)0x81000000) = log_buffer[i];
+		*((volatile unsigned char *)0xF1000000) = log_buffer[i];
 	}
 }
 
-void _system_init(void)
-{
-	int i;
-	int sz = (__ram_end__ - __ram_start__);
-	for (i = 0; i < sz; i++)
-		__ram_start__[i] = __rom_end__[i];
-	pgm2log("Game Start!\n");
-	GAME_START();
-}
+extern unsigned int __rom_end__[];
+extern unsigned int __ram_start__[];
+extern unsigned int __ram_end__[];
+const struct init_data init_ram={
+	PATCH_DAT,
+	0,
+	(u32)__ram_start__,
+	(u32)__ram_end__,
+	(u32)__rom_end__
+};
+

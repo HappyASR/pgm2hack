@@ -21,6 +21,10 @@ typedef unsigned int u32;
 typedef unsigned char _BYTE;
 typedef unsigned short _WORD;
 typedef unsigned int _DWORD;
+typedef unsigned char UINT8;
+typedef unsigned short UINT16;
+typedef unsigned int UINT32;
+typedef unsigned long long UINT64;
 
 typedef  u32 (*_FUNC)();
 
@@ -44,6 +48,15 @@ typedef  u32 (*_FUNC)();
 #define VS32(x)      (*PS32(x))
 
 extern void pgm2log(const char *fmt, ...);
+
+#define PATCH_DAT 0x5441444843544150ULL //"PATCHDAT"
+struct init_data {
+	UINT64 sig;
+	UINT32 typ;
+	UINT32 dst;
+	UINT32 dst_end;
+	UINT32 src;
+};
 
 #endif
 

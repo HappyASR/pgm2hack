@@ -70,7 +70,7 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 	rpPalette_FadeLoad_0(2, 20, 0x10433B68, ubArea_Get());
   rpPalette_FadeLoad_0(2, 22, 0x10433C68, 0);
   rpPalette_FadeLoad_0(2, 21, 0x10433E68, 0);
-  V8(0x200203FC) = rpPalette_FadeLoad_0(2, 19, 0x10431A68, 0);
+  DU8(0x200203FC) = rpPalette_FadeLoad_0(2, 19, 0x10431A68, 0);
   rpPalette_FadeLoad_0(2, 27, 0x1042F668, 0);
   rpPalette_FadeLoad_0(2, 16, 0x1042F768, 0);
   rpPalette_FadeLoad_0(2, 17, 0x10430768, 0);
@@ -106,23 +106,23 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 
 	for (j=0;j<10 ;j++ ) //绘制小头像
 	{
-		sub_100043E6( rpPalette_FadeLoad_0(2, P16(0x10175D54)[j], P32(0x10175D7C)[j], 0x10175D54));//载入色盘
-		sub_100043E6( rpPalette_FadeLoad_0(2, P16(0x10175D68)[j], P32(0x10175DA4)[j], 0x10175D54));//载入色盘
+		sub_100043E6( rpPalette_FadeLoad_0(2, PU16(0x10175D54)[j], PU32(0x10175D7C)[j], 0x10175D54));//载入色盘
+		sub_100043E6( rpPalette_FadeLoad_0(2, PU16(0x10175D68)[j], PU32(0x10175DA4)[j], 0x10175D54));//载入色盘
 		if (j % 2)
 		{
-			P32(0x20061AB4)[j] = CreatOBJ_100813E0(0, 251-58*2, -5, P16(0x10175D68)[j], 4, 300, 0);//画左边头像
-			P32(0x20061AB4)[j+10] = CreatOBJ_100813E0(0, 251, -5,50, 4, 300, 0);//画左边头像
-			P32(0x20061AB4)[j+20] = CreatOBJ_100813E0(0, 251+58*2, -5, 50, 4, 300, 0);//画左边头像
+			PU32(0x20061AB4)[j] = CreatOBJ_100813E0(0, 251-58*2, -5, PU16(0x10175D68)[j], 4, 300, 0);//画左边头像
+			PU32(0x20061AB4)[j+10] = CreatOBJ_100813E0(0, 251, -5,50, 4, 300, 0);//画左边头像
+			PU32(0x20061AB4)[j+20] = CreatOBJ_100813E0(0, 251+58*2, -5, 50, 4, 300, 0);//画左边头像
 		}
 		else
 		{
-			P32(0x20061AB4)[j] = CreatOBJ_100813E0(0, 193-58*2, 255, P16(0x10175D68)[j], 4, 300, 0);//画右边头像
-			P32(0x20061AB4)[j+10] = CreatOBJ_100813E0(0, 193, 255, 50, 4, 300, 0);//画右边头像
-			P32(0x20061AB4)[j+20] = CreatOBJ_100813E0(0, 193+58*2, 255, 50, 4, 300, 0);//画右边头像
+			PU32(0x20061AB4)[j] = CreatOBJ_100813E0(0, 193-58*2, 255, PU16(0x10175D68)[j], 4, 300, 0);//画右边头像
+			PU32(0x20061AB4)[j+10] = CreatOBJ_100813E0(0, 193, 255, 50, 4, 300, 0);//画右边头像
+			PU32(0x20061AB4)[j+20] = CreatOBJ_100813E0(0, 193+58*2, 255, 50, 4, 300, 0);//画右边头像
 		}
-		LoadCMD_1001227E(P32(0x20061AB4)[j], P32(0x10176178)[j]);//载入图片动画
-		LoadCMD_1001227E(P32(0x20061AB4)[j+10], P32(0x10176178)[j]);//载入图片动画
-		LoadCMD_1001227E(P32(0x20061AB4)[j+20], P32(0x10176178)[j]);//载入图片动画
+		LoadCMD_1001227E(PU32(0x20061AB4)[j], PU32(0x10176178)[j]);//载入图片动画
+		LoadCMD_1001227E(PU32(0x20061AB4)[j+10], PU32(0x10176178)[j]);//载入图片动画
+		LoadCMD_1001227E(PU32(0x20061AB4)[j+20], PU32(0x10176178)[j]);//载入图片动画
 	}
 
 
@@ -139,12 +139,12 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 
 
 	for ( i = 0; i < 4; i = (i + 1) & 0xFFFF )//这里是OBJ的句柄数组清空
-		P32(0x20061ADC)[i] = 0;
-		P32(0x20061AA4)[i] = 0;
-		P32(0x20061888)[i] = 0;
+		PU32(0x20061ADC)[i] = 0;
+		PU32(0x20061AA4)[i] = 0;
+		PU32(0x20061888)[i] = 0;
 	for ( i = 0; i < 4; i = (i + 1) & 0xFFFF ) //这个是选人时候的ROLEID
 	{
-		P8(0x2002039C)[i] = 0;
+		PU8(0x2002039C)[i] = 0;
 
 	}
 
@@ -206,11 +206,11 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 		}
 
 
-		if (P32(0x20061ADC)[bPlayerNo])
+		if (PU32(0x20061ADC)[bPlayerNo])
 		{
-			 sub_10012160(P32(0x20061ADC)[bPlayerNo]);	//这里用来释放之前光标格子的OBJ空间
+			 sub_10012160(PU32(0x20061ADC)[bPlayerNo]);	//这里用来释放之前光标格子的OBJ空间
 		}
-		P32(0x20061ADC)[bPlayerNo] = sub_10081C08(bPlayerNo,77+58* x ,69 + y * 30);//然后重新创建光标格子OBJ
+		PU32(0x20061ADC)[bPlayerNo] = sub_10081C08(bPlayerNo,77+58* x ,69 + y * 30);//然后重新创建光标格子OBJ
 
 
 		update_1002F81A();//更新屏幕
@@ -232,14 +232,14 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 
 
 //---------载入卡片数据-------------------------------
-		memcpy((void*)P32(0x2003DC8C), &CardTest,sizeof(CardTest));//这里写入卡片数据
-		role = V8(0x20020170);
+		memcpy((void*)PU32(0x2003DC8C), &CardTest,sizeof(CardTest));//这里写入卡片数据
+		role = DU8(0x20020170);
 //		pgm2log("role:%d\n");
 		if((role%30)<10)
 		{
-			V8(0x2003DC8C + 84 + 3  ) = (role%30) * 9 + 1;//这里补充人物的初始武器
-			V8(0x2003DC8C + 93 + 3  ) = 1;
-			V8(0x2003DC8C + 102 + 3 *2  ) = 100;
+			DU8(0x2003DC8C + 84 + 3  ) = (role%30) * 9 + 1;//这里补充人物的初始武器
+			DU8(0x2003DC8C + 93 + 3  ) = 1;
+			DU8(0x2003DC8C + 102 + 3 *2  ) = 100;
 		}
 //-----------------------------------------------------
 

@@ -6,9 +6,9 @@
 
 
 
-#define main_fsm         V8(0x20020104)
-#define g_ScreenX        VS16(0x20020154)
-#define g_ScreenY        VS16(0x20020156)
+#define main_fsm         DU8(0x20020104)
+#define g_ScreenX        DS16(0x20020154)
+#define g_ScreenY        DS16(0x20020156)
 
 void __fastcall hook_dropitem(__int16 x, __int16 y, __int16 a3, int id, int a5, __int16 a6, __int16 a7, __int16 a8)
 {

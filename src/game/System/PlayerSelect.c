@@ -179,17 +179,17 @@ int InitSameRolePalNo()
 	int bPlayerNo; // r0@1
 
 	for ( bPlayerNo = 0; bPlayerNo < 4; bPlayerNo = (bPlayerNo + 1) & 0xFF )
-		P32(0x20057A84)[bPlayerNo] = 0;
+		PU32(0x20057A84)[bPlayerNo] = 0;
 	return bPlayerNo;
 }
 
 int hook_sub_1002993A(int bPlayerNo)//修复人物颜色
 {
-  if ( P32(0x20057A84)[bPlayerNo] )
-    sub_100043D6(P32(0x20057A84)[bPlayerNo], RolePtrTbl[bPlayerNo]->pPalTbl);
+  if ( PU32(0x20057A84)[bPlayerNo] )
+    sub_100043D6(PU32(0x20057A84)[bPlayerNo], RolePtrTbl[bPlayerNo]->pPalTbl);
   else
-    P32(0x20057A84)[bPlayerNo] = rpPalette_FadeLoad(2, (bPlayerNo + 12) & 0xFF, RolePtrTbl[bPlayerNo]->pPalTbl, 32);
-  return P32(0x20057A84)[bPlayerNo];
+    PU32(0x20057A84)[bPlayerNo] = rpPalette_FadeLoad(2, (bPlayerNo + 12) & 0xFF, RolePtrTbl[bPlayerNo]->pPalTbl, 32);
+  return PU32(0x20057A84)[bPlayerNo];
 }
 
 int hook_sub_1002998C()
@@ -199,10 +199,10 @@ int hook_sub_1002998C()
 
   for ( i = 0; i < 4; i = (i + 1) & 0xFF )
   {
-    if ( P32(0x20057A84)[i] )
+    if ( PU32(0x20057A84)[i] )
     {
-      sub_10004376(P32(0x20057A84)[i]);
-      P32(0x20057A84)[i] = 0;
+      sub_10004376(PU32(0x20057A84)[i]);
+      PU32(0x20057A84)[i] = 0;
     }
     result = i + 1;
   }
@@ -222,33 +222,33 @@ signed int hook_sub_100299C0()
   sub_10029920();
   sub_1002258C();
   v0 = 0;
-  v1 = P32(0x20056BD4);
+  v1 = PU32(0x20056BD4);
   //pgm2log("1");
   while ( v0 < 4 )
   {
-    V16(v1 + 6*2) = 0;
-    V16(v1 + 7*2) = v0;
-    V32(v1 + 30*4) = 0x20057744 + 192 * v0;
-    V32(v1 + 31*4) = 0x20057A44 + 16 * v0;//人物阴影
-    V16(v1 + 346*2) = 0;
-    V16(v1 + 359*2) = 255;
-    V32(v1 + 178*4) = 0;
-    V16(v1 + 358*2) = 0;
-    V16(v1 + 364*2) = 0;
+    DU16(v1 + 6*2) = 0;
+    DU16(v1 + 7*2) = v0;
+    DU32(v1 + 30*4) = 0x20057744 + 192 * v0;
+    DU32(v1 + 31*4) = 0x20057A44 + 16 * v0;//人物阴影
+    DU16(v1 + 346*2) = 0;
+    DU16(v1 + 359*2) = 255;
+    DU32(v1 + 178*4) = 0;
+    DU16(v1 + 358*2) = 0;
+    DU16(v1 + 364*2) = 0;
     ++v0;
     v1 = v1 + 732;
   }
-  V8(0x200200A9) = 0;
-  V8(0x200200AB) = 1;
-  V8(0x200200C7) = 1;
-  V16(0x200200AC) = 0;
-  V16(0x200200AE) = 0;
-  V8(0x200200B0) = 0;
-  V16(0x200200C4) = 0;
+  DU8(0x200200A9) = 0;
+  DU8(0x200200AB) = 1;
+  DU8(0x200200C7) = 1;
+  DU16(0x200200AC) = 0;
+  DU16(0x200200AE) = 0;
+  DU8(0x200200B0) = 0;
+  DU16(0x200200C4) = 0;
   for ( i = 0; i < 10; ++i )
-    P32(0x20057A94)[i] = P32(0x1012EFB4)[i];
+    PU32(0x20057A94)[i] = PU32(0x1012EFB4)[i];
   result = 10;
-  V8(0x200200AA) = 10;
+  DU8(0x200200AA) = 10;
   return result;
 }
 

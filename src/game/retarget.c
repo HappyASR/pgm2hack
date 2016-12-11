@@ -13,8 +13,13 @@ void pgm2log(const char *fmt, ...)
 	vsprintf(log_buffer, fmt, p);
 	va_end(p);
 	for (i = 0; i < strlen(log_buffer); i++) {
-		*((volatile unsigned char *)0xF1000000) = log_buffer[i];
+		DVU8(0xF1000000) = log_buffer[i];
 	}
+}
+
+void pgm2patch(int addr, int dat)
+{
+	DVU32(0xF1000004) = (addr<<8) | (dat&0xff);
 }
 
 extern unsigned int __rom_end__[];

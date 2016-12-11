@@ -5,15 +5,15 @@
 #include "xyj2_func.h"
 #include "system\ICCard.h"
 //--------------game_mode----------------------------
-#define Main_Fsm			V8(0x20020104)
-#define V_20020105			V8(0x20020105)
-#define V_20020106			V8(0x20020106)
-#define V_200203C4			V8(0x200203C4)
-#define P32_20020110		P32(0x20020110)
-#define P64_20020110		P64(0x20020110)
-#define P32_2002010C		P32(0x2002010C)
-#define P32_200200FC		V32(0x200200FC)
-#define exp					V32(0x2005F768)
+#define Main_Fsm			DU8(0x20020104)
+#define V_20020105			DU8(0x20020105)
+#define V_20020106			DU8(0x20020106)
+#define V_200203C4			DU8(0x200203C4)
+#define P32_20020110		PU32(0x20020110)
+#define P64_20020110		PU64(0x20020110)
+#define P32_2002010C		PU32(0x2002010C)
+#define P32_200200FC		DU32(0x200200FC)
+#define exp					DU32(0x2005F768)
 
 int MemInfo[]={0x0};
 int role = 0;
@@ -65,24 +65,24 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
   }
 	//  vPrint(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
 			vPrint(5,5,0,0,(int)"                         ");//这里固定显示ACT
-	  vPrint(5,5,0,0,(int)"ACT:%d ID:%d OFF:%08X",V16(0x20056BD4+76),V16(0x20056BD4+78),V32(0x20056BD4+40));//这里固定显示ACT
+	  vPrint(5,5,0,0,(int)"ACT:%d ID:%d OFF:%08X",DU16(0x20056BD4+76),DU16(0x20056BD4+78),DU32(0x20056BD4+40));//这里固定显示ACT
  
 
 	for (i=0;i<sizeof(MemInfo)/sizeof(int) ;i++ )
 	{
 		  if (MemInfo[i])//这里用来测试内存地址的
 		{
-			  vPrint(5,7+i,0,0,(int)"%02X:%d",MemInfo[i],V8( MemInfo[i]));
+			  vPrint(5,7+i,0,0,(int)"%02X:%d",MemInfo[i],DU8( MemInfo[i]));
 		}
 		
 	}
 	//cheat-start---------------------------------
-	V8(0x2005F7B6) = 6;//取消技能等级限制.
-	V8(0x2005F7B7) = 2;//取消普攻等级限制.
-	//V8(0x200203E2) = 1;//这里让特殊人物可选
+	DU8(0x2005F7B6) = 6;//取消技能等级限制.
+	DU8(0x2005F7B7) = 2;//取消普攻等级限制.
+	//DU8(0x200203E2) = 1;//这里让特殊人物可选
 	
-	V8(0x20020509) = 1;//是否有卡.
-	V8(0x20020048) = 1;//是否有卡.
+	DU8(0x20020509) = 1;//是否有卡.
+	DU8(0x20020048) = 1;//是否有卡.
 	//0x2003DC8C 是内存里卡片数据基址 124 * 4大小
 	//0x2003DE71 同样是一个124*4大小的内存。意义不明
 

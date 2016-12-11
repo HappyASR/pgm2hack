@@ -140,25 +140,25 @@ void testmusic()
       {
         MusicID = (MusicID - 1) & 0xFFFF;
         print_(12, 5, "%3d / %d   ", MusicID, 663);
-        print_(1, 8, "(%19s)", P32(0x1012F1DC)[MusicID]);//œ‘ æMusicName
+        print_(1, 8, "(%19s)", PU32(0x1012F1DC)[MusicID]);//œ‘ æMusicName
       }
       if ( uwInputPressKey(KEY_P1_RIGHT) && MusicID < 663 )
       {
         MusicID = (MusicID + 1) & 0xFFFF;
         print_(12, 5, "%3d / %d   ", MusicID, 663);
-        print_(1, 8, "(%19s)", P32(0x1012F1DC)[MusicID]);
+        print_(1, 8, "(%19s)", PU32(0x1012F1DC)[MusicID]);
       }
       if ( uwInputPressKey(KEY_P2_LEFT) && VoiceID )
       {
         VoiceID = (VoiceID - 1) & 0xFFFF;
         print_(12, 12, "%3d / %d   ", VoiceID, 663);
-        print_(1, 15, "(%19s)", P32(0x1012F1DC)[VoiceID]);
+        print_(1, 15, "(%19s)", PU32(0x1012F1DC)[VoiceID]);
       }
       if ( uwInputPressKey(KEY_P2_RIGHT) && VoiceID < 663 )
       {
         VoiceID = (VoiceID + 1) & 0xFFFF;
         print_(12, 12, "%3d / %d   ", VoiceID, 663);
-        print_(1, 15, "(%19s)", P32(0x1012F1DC)[VoiceID]);
+        print_(1, 15, "(%19s)", PU32(0x1012F1DC)[VoiceID]);
       }
     }
     else
@@ -167,25 +167,25 @@ void testmusic()
       {
         MusicID = (MusicID - 1) & 0xFFFF;
         print_(12, 5, "%3d / %d   ", MusicID, 663);
-        print_(1, 8, "(%19s)", P32(0x1012F1DC)[MusicID]);
+        print_(1, 8, "(%19s)", PU32(0x1012F1DC)[MusicID]);
       }
       if ( uwInputPressKeyLong(KEY_P1_RIGHT) && MusicID < 663 )
       {
         MusicID = (MusicID + 1) & 0xFFFF;
         print_(12, 5, "%3d / %d   ", MusicID, 663);
-        print_(1, 8, "(%19s)", P32(0x1012F1DC)[MusicID]);
+        print_(1, 8, "(%19s)", PU32(0x1012F1DC)[MusicID]);
       }
       if ( uwInputPressKeyLong(KEY_P2_LEFT) && VoiceID )
       {
         VoiceID = (VoiceID - 1) & 0xFFFF;
         print_(12, 12, "%3d / %d   ", VoiceID, 663);
-        print_(1, 15, "(%19s)", P32(0x1012F1DC)[VoiceID]);
+        print_(1, 15, "(%19s)", PU32(0x1012F1DC)[VoiceID]);
       }
       if ( uwInputPressKeyLong(KEY_P2_RIGHT) && VoiceID < 663 )
       {
         VoiceID = (VoiceID + 1) & 0xFFFF;
         print_(12, 12, "%3d / %d   ", VoiceID, 663);
-        print_(1, 15, "(%19s)", P32(0x1012F1DC)[VoiceID]);
+        print_(1, 15, "(%19s)", PU32(0x1012F1DC)[VoiceID]);
       }
     }
     if ( uwInputPressKey(KEY_P1_UP) && MusicVolume )

@@ -15,12 +15,15 @@
 typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
+
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
+
 typedef unsigned char _BYTE;
 typedef unsigned short _WORD;
 typedef unsigned int _DWORD;
+
 typedef unsigned char UINT8;
 typedef unsigned short UINT16;
 typedef unsigned int UINT32;
@@ -29,25 +32,42 @@ typedef unsigned long long UINT64;
 typedef  u32 (*_FUNC)();
 
 #define FUNC32(x)  (*((u32 (*)())((x)+0)))
-#define FUNC16(x)  (*((u32 (*)())((x)+1)))
+#define FUNC16(x)  (*((u32 (*)())((x)|1)))
 
-#define P8(x)      ((u8 *)(x))
-#define P16(x)      ((u16 *)(x))
-#define P32(x)      ((u32 *)(x))
+#define PU8(x)     ((u8 *)(x))
+#define PU16(x)    ((u16 *)(x))
+#define PU32(x)    ((u32 *)(x))
 
-#define PS8(x)      ((s8 *)(x))
-#define PS16(x)      ((s16 *)(x))
-#define PS32(x)      ((s32 *)(x))
+#define PS8(x)     ((s8 *)(x))
+#define PS16(x)    ((s16 *)(x))
+#define PS32(x)    ((s32 *)(x))
 
-#define V8(x)      (*P8(x))
-#define V16(x)      (*P16(x))
-#define V32(x)      (*P32(x))
+#define DU8(x)     (*PU8(x))
+#define DU16(x)    (*PU16(x))
+#define DU32(x)    (*PU32(x))
 
-#define VS8(x)      (*PS8(x))
-#define VS16(x)      (*PS16(x))
-#define VS32(x)      (*PS32(x))
+#define DS8(x)     (*PS8(x))
+#define DS16(x)    (*PS16(x))
+#define DS32(x)    (*PS32(x))
+
+#define PVU8(x)     ((volatile u8 *)(x))
+#define PVU16(x)    ((volatile u16 *)(x))
+#define PVU32(x)    ((volatile u32 *)(x))
+
+#define PVS8(x)     ((volatile s8 *)(x))
+#define PVS16(x)    ((volatile s16 *)(x))
+#define PVS32(x)    ((volatile s32 *)(x))
+
+#define DVU8(x)     (*PVU8(x))
+#define DVU16(x)    (*PVU16(x))
+#define DVU32(x)    (*PVU32(x))
+
+#define DVS8(x)     (*PVS8(x))
+#define DVS16(x)    (*PVS16(x))
+#define DVS32(x)    (*PVS32(x))
 
 extern void pgm2log(const char *fmt, ...);
+extern void pgm2patch(int addr, int dat);
 
 #define PATCH_DAT 0x5441444843544150ULL //"PATCHDAT"
 struct init_data {

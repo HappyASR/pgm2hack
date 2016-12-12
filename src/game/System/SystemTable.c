@@ -212,8 +212,8 @@ const char LevelLimitTbl5[]={
 
 };
 
-//0x10158B74			ID相关表  暂时只保存指针 每人两指针
-const int IdRelTbl1[]={
+//0x10158B74			ID相关表  暂时只保存指针 每人两指针 头像颜色表
+const int MiniHeadPalTbl[]={
 		0x10392E98,		0x10392E98,
 		0x10392ED8,		0x10392ED8,
 		0x10392F18,		0x10392F18,
@@ -225,8 +225,8 @@ const int IdRelTbl1[]={
 		0x10393098,		0x10393098,
 		0x103930D8,		0x103930D8,
 
-		0x10392E98,		0x10392E98,
-		0x10392E98,		0x10392E98,
+		0x10393118,		0x10393118,//牛魔王
+		0x10393158,		0x10393158,//金角
 		0x10392E98,		0x10392E98,
 		0x10392E98,		0x10392E98,
 		0x10392E98,		0x10392E98,
@@ -250,6 +250,11 @@ const int IdRelTbl1[]={
 
 };
 
+
+
+
+
+
 //0x101724B4	人名表
 const short RoleNameTbl[]={
 	0xD73, 0xEA7, 0x5F2,0xFFFF,	0,		//孙悟空，FFFF为NULL
@@ -263,7 +268,7 @@ const short RoleNameTbl[]={
 	0x32B, 0xD45, 0xC9C,0xFFFF,0,
 	0x99B, 0xA41, 0x79C,0xFFFF,0,
 
-	0,    0,    0,  0xFFFF,0,
+	0,    0,    0,  0xFFFF,0,//金角
 	0,    0,    0,  0xFFFF,0,
 	0,    0,    0,  0xFFFF,0,
 	0,    0,    0,  0xFFFF,0,

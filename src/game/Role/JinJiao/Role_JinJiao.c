@@ -28,7 +28,7 @@ const Role Role_JinJiao_0={
 			0x50000, 
 			1, 
 			0, 
-			0x1026C14C,
+			(int)&Role_JinJiao_ActPtrTbl_0,//0x1026C14C,//BOSS动作?or援军动作指针
 			0,	0,	0,	0,	0,	0,	0,	0,
 			0,										//初始武器ID
 			0,										//武器图指针

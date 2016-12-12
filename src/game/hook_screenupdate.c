@@ -65,9 +65,10 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
   }
 	//  vPrint(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
 			vPrint(5,5,0,0,(int)"                         ");//这里固定显示ACT
-	  vPrint(5,5,0,0,(int)"ACT:%d ID:%d OFF:%08X",DU16(0x20056BD4+76),DU16(0x20056BD4+78),DU32(0x20056BD4+40));//这里固定显示ACT
- 
-
+	  //vPrint(5,5,0,0,(int)"ACT:%d ID:%d OFF:%08X",DU16(0x20056BD4+76),DU16(0x20056BD4+78),DU32(0x20056BD4+40));//这里固定显示ACT
+ vPrint(5,5,0,0,(int)"ROLE:%d",DU8(0x2005F69C+41));//这里固定显示EXP
+//if(DU8(0x2005F69C+2)!=11)
+	//pgm2log("%d\n",DU8(0x2005F69C+2));
 	for (i=0;i<sizeof(MemInfo)/sizeof(int) ;i++ )
 	{
 		  if (MemInfo[i])//这里用来测试内存地址的
@@ -81,8 +82,8 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
 	DU8(0x2005F7B7) = 2;//取消普攻等级限制.
 	//DU8(0x200203E2) = 1;//这里让特殊人物可选
 	
-	DU8(0x20020509) = 1;//是否有卡.
-	DU8(0x20020048) = 1;//是否有卡.
+	//DU8(0x20020509) = 1;//是否有卡.
+	//DU8(0x20020048) = 1;//是否有卡.
 	//0x2003DC8C 是内存里卡片数据基址 124 * 4大小
 	//0x2003DE71 同样是一个124*4大小的内存。意义不明
 

@@ -1,6 +1,14 @@
-//接关可选人数，似乎未完全
-	//XXPATCH16(0x1006055E)
-	//MOVS            R5, #30
+//扩展接关头像上限到30
+XXPATCH16(0x10060708)
+MOVS R5,#30
+XXPATCH16(0x1006055E)
+MOVS R5,#30
+
+//增加小头像读取上限到30
+XXPATCH16(0x1005AE20)
+CMP R4,#30
+
+
 
 //暂时修改获取人物指针函数对应自定义指针表
 	//XXPATCH16JMP16(0x100298BC,GetRolePtrById)
@@ -53,8 +61,8 @@
 	nop
 
 	//这个是选人程序
-	XXPATCH16(0x10086850)
-                MOVS            R0, #10
+	//XXPATCH16(0x10086850)
+   //MOVS            R0, #30
 
 
 
@@ -66,8 +74,8 @@
        	XXPATCH16PTR32(0x1005C800,LevelLimitTbl3)   
        	XXPATCH16PTR32(0x1005C804,LevelLimitTbl4)
        	XXPATCH16PTR32(0x1005C808,LevelLimitTbl5)
-
-       	XXPATCH16PTR32(0x1005AF4C,IdRelTbl1)
+		//这个是迷你头像的颜色表
+       	XXPATCH16PTR32(0x1005AF4C,MiniHeadPalTbl)
 
 	//人名表
 	XXPATCH16PTR32(0x10057D3C,RoleNameTbl)

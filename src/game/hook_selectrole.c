@@ -4,7 +4,6 @@
 #include "game_type.h"
 #include "xyj2_func.h"
 #include "system\ICCard.h"
-
 extern void pgm2log(const char *fmt, ...);
 
 
@@ -55,6 +54,21 @@ const struct IC_CARD CardTest=
 	{0,	0,	0,	0,	1,	1,	1,	1,	1},//身上装备+经书 数量
 	{0,	0,	0,	0,	100,	100,	100,	100,	100},//身上装备+经书 耐久
 	0};
+	
+	
+	
+	
+//下面是自己定义的人物信息顺序表
+const __int8 RoleIndex[]={
+	0,1,2,3,4,5,6,7,8,9,
+	11,12,13,14,15,16,17,18,19,20,
+	21,22,23,24,10,25,
+};	
+	
+	
+	
+	
+	
 int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 {
 	int i;
@@ -244,5 +258,5 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 //-----------------------------------------------------
 
 	
-	return sub_1006514A(0x2005F69C,byte_20020170);//这个函数是SetPlayer，把选人结果传递给系统。参数1：1P的内存基址，参数2：ROLEID。
+	return sub_1006514A(0x2005F69C, RoleIndex[byte_20020170]);//这个函数是SetPlayer，把选人结果传递给系统。参数1：1P的内存基址，参数2：ROLEID。
 }

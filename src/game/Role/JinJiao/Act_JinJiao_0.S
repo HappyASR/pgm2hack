@@ -4,8 +4,8 @@
 		.global JinJiao_ActType_Start
 		.global JinJiao_ActType_Motion
 		.global JinJiao_ActType_Attack
-		//.global JinJiao_ActType_Type4
-		//.global JinJiao_ActType_Type5
+		.global JinJiao_ActType_Type4
+		.global JinJiao_ActType_Type5
 		.global JinJiao_ActType_Kill
 
 		.global JinJiao_ActType_Caning

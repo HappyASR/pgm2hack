@@ -61,6 +61,7 @@ Role* RolePtrTbl[MAX_ROLE_NUM*3] ={
 		&Role_TangSeng_0,
 		&Role_ZhiZhuJing_0,
 //添加人物   注意前面必须用&Role_取指针，否则编译错误
+		&Role_NiuMoWang_0, //这里牵涉到了头像调用之类的索引，所以还是按照顺序排列把牛魔王放第一
 		&Role_JinJiao_0,
 		&Role_YinJiao_0,
 		&Role_BaiGuJing_0,
@@ -70,9 +71,8 @@ Role* RolePtrTbl[MAX_ROLE_NUM*3] ={
 		&Role_LuLi_0,
 		&Role_JinYuJing_0,
 		&Role_LiuEr_0,
+		
 		&Role_HongHaiEr_0,
-
-		&Role_NiuMoWang_0,
 		&Role_DaPengWang_0,
 		&Role_BaiXiangWang_0,
 		&Role_QingShiWang_0,

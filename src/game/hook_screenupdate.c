@@ -64,9 +64,9 @@ int hook_screen_update(int a1,int a2,int a3,int a4)
       ;
   }
 	//  vPrint(5,5,0,0,(int)"EXP:%d",exp);//这里固定显示EXP
-			vPrint(5,5,0,0,(int)"                         ");//这里固定显示ACT
+//			vPrint(5,5,0,0,(int)"                         ");//这里固定显示ACT
 	  //vPrint(5,5,0,0,(int)"ACT:%d ID:%d OFF:%08X",DU16(0x20056BD4+76),DU16(0x20056BD4+78),DU32(0x20056BD4+40));//这里固定显示ACT
- vPrint(5,5,0,0,(int)"ROLE:%d",DU8(0x2005F69C+41));//这里固定显示EXP
+// vPrint(5,5,0,0,(int)"ROLE:%d",DU8(0x2005F69C+41));//这里固定显示EXP
 //if(DU8(0x2005F69C+2)!=11)
 	//pgm2log("%d\n",DU8(0x2005F69C+2));
 	for (i=0;i<sizeof(MemInfo)/sizeof(int) ;i++ )

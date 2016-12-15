@@ -1590,6 +1590,17 @@ byte_10701D94:	SCR_ScrLoopStart 18
 		SCR_ScrLoopEnd
 		SCR_CallFunc 0,0,0x1009E149
 		SCR_JmpTo byte_10701D94,Act_JinJiao_Start_33
+		SCR_CallFunc 0,0,0x1009E1BB
+		SCR_ScrLoopStart 3
+		SCR_ShowLoopPic	2
+		SCR_PicElem 0,0,0
+		SCR_PicElem 0,-1,0
+		SCR_ShowLoopPic	2
+		SCR_PicElem 0,0,0
+		SCR_PicElem 0,1,0
+		SCR_ScrLoopEnd
+		SCR_CallFunc 0,0,0x1009E149
+		SCR_JmpTo byte_10701D94,Act_JinJiao_Start_33
 Act_JinJiao_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_CallFunc 0,2,0x1009E1E9
 		SCR_ShowLoopPic	20

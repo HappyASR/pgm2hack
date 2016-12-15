@@ -1591,6 +1591,17 @@ byte_10701D94:	SCR_ScrLoopStart 18
 		SCR_ScrLoopEnd
 		SCR_CallFunc 0,0,0x1009E149
 		SCR_JmpTo byte_10701D94,Act_SunWuKong_Start_33
+		SCR_CallFunc 0,0,0x1009E1BB
+		SCR_ScrLoopStart 3
+		SCR_ShowLoopPic	2
+		SCR_PicElem 0,0,0
+		SCR_PicElem 0,-1,0
+		SCR_ShowLoopPic	2
+		SCR_PicElem 0,0,0
+		SCR_PicElem 0,1,0
+		SCR_ScrLoopEnd
+		SCR_CallFunc 0,0,0x1009E149
+		SCR_JmpTo byte_10701D94,Act_SunWuKong_Start_33
 Act_SunWuKong_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_CallFunc 0,2,0x1009E1E9
 		SCR_ShowLoopPic	20
@@ -1605,7 +1616,7 @@ Act_SunWuKong_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_ShowLoopPic	50
 		SCR_PicElem 0,0,0
 		SCR_ScrLoopStart 3
-		SCR_TestJmp byte_10701F00,Act_SunWuKong_Start_34
+		SCR_TestJmp byte_10701F34,Act_SunWuKong_Start_34
 		SCR_PicElem 0,0,0
 		SCR_PicElem 0,0,2
 		SCR_PicElem 0,-1,3
@@ -1669,7 +1680,7 @@ Act_SunWuKong_Start_34:SCR_CallFunc 0,0,0x1009E1E9
 		SCR_ScrLoopEnd
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 7,-2,3
-byte_10701F00:	SCR_CallFunc 0,1,0x1009E1E9
+byte_10701F34:	SCR_CallFunc 0,1,0x1009E1E9
 		SCR_End
 Act_SunWuKong_Start_35:SCR_SetInvincible
 		SCR_ScrLoopStart 5
@@ -1746,7 +1757,7 @@ Act_SunWuKong_Start_36:SCR_F018	1	@ F018
 		SCR_PicElem 66,6,-6
 		SCR_PicElem 66,6,-6
 		SCR_PicElem 66,5,-6
-byte_10702038:	SCR_PicElem 67,5,-5
+byte_1070206C:	SCR_PicElem 67,5,-5
 		SCR_PicElem 67,5,-5
 		SCR_PicElem 67,5,-4
 		SCR_PicElem 67,5,-4
@@ -1762,7 +1773,7 @@ byte_10702038:	SCR_PicElem 67,5,-5
 		SCR_PicElem 202,4,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 203,4,0
-		SCR_TestJmp byte_107020C4,Act_SunWuKong_Start_36
+		SCR_TestJmp byte_107020F8,Act_SunWuKong_Start_36
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,4,1
 		SCR_PicElem 68,9,10
@@ -1781,7 +1792,7 @@ byte_10702038:	SCR_PicElem 67,5,-5
 		SCR_PicElem 69,3,8
 		SCR_PicElem 70,3,0
 		SCR_F018 0		@ F018
-byte_107020C4:	SCR_End
+byte_107020F8:	SCR_End
 		SCR_ScrLoopStart 3
 		SCR_PicElem 17,0,0
 		SCR_ScrLoopEnd
@@ -1796,7 +1807,7 @@ byte_107020C4:	SCR_End
 		SCR_PicElem 18,0,1
 		SCR_PicElem 18,0,-1
 		SCR_ScrLoopEnd
-		SCR_JmpTo byte_10702038,Act_SunWuKong_Start_36
+		SCR_JmpTo byte_1070206C,Act_SunWuKong_Start_36
 Act_SunWuKong_Start_37:SCR_ScrLoopStart	3
 		SCR_PicElem 17,0,0
 		SCR_ScrLoopEnd
@@ -1807,11 +1818,11 @@ Act_SunWuKong_Start_37:SCR_ScrLoopStart	3
 		SCR_PicElem 18,0,2
 		SCR_PicElem 18,0,-2
 		SCR_ScrLoopEnd
-byte_1070212C:	SCR_ScrLoopStart 10
+byte_10702160:	SCR_ScrLoopStart 10
 		SCR_PicElem 18,0,1
 		SCR_PicElem 18,0,-1
 		SCR_ScrLoopEnd
-		SCR_JmpTo byte_1070212C,Act_SunWuKong_Start_37
+		SCR_JmpTo byte_10702160,Act_SunWuKong_Start_37
 Act_SunWuKong_Start_38:SCR_F018	1	@ F018
 		SCR_SetInvincible
 		SCR_CallSysObj 0,1,0,1,0 @ F011	sys,id,param1,xPos,yPos
@@ -2072,7 +2083,7 @@ Act_SunWuKong_Start_44:SCR_PicElem 63,0,0
 		SCR_PicElem 202,-6,0
 		SCR_PicElem 202,-6,0
 		SCR_PicElem 203,-6,0
-		SCR_TestJmp byte_107025B0,Act_SunWuKong_Start_44
+		SCR_TestJmp byte_107025E4,Act_SunWuKong_Start_44
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 68,-10,15
@@ -2089,7 +2100,7 @@ Act_SunWuKong_Start_44:SCR_PicElem 63,0,0
 		SCR_PicElem 69,-3,7
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,-3,8
-byte_107025B0:	SCR_PicElem 70,-3,0
+byte_107025E4:	SCR_PicElem 70,-3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_SunWuKong_Start_46:SCR_ShowLoopPic 3
@@ -2132,11 +2143,11 @@ Act_SunWuKong_Start_46:SCR_ShowLoopPic 3
 		SCR_End
 Act_SunWuKong_Start_47:SCR_PicElem 18,0,0
 		SCR_JmpTo Act_SunWuKong_Start_47,Act_SunWuKong_Start_47
-Act_SunWuKong_Start_48:SCR_JmpTo byte_10702698,Act_SunWuKong_Start_48
-byte_1070268C:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_1070268C,Act_SunWuKong_Start_48
+Act_SunWuKong_Start_48:SCR_JmpTo byte_107026CC,Act_SunWuKong_Start_48
+byte_107026C0:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_107026C0,Act_SunWuKong_Start_48
 		SCR_End
-byte_10702698:	SCR_PicElem 63,0,0
+byte_107026CC:	SCR_PicElem 63,0,0
 		SCR_PicElem 64,0,0
 		SCR_PicElem 97,0,0
 		SCR_PicElem 98,0,0
@@ -2152,9 +2163,9 @@ byte_10702698:	SCR_PicElem 63,0,0
 		SCR_PicElem 99,0,0
 		SCR_ScrLoopEnd
 		SCR_CallSysObj 4,18,0,0,-30 @ F011 sys,id,param1,xPos,yPos
-		SCR_JmpTo byte_1070268C,Act_SunWuKong_Start_48
-Act_SunWuKong_Start_49:SCR_JmpTo byte_10702728,Act_SunWuKong_Start_49
-byte_107026E4:	SCR_ClearInvincible
+		SCR_JmpTo byte_107026C0,Act_SunWuKong_Start_48
+Act_SunWuKong_Start_49:SCR_JmpTo byte_1070275C,Act_SunWuKong_Start_49
+byte_10702718:	SCR_ClearInvincible
 		SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
@@ -2170,7 +2181,7 @@ byte_107026E4:	SCR_ClearInvincible
 		SCR_PicElem 26,0,0
 		SCR_JmpAct 8,24		@ JMP to other Action,type,element
 		SCR_End
-byte_10702728:	SCR_SetInvincible
+byte_1070275C:	SCR_SetInvincible
 		SCR_F018 1		@ F018
 		SCR_CloseRoleShadow	@ 人物影子
 		SCR_F058 50
@@ -2240,7 +2251,7 @@ byte_10702728:	SCR_SetInvincible
 		SCR_PicElem 44,-1,0
 		SCR_PicElem 44,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_107026E4,Act_SunWuKong_Start_49
+		SCR_TestJmp byte_10702718,Act_SunWuKong_Start_49
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,-1,1
@@ -2396,8 +2407,8 @@ Act_SunWuKong_Start_52:SCR_SetInvincible
 		SCR_ShowLoopPic	2
 		SCR_PicElem 26,3,0
 		SCR_CloseRoleShadow	@ 人物影子
-byte_10702AD8:	SCR_PicElemNone	0,0,0
-		SCR_JmpTo byte_10702AD8,Act_SunWuKong_Start_52
+byte_10702B0C:	SCR_PicElemNone	0,0,0
+		SCR_JmpTo byte_10702B0C,Act_SunWuKong_Start_52
 SunWuKong_ActType_Motion:ACT_Elem 2,0,	Act_SunWuKong_Motion_0	,1,0,0
 					@ DATA XREF: ROM:10700008o
 		ACT_Elem 2,1,  Act_SunWuKong_Motion_1  ,1,0,0
@@ -2900,7 +2911,7 @@ Act_SunWuKong_Motion_19:SCR_ShowLoopPic	2
 		SCR_PicElem 203,0,0
 		SCR_PicElem 203,0,0
 		SCR_PicElem 203,0,0
-		SCR_TestJmp byte_107034C0,Act_SunWuKong_Motion_19
+		SCR_TestJmp byte_107034F4,Act_SunWuKong_Motion_19
 		SCR_PicElem 203,0,1
 		SCR_PicElem 68,0,21
 		SCR_PicElem 68,0,1
@@ -2921,7 +2932,7 @@ Act_SunWuKong_Motion_19:SCR_ShowLoopPic	2
 		SCR_PicElem 69,0,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,9
-byte_107034C0:	SCR_ShowLoopPic	2
+byte_107034F4:	SCR_ShowLoopPic	2
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_SunWuKong_Motion_20:SCR_PicElem 63,0,0
@@ -2948,7 +2959,7 @@ Act_SunWuKong_Motion_20:SCR_PicElem 63,0,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 202,4,0
 		SCR_PicElem 203,4,0
-		SCR_TestJmp byte_10703578,Act_SunWuKong_Motion_20
+		SCR_TestJmp byte_107035AC,Act_SunWuKong_Motion_20
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,4,1
 		SCR_PicElem 68,10,15
@@ -2967,7 +2978,7 @@ Act_SunWuKong_Motion_20:SCR_PicElem 63,0,0
 		SCR_PicElem 69,3,8
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,3,8
-byte_10703578:	SCR_PicElem 70,3,0
+byte_107035AC:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_SunWuKong_Motion_21:SCR_ShowLoopPic	2
@@ -2996,7 +3007,7 @@ Act_SunWuKong_Motion_21:SCR_ShowLoopPic	2
 		SCR_PicElem 202,4,-1
 		SCR_PicElem 202,3,0
 		SCR_PicElem 203,3,0
-		SCR_TestJmp byte_10703638,Act_SunWuKong_Motion_21
+		SCR_TestJmp byte_1070366C,Act_SunWuKong_Motion_21
 		SCR_PicElem 203,4,1
 		SCR_PicElem 203,3,1
 		SCR_PicElem 68,8,14
@@ -3015,7 +3026,7 @@ Act_SunWuKong_Motion_21:SCR_ShowLoopPic	2
 		SCR_PicElem 69,3,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,3,9
-byte_10703638:	SCR_PicElem 70,3,0
+byte_1070366C:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_SunWuKong_Motion_22:SCR_ShowLoopPic	2
@@ -3044,7 +3055,7 @@ Act_SunWuKong_Motion_22:SCR_ShowLoopPic	2
 		SCR_PicElem 202,-4,-1
 		SCR_PicElem 202,-3,0
 		SCR_PicElem 203,-3,0
-		SCR_TestJmp byte_107036F8,Act_SunWuKong_Motion_22
+		SCR_TestJmp byte_1070372C,Act_SunWuKong_Motion_22
 		SCR_PicElem 203,-4,1
 		SCR_PicElem 203,-3,1
 		SCR_PicElem 68,-8,14
@@ -3063,7 +3074,7 @@ Act_SunWuKong_Motion_22:SCR_ShowLoopPic	2
 		SCR_PicElem 69,-3,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,-3,9
-byte_107036F8:	SCR_PicElem 70,3,0
+byte_1070372C:	SCR_PicElem 70,3,0
 		SCR_PicElem 70,0,0
 		SCR_End
 Act_SunWuKong_Motion_23:SCR_JmpAct 2,19	@ JMP to other Action,type,element
@@ -3078,30 +3089,30 @@ Act_SunWuKong_Motion_26:SCR_SetInvincible
 		SCR_PicElem 108,-2,-4
 		SCR_PicElem 108,-2,-3
 		SCR_PicElem 68,-7,0
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 68,-2,-1
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 68,-2,0
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 68,-1,1
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 68,-2,1
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 68,-2,2
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,2
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,3
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,4
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,5
-		SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+		SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,6
-byte_10703784:	SCR_TestJmp byte_10703790,Act_SunWuKong_Motion_26
+byte_107037B8:	SCR_TestJmp byte_107037C4,Act_SunWuKong_Motion_26
 		SCR_PicElem 69,-1,10
-		SCR_JmpTo byte_10703784,Act_SunWuKong_Motion_26
-byte_10703790:	SCR_CallSysObj 4,12,0,0,0 @ F011 sys,id,param1,xPos,yPos
+		SCR_JmpTo byte_107037B8,Act_SunWuKong_Motion_26
+byte_107037C4:	SCR_CallSysObj 4,12,0,0,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ClearInvincible
 		SCR_ShowLoopPic	3
 		SCR_PicElem 70,0,0
@@ -3111,12 +3122,12 @@ byte_10703790:	SCR_CallSysObj 4,12,0,0,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-Act_SunWuKong_Motion_28:SCR_TestJmp byte_107037D0,Act_SunWuKong_Motion_28
+Act_SunWuKong_Motion_28:SCR_TestJmp byte_10703804,Act_SunWuKong_Motion_28
 		SCR_ShowLoopPic	5
 		SCR_PicElem 69,0,4
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,10
-byte_107037D0:	SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
+byte_10703804:	SCR_PlaySound 64,0,540,0 @ param1,param2,sndid,off
 		SCR_ShowLoopPic	2
 		SCR_PicElem 70,0,0
 		SCR_End
@@ -3188,8 +3199,8 @@ Act_SunWuKong_Motion_33:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	30
 		SCR_ShowLoopPic	6
 		SCR_PicElem 20,0,1
-byte_107038FC:	SCR_PicElemNone	19,0,0
-		SCR_JmpTo byte_107038FC,Act_SunWuKong_Motion_33
+byte_10703930:	SCR_PicElemNone	19,0,0
+		SCR_JmpTo byte_10703930,Act_SunWuKong_Motion_33
 Act_SunWuKong_Motion_34:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	3
 		SCR_ShowLoopPic	6
@@ -3221,8 +3232,8 @@ Act_SunWuKong_Motion_34:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	31
 		SCR_ShowLoopPic	6
 		SCR_PicElem 20,0,-1
-byte_10703984:	SCR_PicElemNone	21,0,0
-		SCR_JmpTo byte_10703984,Act_SunWuKong_Motion_34
+byte_107039B8:	SCR_PicElemNone	21,0,0
+		SCR_JmpTo byte_107039B8,Act_SunWuKong_Motion_34
 Act_SunWuKong_Motion_35:SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	30
 		SCR_ShowLoopPic	6
@@ -3282,8 +3293,8 @@ Act_SunWuKong_Motion_36:SCR_SetInvincible
 		SCR_ShowLoopPic	4
 		SCR_PicElem 26,3,0
 		SCR_CloseRoleShadow	@ 人物影子
-byte_10703A80:	SCR_PicElemNone	19,0,0
-		SCR_JmpTo byte_10703A80,Act_SunWuKong_Motion_36
+byte_10703AB4:	SCR_PicElemNone	19,0,0
+		SCR_JmpTo byte_10703AB4,Act_SunWuKong_Motion_36
 Act_SunWuKong_Motion_37:SCR_SetInvincible
 		SCR_PlaySound 64,0,537,0 @ param1,param2,sndid,off
 		SCR_SetRoleDark	28
@@ -6373,65 +6384,65 @@ Act_SunWuKong_Kill_3:SCR_F02A 1
 		SCR_CheckPressAStart 0
 		SCR_F02B 0,0,218,-4,0,1
 		SCR_PicElemAtk 210,-4,1
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,218,7,0,2
 		SCR_PicElemAtk 210,7,2
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,216,6,0,2
 		SCR_PicElemAtk 210,6,2
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,216,5,0,1
 		SCR_PicElemAtk 211,5,1
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,217,5,0,1
 		SCR_PicElemAtk 211,5,1
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,217,5,0,0
 		SCR_PicElemAtk 211,5,0
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F039 1,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,218,4,0,0
 		SCR_PicElemAtk 212,4,0
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,218,5,0,-1
 		SCR_PicElemAtk 212,5,-1
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,216,6,0,-2
 		SCR_PicElemAtk 212,6,-2
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,216,7,0,-3
 		SCR_PicElemAtk 210,7,-3
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,217,8,0,-3
 		SCR_PicElemAtk 210,8,-3
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,217,8,0,-4
 		SCR_PicElemAtk 210,8,-4
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_SetCaningAct 21
 		SCR_F039 1,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,218,8,0,-6
 		SCR_PicElemAtk 211,8,-6
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,218,9,0,-6
 		SCR_PicElemAtk 211,9,-6
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,216,9,0,-6
 		SCR_PicElemAtk 211,9,-6
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_ShowLoopPic	2
 		SCR_F02B 0,0,216,6,0,-5
 		SCR_PicElemAtk 212,6,-5
-		SCR_IfPressAJmpTo byte_1070836C,0
+		SCR_IfPressAJmpTo byte_107083A0,0
 		SCR_F02B 0,0,214,7,0,4
 		SCR_PicElem 68,20,15
 		SCR_F02B 0,0,214,-13,0,-11
@@ -6456,7 +6467,7 @@ Act_SunWuKong_Kill_3:SCR_F02A 1
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_1070836C:	SCR_F02A 0
+byte_107083A0:	SCR_F02A 0
 		SCR_F039 1,0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 64,0,0
@@ -6478,68 +6489,68 @@ byte_1070836C:	SCR_F02A 0
 		SCR_PicElemAtk 200,3,-3
 		SCR_F02B 0,-1,204,3,0,-2
 		SCR_PicElemAtk 200,3,-2
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,3,0,-1
 		SCR_PicElemAtk 201,3,-1
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,2,0,-1
 		SCR_PicElemAtk 201,2,-1
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,2,0,0
 		SCR_PicElemAtk 201,2,0
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,206,2,0,0
 		SCR_PicElemAtk 202,2,0
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,206,2,0,0
 		SCR_PicElemAtk 202,2,0
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_CallFunc 0,87,0x1009CBE3
 		SCR_F02B 0,-1,206,2,0,1
 		SCR_PicElemAtk 202,2,1
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,207,2,0,1
 		SCR_PicElemAtk 203,2,1
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,207,2,0,2
 		SCR_PicElemAtk 203,2,2
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,207,2,0,2
 		SCR_PicElemAtk 203,2,2
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,2,0,4
 		SCR_PicElemAtk 201,2,4
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,2,0,5
 		SCR_PicElemAtk 201,2,5
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,205,2,0,6
 		SCR_PicElemAtk 201,2,6
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,206,2,0,7
 		SCR_PicElemAtk 202,2,7
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,206,2,0,8
 		SCR_PicElemAtk 202,2,8
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,206,2,0,9
 		SCR_PicElemAtk 202,2,9
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,207,2,0,10
 		SCR_PicElemAtk 203,2,10
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,207,2,0,11
 		SCR_PicElemAtk 203,2,11
-		SCR_IfPressAJmpTo byte_107085D8,0
+		SCR_IfPressAJmpTo byte_1070860C,0
 		SCR_F02B 0,-1,208,2,0,12
 		SCR_PicElem 203,2,12
 		SCR_F02A 0
@@ -6560,7 +6571,7 @@ byte_1070836C:	SCR_F02A 0
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_107085D8:	SCR_F02A 0
+byte_1070860C:	SCR_F02A 0
 		SCR_F039 1,0
 		SCR_PicElem 65,0,0
 		SCR_PicElem 66,9,-4
@@ -6580,68 +6591,68 @@ byte_107085D8:	SCR_F02A 0
 		SCR_PicElemAtk 200,3,-2
 		SCR_F02B 0,-1,204,3,0,-1
 		SCR_PicElemAtk 200,3,-1
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,3,0,-1
 		SCR_PicElemAtk 201,3,-1
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,2,0,-1
 		SCR_PicElemAtk 201,2,-1
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,2,0,0
 		SCR_PicElemAtk 201,2,0
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,206,2,0,0
 		SCR_PicElemAtk 202,2,0
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_CallFunc 0,92,0x1009CBE3
 		SCR_F02B 0,-1,206,2,0,1
 		SCR_PicElemAtk 202,2,1
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,206,2,0,1
 		SCR_PicElemAtk 202,2,1
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,207,2,0,2
 		SCR_PicElemAtk 203,2,2
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,207,2,0,2
 		SCR_PicElemAtk 203,2,2
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,207,2,0,2
 		SCR_PicElemAtk 203,2,2
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,204,2,0,3
 		SCR_PicElemAtk 200,2,3
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,2,0,4
 		SCR_PicElemAtk 201,2,4
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,2,0,5
 		SCR_PicElemAtk 201,2,5
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,205,2,0,6
 		SCR_PicElemAtk 201,2,6
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,206,2,0,7
 		SCR_PicElemAtk 202,2,7
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,206,2,0,8
 		SCR_PicElemAtk 202,2,8
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,206,2,0,9
 		SCR_PicElemAtk 202,2,9
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,207,2,0,10
 		SCR_PicElemAtk 203,2,10
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,207,2,0,11
 		SCR_PicElemAtk 203,2,11
-		SCR_IfPressAJmpTo byte_1070883C,0
+		SCR_IfPressAJmpTo byte_10708870,0
 		SCR_F02B 0,-1,208,2,0,12
 		SCR_PicElem 203,2,12
 		SCR_F02A 0
@@ -6662,7 +6673,7 @@ byte_107085D8:	SCR_F02A 0
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_1070883C:	SCR_F02A 0
+byte_10708870:	SCR_F02A 0
 		SCR_F039 1,0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 64,0,0
@@ -6768,8 +6779,8 @@ Act_SunWuKong_Kill_4:SCR_ShowLoopPic 2
 		SCR_ShowLoopPic	3
 		SCR_PicElem 223,0,0
 		SCR_End
-Act_SunWuKong_Kill_5:SCR_JmpTo byte_10708A4C,Act_SunWuKong_Kill_5
-byte_10708A00:	SCR_TestJmp byte_10708A28,Act_SunWuKong_Kill_5
+Act_SunWuKong_Kill_5:SCR_JmpTo byte_10708A80,Act_SunWuKong_Kill_5
+byte_10708A34:	SCR_TestJmp byte_10708A5C,Act_SunWuKong_Kill_5
 		SCR_PicElem 69,5,1
 		SCR_PicElem 69,1,2
 		SCR_PicElem 69,1,4
@@ -6779,7 +6790,7 @@ byte_10708A00:	SCR_TestJmp byte_10708A28,Act_SunWuKong_Kill_5
 		SCR_PicElem 69,0,10
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,12
-byte_10708A28:	SCR_ShowLoopPic	2
+byte_10708A5C:	SCR_ShowLoopPic	2
 		SCR_PicElem 70,0,0
 		SCR_CallSysObj 0,0,0,1,0 @ F011	sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic	3
@@ -6787,7 +6798,7 @@ byte_10708A28:	SCR_ShowLoopPic	2
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_10708A4C:	SCR_CancelActionStart 1
+byte_10708A80:	SCR_CancelActionStart 1
 		SCR_ShowLoopPic	2
 		SCR_F02A 1
 		SCR_F02B 0,0,213,0,-3,0
@@ -6880,7 +6891,7 @@ byte_10708A4C:	SCR_CancelActionStart 1
 		SCR_PicElem 67,3,-1
 		SCR_PicElem 68,3,-1
 		SCR_PicElem 68,2,0
-		SCR_JmpTo byte_10708A00,Act_SunWuKong_Kill_5
+		SCR_JmpTo byte_10708A34,Act_SunWuKong_Kill_5
 Act_SunWuKong_Kill_10:SCR_ShowLoopPic 3
 		SCR_PicElem 173,0,0
 		SCR_ShowLoopPic	4
@@ -7005,9 +7016,9 @@ Act_SunWuKong_Kill_11:SCR_F025 1	@ 未知F025
 		SCR_ShowLoopPic	2
 		SCR_PicElem 189,0,0
 		SCR_End
-Act_SunWuKong_Kill_12:SCR_JmpTo	byte_10708FDC,Act_SunWuKong_Kill_12
+Act_SunWuKong_Kill_12:SCR_JmpTo	byte_10709010,Act_SunWuKong_Kill_12
 		SCR_F058 0
-byte_10708F4C:	SCR_CallSysObj 4,19,107,5,0 @ F011 sys,id,param1,xPos,yPos
+byte_10708F80:	SCR_CallSysObj 4,19,107,5,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 3,18,119,0,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_F02B 0,-1,60,0,0,0
 		SCR_ScreenShake	0,-2
@@ -7033,7 +7044,7 @@ byte_10708F4C:	SCR_CallSysObj 4,19,107,5,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 58,0,0
 		SCR_PicElem 0,11,0
 		SCR_End
-byte_10708FDC:	SCR_ShowLoopPic	2
+byte_10709010:	SCR_ShowLoopPic	2
 		SCR_PicElem 195,0,0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 196,0,0
@@ -7057,7 +7068,7 @@ byte_10708FDC:	SCR_ShowLoopPic	2
 		SCR_CancelActionStart 1
 		SCR_F02B 0,-1,204,3,0,0
 		SCR_PicElemAtk 200,3,0
-		SCR_TestJmp byte_10708F4C,Act_SunWuKong_Kill_12
+		SCR_TestJmp byte_10708F80,Act_SunWuKong_Kill_12
 		SCR_F02B 0,-1,204,3,0,1
 		SCR_PicElem 200,3,1
 		SCR_F02B 0,-1,204,3,0,1
@@ -7139,16 +7150,16 @@ byte_10708FDC:	SCR_ShowLoopPic	2
 		SCR_PicElem 53,1,8
 		SCR_F02B 0,-1,60,3,0,12
 		SCR_PicElemAtk 53,3,12
-		SCR_JmpTo byte_10708F4C,Act_SunWuKong_Kill_12
-Act_SunWuKong_Kill_13:SCR_JmpTo	byte_107092C8,Act_SunWuKong_Kill_13
-byte_107092AC:	SCR_CallSysObj 4,15,-1,-2,2 @ F011 sys,id,param1,xPos,yPos
+		SCR_JmpTo byte_10708F80,Act_SunWuKong_Kill_12
+Act_SunWuKong_Kill_13:SCR_JmpTo	byte_107092FC,Act_SunWuKong_Kill_13
+byte_107092E0:	SCR_CallSysObj 4,15,-1,-2,2 @ F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic	7
 		SCR_PicElem 64,0,0
 		SCR_ShowLoopPic	3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_107092C8:	SCR_F02A 1
-		SCR_TestJmp byte_107092AC,Act_SunWuKong_Kill_13
+byte_107092FC:	SCR_F02A 1
+		SCR_TestJmp byte_107092E0,Act_SunWuKong_Kill_13
 		SCR_F02B 0,0,213,16,0,12
 		SCR_PicElem 69,0,1
 		SCR_F02B 0,0,213,16,0,11
@@ -7252,7 +7263,7 @@ byte_107092C8:	SCR_F02A 1
 		SCR_PicElem 69,1,18
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,1,20
-		SCR_JmpTo byte_107092AC,Act_SunWuKong_Kill_13
+		SCR_JmpTo byte_107092E0,Act_SunWuKong_Kill_13
 Act_SunWuKong_Kill_14:SCR_ShowLoopPic 2
 		SCR_PicElem 219,0,0
 		SCR_ShowLoopPic	2
@@ -7318,8 +7329,8 @@ Act_SunWuKong_Kill_14:SCR_ShowLoopPic 2
 		SCR_ShowLoopPic	3
 		SCR_PicElem 223,0,0
 		SCR_End
-Act_SunWuKong_Kill_15:SCR_JmpTo	byte_107096F8,Act_SunWuKong_Kill_15
-byte_107096D0:	SCR_F02A 0
+Act_SunWuKong_Kill_15:SCR_JmpTo	byte_1070972C,Act_SunWuKong_Kill_15
+byte_10709704:	SCR_F02A 0
 		SCR_CallSysObj 4,12,0,0,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic	3
 		SCR_PicElem 70,0,0
@@ -7328,7 +7339,7 @@ byte_107096D0:	SCR_F02A 0
 		SCR_ShowLoopPic	4
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_107096F8:	SCR_F02A 1
+byte_1070972C:	SCR_F02A 1
 		SCR_ScrLoopStart 4
 		SCR_F02B 0,0,213,0,0,-3
 		SCR_PicElem 229,0,0
@@ -7345,7 +7356,7 @@ byte_107096F8:	SCR_F02A 1
 		SCR_F04C 1
 		SCR_CallSpark 10,0
 		SCR_CancelActionStart 1
-		SCR_TestJmp byte_107096D0,Act_SunWuKong_Kill_15
+		SCR_TestJmp byte_10709704,Act_SunWuKong_Kill_15
 		SCR_CallObj 1,0,0x101CB280,46,0,-24 @ F012 b1,b2,objPtr,w3,xPos,yPos
 		SCR_F02B 0,0,216,1,0,0
 		SCR_PicElemAtk 230,1,3
@@ -7430,7 +7441,7 @@ byte_107096F8:	SCR_F02A 1
 		SCR_PicElem 69,0,18
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 69,0,21
-		SCR_JmpTo byte_107096D0,Act_SunWuKong_Kill_15
+		SCR_JmpTo byte_10709704,Act_SunWuKong_Kill_15
 Act_SunWuKong_Kill_20:SCR_SetInvincible
 		SCR_F056 0		@ 未知开关
 		SCR_CallSysObj 4,26,13,0,-50 @ F011 sys,id,param1,xPos,yPos
@@ -7830,27 +7841,27 @@ Act_SunWuKong_Kill_28:SCR_SetInvincible
 Act_SunWuKong_Kill_29:SCR_SetInvincible
 		SCR_SetAfterImage 2,-1
 		SCR_CallSysObj 4,36,11,0,0 @ F011 sys,id,param1,xPos,yPos
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,3,3
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,3,4
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,4,5
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,5,6
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,6,7
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,7,8
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,8,9
-		SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+		SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,9,10
 		SCR_SetAfterImage 0,0
-byte_1070A11C:	SCR_TestJmp byte_1070A128,Act_SunWuKong_Kill_29
+byte_1070A150:	SCR_TestJmp byte_1070A15C,Act_SunWuKong_Kill_29
 		SCR_PicElem 48,10,11
-		SCR_JmpTo byte_1070A11C,Act_SunWuKong_Kill_29
-byte_1070A128:	SCR_ClearInvincible
+		SCR_JmpTo byte_1070A150,Act_SunWuKong_Kill_29
+byte_1070A15C:	SCR_ClearInvincible
 		SCR_PicElem 49,18,0
 		SCR_ShowLoopPic	2
 		SCR_PicElem 49,0,0
@@ -9503,7 +9514,7 @@ Act_SunWuKong_Caning_4:SCR_PlayCaningSound 1,56
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
-		SCR_TestJmp byte_1070BE0C,Act_SunWuKong_Caning_4
+		SCR_TestJmp byte_1070BE40,Act_SunWuKong_Caning_4
 		SCR_F05D 1
 		SCR_PicElem 23,9,1
 		SCR_PicElem 23,9,2
@@ -9523,7 +9534,7 @@ Act_SunWuKong_Caning_4:SCR_PlayCaningSound 1,56
 		SCR_PicElem 24,11,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,11,12
-byte_1070BE0C:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070BE40:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -9557,7 +9568,7 @@ Act_SunWuKong_Caning_5:SCR_PlayCaningSound 0,56
 		SCR_PicElem 23,5,-1
 		SCR_PicElem 23,4,0
 		SCR_PicElem 23,4,0
-		SCR_TestJmp byte_1070BEEC,Act_SunWuKong_Caning_5
+		SCR_TestJmp byte_1070BF20,Act_SunWuKong_Caning_5
 		SCR_F05D 1
 		SCR_PicElem 23,5,1
 		SCR_PicElem 23,4,2
@@ -9578,7 +9589,7 @@ Act_SunWuKong_Caning_5:SCR_PlayCaningSound 0,56
 		SCR_PicElem 25,5,14
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 25,5,15
-byte_1070BEEC:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070BF20:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -9607,7 +9618,7 @@ Act_SunWuKong_Caning_6:SCR_PlayCaningSound 0,56
 		SCR_PicElem 22,5,-2
 		SCR_PicElem 23,4,-1
 		SCR_PicElem 23,5,0
-		SCR_TestJmp byte_1070BF9C,Act_SunWuKong_Caning_6
+		SCR_TestJmp byte_1070BFD0,Act_SunWuKong_Caning_6
 		SCR_F05D 1
 		SCR_PicElem 23,4,2
 		SCR_PicElem 23,4,2
@@ -9621,7 +9632,7 @@ Act_SunWuKong_Caning_6:SCR_PlayCaningSound 0,56
 		SCR_PicElem 25,2,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 25,2,12
-byte_1070BF9C:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070BFD0:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-1
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,1
@@ -9657,7 +9668,7 @@ Act_SunWuKong_Caning_7:SCR_PlayCaningSound 1,56
 		SCR_PicElem 22,2,-1
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,1,0
-		SCR_TestJmp byte_1070C0A0,Act_SunWuKong_Caning_7
+		SCR_TestJmp byte_1070C0D4,Act_SunWuKong_Caning_7
 		SCR_F05D 1
 		SCR_PicElem 23,1,1
 		SCR_PicElem 24,2,1
@@ -9685,7 +9696,7 @@ Act_SunWuKong_Caning_7:SCR_PlayCaningSound 1,56
 		SCR_PicElem 30,2,22
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 30,2,25
-byte_1070C0A0:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C0D4:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-5
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,5
@@ -9749,7 +9760,7 @@ Act_SunWuKong_Caning_8:SCR_PlayCaningSound 2,56
 		SCR_PicElem 24,1,0
 		SCR_PicElem 24,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070C254,Act_SunWuKong_Caning_8
+		SCR_TestJmp byte_1070C288,Act_SunWuKong_Caning_8
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,1,1
@@ -9793,7 +9804,7 @@ Act_SunWuKong_Caning_8:SCR_PlayCaningSound 2,56
 		SCR_PicElem 30,0,20
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_1070C254:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C288:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,6
@@ -9831,7 +9842,7 @@ Act_SunWuKong_Caning_9:SCR_PlayCaningSound 1,56
 		SCR_PicElem 2,7,-1
 		SCR_PicElem 2,7,0
 		SCR_PicElem 1,6,0
-		SCR_TestJmp byte_1070C34C,Act_SunWuKong_Caning_9
+		SCR_TestJmp byte_1070C380,Act_SunWuKong_Caning_9
 		SCR_F05D 1
 		SCR_PicElem 1,7,1
 		SCR_PicElem 1,7,1
@@ -9854,7 +9865,7 @@ Act_SunWuKong_Caning_9:SCR_PlayCaningSound 1,56
 		SCR_PicElem 3,6,10
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 3,6,13
-byte_1070C34C:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C380:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -9876,7 +9887,7 @@ Act_SunWuKong_Caning_10:SCR_SetInvincible
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,0
-		SCR_TestJmp byte_1070C3D4,Act_SunWuKong_Caning_10
+		SCR_TestJmp byte_1070C408,Act_SunWuKong_Caning_10
 		SCR_PicElem 27,2,0
 		SCR_PicElem 27,2,1
 		SCR_PicElem 27,2,1
@@ -9887,7 +9898,7 @@ Act_SunWuKong_Caning_10:SCR_SetInvincible
 		SCR_PicElem 27,2,7
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 27,2,11
-byte_1070C3D4:	SCR_ShowLoopPic	2
+byte_1070C408:	SCR_ShowLoopPic	2
 		SCR_CallSysObj 0,3,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
 		SCR_PicElem 26,0,0
@@ -9911,7 +9922,7 @@ Act_SunWuKong_Caning_11:SCR_PicElem 21,2,-15
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,2,-12
 		SCR_PicElem 23,1,-1
-		SCR_TestJmp byte_1070C490,Act_SunWuKong_Caning_11
+		SCR_TestJmp byte_1070C4C4,Act_SunWuKong_Caning_11
 		SCR_F05D 1
 		SCR_PicElem 23,2,1
 		SCR_PicElem 23,1,1
@@ -9933,7 +9944,7 @@ Act_SunWuKong_Caning_11:SCR_PicElem 21,2,-15
 		SCR_PicElem 24,2,17
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,2,20
-byte_1070C490:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C4C4:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-5
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,5
@@ -9951,13 +9962,13 @@ Act_SunWuKong_Caning_12:SCR_ClearInvincible
 		SCR_PicElem 27,3,-3
 		SCR_PicElem 27,3,-2
 		SCR_PicElem 24,2,-1
-		SCR_TestJmp byte_1070C4F4,Act_SunWuKong_Caning_12
+		SCR_TestJmp byte_1070C528,Act_SunWuKong_Caning_12
 		SCR_PicElem 24,3,1
 		SCR_PicElem 24,2,2
 		SCR_PicElem 24,3,3
 		SCR_PicElem 24,2,4
 		SCR_PicElem 24,3,5
-byte_1070C4F4:	SCR_PicElem 24,3,8
+byte_1070C528:	SCR_PicElem 24,3,8
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,3,11
 		SCR_ShowLoopPic	2
@@ -9973,7 +9984,7 @@ Act_SunWuKong_Caning_13:SCR_ScrLoopStart 3
 		SCR_PicElem 24,3,0
 		SCR_PicElem 24,-3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070C568,Act_SunWuKong_Caning_13
+		SCR_TestJmp byte_1070C59C,Act_SunWuKong_Caning_13
 		SCR_PicElem 24,6,20
 		SCR_PicElem 24,3,17
 		SCR_PicElem 24,2,15
@@ -9985,7 +9996,7 @@ Act_SunWuKong_Caning_13:SCR_ScrLoopStart 3
 		SCR_PicElem 24,1,19
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,1,22
-byte_1070C568:	SCR_CallSysObj 3,19,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C59C:	SCR_CallSysObj 3,19,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
@@ -10098,7 +10109,7 @@ Act_SunWuKong_Caning_18:SCR_PlayCaningSound 1,56
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
-		SCR_TestJmp byte_1070C784,Act_SunWuKong_Caning_18
+		SCR_TestJmp byte_1070C7B8,Act_SunWuKong_Caning_18
 		SCR_F05D 1
 		SCR_PicElem 23,-9,1
 		SCR_PicElem 23,-9,2
@@ -10118,7 +10129,7 @@ Act_SunWuKong_Caning_18:SCR_PlayCaningSound 1,56
 		SCR_PicElem 24,-11,9
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,-11,12
-byte_1070C784:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C7B8:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -10152,7 +10163,7 @@ Act_SunWuKong_Caning_19:SCR_PlayCaningSound 0,56
 		SCR_PicElem 23,-5,-1
 		SCR_PicElem 23,-4,0
 		SCR_PicElem 23,-4,0
-		SCR_TestJmp byte_1070C864,Act_SunWuKong_Caning_19
+		SCR_TestJmp byte_1070C898,Act_SunWuKong_Caning_19
 		SCR_F05D 1
 		SCR_PicElem 23,-5,1
 		SCR_PicElem 23,-4,2
@@ -10173,7 +10184,7 @@ Act_SunWuKong_Caning_19:SCR_PlayCaningSound 0,56
 		SCR_PicElem 25,-5,13
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 25,-5,16
-byte_1070C864:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C898:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -10202,7 +10213,7 @@ Act_SunWuKong_Caning_20:SCR_PlayCaningSound 0,56
 		SCR_PicElem 22,-5,-2
 		SCR_PicElem 23,-4,-1
 		SCR_PicElem 23,-5,0
-		SCR_TestJmp byte_1070C914,Act_SunWuKong_Caning_20
+		SCR_TestJmp byte_1070C948,Act_SunWuKong_Caning_20
 		SCR_F05D 1
 		SCR_PicElem 23,-4,2
 		SCR_PicElem 23,-4,2
@@ -10216,7 +10227,7 @@ Act_SunWuKong_Caning_20:SCR_PlayCaningSound 0,56
 		SCR_PicElem 25,-2,10
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 25,-2,13
-byte_1070C914:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070C948:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-1
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,1
@@ -10252,7 +10263,7 @@ Act_SunWuKong_Caning_21:SCR_PlayCaningSound 1,56
 		SCR_PicElem 22,-2,-1
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-1,0
-		SCR_TestJmp byte_1070CA18,Act_SunWuKong_Caning_21
+		SCR_TestJmp byte_1070CA4C,Act_SunWuKong_Caning_21
 		SCR_F05D 1
 		SCR_PicElem 23,-1,1
 		SCR_PicElem 24,-2,1
@@ -10280,7 +10291,7 @@ Act_SunWuKong_Caning_21:SCR_PlayCaningSound 1,56
 		SCR_PicElem 30,-2,22
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 30,-2,25
-byte_1070CA18:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070CA4C:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-5
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,5
@@ -10344,7 +10355,7 @@ Act_SunWuKong_Caning_22:SCR_PlayCaningSound 2,56
 		SCR_PicElem 44,-1,0
 		SCR_PicElem 44,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070CBCC,Act_SunWuKong_Caning_22
+		SCR_TestJmp byte_1070CC00,Act_SunWuKong_Caning_22
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,-1,1
@@ -10388,7 +10399,7 @@ Act_SunWuKong_Caning_22:SCR_PlayCaningSound 2,56
 		SCR_PicElem 30,0,20
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_1070CBCC:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070CC00:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,6
@@ -10426,7 +10437,7 @@ Act_SunWuKong_Caning_23:SCR_PlayCaningSound 1,56
 		SCR_PicElem 5,-7,-1
 		SCR_PicElem 5,-7,0
 		SCR_PicElem 6,-6,0
-		SCR_TestJmp byte_1070CCC4,Act_SunWuKong_Caning_23
+		SCR_TestJmp byte_1070CCF8,Act_SunWuKong_Caning_23
 		SCR_F05D 1
 		SCR_PicElem 6,-7,1
 		SCR_PicElem 6,-7,1
@@ -10449,7 +10460,7 @@ Act_SunWuKong_Caning_23:SCR_PlayCaningSound 1,56
 		SCR_PicElem 4,-6,10
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 4,-6,13
-byte_1070CCC4:	SCR_CallSysObj 2,16,0,-2,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070CCF8:	SCR_CallSysObj 2,16,0,-2,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-3
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,3
@@ -10471,7 +10482,7 @@ Act_SunWuKong_Caning_24:SCR_SetInvincible
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,0
-		SCR_TestJmp byte_1070CD4C,Act_SunWuKong_Caning_24
+		SCR_TestJmp byte_1070CD80,Act_SunWuKong_Caning_24
 		SCR_PicElem 27,-2,0
 		SCR_PicElem 27,-2,1
 		SCR_PicElem 27,-2,1
@@ -10482,7 +10493,7 @@ Act_SunWuKong_Caning_24:SCR_SetInvincible
 		SCR_PicElem 27,-2,7
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 27,-2,10
-byte_1070CD4C:	SCR_ShowLoopPic	2
+byte_1070CD80:	SCR_ShowLoopPic	2
 		SCR_CallSysObj 0,3,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
 		SCR_PicElem 26,0,0
@@ -10506,7 +10517,7 @@ Act_SunWuKong_Caning_25:SCR_PicElem 21,-2,-15
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-2,-12
 		SCR_PicElem 23,-1,-1
-		SCR_TestJmp byte_1070CE08,Act_SunWuKong_Caning_25
+		SCR_TestJmp byte_1070CE3C,Act_SunWuKong_Caning_25
 		SCR_F05D 1
 		SCR_PicElem 23,-2,1
 		SCR_PicElem 23,-1,1
@@ -10528,7 +10539,7 @@ Act_SunWuKong_Caning_25:SCR_PicElem 21,-2,-15
 		SCR_PicElem 25,-2,17
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 25,-2,20
-byte_1070CE08:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070CE3C:	SCR_CallSysObj 0,4,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-5
 		SCR_PicElem 25,0,0
 		SCR_ScreenShake	0,5
@@ -10546,7 +10557,7 @@ Act_SunWuKong_Caning_26:SCR_SetInvincible
 		SCR_PicElem 27,-3,-3
 		SCR_PicElem 27,-3,-2
 		SCR_PicElem 24,-2,-1
-		SCR_TestJmp byte_1070CE78,Act_SunWuKong_Caning_26
+		SCR_TestJmp byte_1070CEAC,Act_SunWuKong_Caning_26
 		SCR_PicElem 24,-3,1
 		SCR_PicElem 24,-2,2
 		SCR_PicElem 24,-3,3
@@ -10555,7 +10566,7 @@ Act_SunWuKong_Caning_26:SCR_SetInvincible
 		SCR_PicElem 24,-3,8
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,-3,11
-byte_1070CE78:	SCR_ShowLoopPic	2
+byte_1070CEAC:	SCR_ShowLoopPic	2
 		SCR_CallSysObj 0,3,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
 		SCR_PicElem 26,0,0
@@ -10566,7 +10577,7 @@ Act_SunWuKong_Caning_27:SCR_ScrLoopStart 3
 		SCR_PicElem 24,-3,0
 		SCR_PicElem 24,3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070CED8,Act_SunWuKong_Caning_27
+		SCR_TestJmp byte_1070CF0C,Act_SunWuKong_Caning_27
 		SCR_PicElem 24,-6,20
 		SCR_PicElem 24,-3,17
 		SCR_PicElem 24,-2,15
@@ -10578,7 +10589,7 @@ Act_SunWuKong_Caning_27:SCR_ScrLoopStart 3
 		SCR_PicElem 24,-1,19
 		SCR_SetZMode		@ F003	设置Z轴模式
 		SCR_PicElem 24,-1,22
-byte_1070CED8:	SCR_CallSysObj 3,19,0,-1,0 @ F011 sys,id,param1,xPos,yPos
+byte_1070CF0C:	SCR_CallSysObj 3,19,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake	0,-6
 		SCR_PicElem 25,0,0
@@ -10587,7 +10598,7 @@ byte_1070CED8:	SCR_CallSysObj 3,19,0,-1,0 @ F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 25,0,0
 		SCR_JmpAct 8,25		@ JMP to other Action,type,element
 Act_SunWuKong_Caning_28:SCR_SetInvincible
-		SCR_IfDeadJmpTo	byte_1070CF50,0
+		SCR_IfDeadJmpTo	byte_1070CF84,0
 		SCR_ShowLoopPic	4
 		SCR_PicElem 122,0,0
 		SCR_ShowLoopPic	4
@@ -10606,7 +10617,7 @@ Act_SunWuKong_Caning_28:SCR_SetInvincible
 		SCR_End
 		SCR_ScrLoopStart 30
 		SCR_PicElem 122,0,0
-byte_1070CF50:	SCR_PicElemNone	0,0,0
+byte_1070CF84:	SCR_PicElemNone	0,0,0
 		SCR_ScrLoopEnd
 		SCR_End
 Act_SunWuKong_Caning_29:SCR_F066 8
@@ -10668,12 +10679,12 @@ Act_SunWuKong_Victor_0:SCR_ShowLoopPic 3
 		SCR_ShowLoopPic	3
 		SCR_PicElem 99,0,0
 		SCR_PicElem 98,0,0
-byte_1070D064:	SCR_ShowLoopPic	3
+byte_1070D098:	SCR_ShowLoopPic	3
 		SCR_PicElem 98,0,0
 		SCR_PicElem 99,0,0
 		SCR_ShowLoopPic	3
 		SCR_PicElem 99,0,0
-		SCR_JmpTo byte_1070D064,Act_SunWuKong_Victor_0
+		SCR_JmpTo byte_1070D098,Act_SunWuKong_Victor_0
 Act_SunWuKong_Victor_1:SCR_PicElem 63,0,0
 		SCR_PicElem 64,0,0
 		SCR_PicElem 97,0,0

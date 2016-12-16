@@ -67,7 +67,7 @@
 
 //增加小头像PAL读取上限到30
 	XXPATCH16(0x1005AE20)
-		CMP R4,#30
+		CMP R4,#60
 	//这个是迷你头像的颜色表
        	XXPATCH16PTR32(0x1005AF4C,MiniHeadPalTbl)
 
@@ -103,7 +103,7 @@
 	XXPATCH16PTR32(0x100656AC,RoleIdUsedTbl)
 //可选人数PATCH
 	XXPATCH16(0x10064E68)
-	MOVS R2,#30
+	MOVS R2,#60
 //----------------------------------------------------------------------------------------
 //扩展nvram可选ID相关表
 	XXPATCH16JMP16(0x100657AE,hook_sub_100657AE)

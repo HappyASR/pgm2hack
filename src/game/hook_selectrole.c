@@ -6,7 +6,7 @@
 #include "system\ICCard.h"
 extern void pgm2log(const char *fmt, ...);
 
-
+extern int RolePtrTbl[];
 
 
 #define update_1002F81A		(*(int (*)())(0x1002F81A+1))
@@ -213,8 +213,8 @@ int hook_selectrole(int bPlayerNo) //重新制作的选人主函数 by 海叔 2016-10-17
 				byte_20020170 = y *2 + (x/2)*10 + x%2;
 				
 				if (uwInputPressKey(41))
-					byte_20020170 = byte_20020170 + 60;
-				pgm2log("selectid=%d,x=%d,y=%d\n",byte_20020170,x,y);
+					byte_20020170 = byte_20020170 + 30;
+				pgm2log("selectid=%d,x=%d,y=%d,ptr = %X\n",byte_20020170,x,y,RolePtrTbl[byte_20020170]);
 				sub_1002F288(659, 112);//播放音效 原版625
 				break;
 		}

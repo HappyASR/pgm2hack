@@ -17,4 +17,4 @@
 #define 	AREA_OVERSEA	4
 
 //自定义可选最大人数
-#define MAX_ROLE_NUM	30
+#define MAX_ROLE_NUM	60

@@ -4,6 +4,8 @@
 #include "../Include/Role.h"
 #include "../xyj2_func.h"
 
+extern int NvIdRelTbl[];
+
 extern Role Role_SunWuKong_0;
 extern Role Role_ZhuBaJie_0;
 extern Role Role_ShaWuJing_0;
@@ -49,9 +51,7 @@ extern Role Role_ZhiZhuJing_1;
 //定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个,里人物30个
 Role* RolePtrTbl[MAX_ROLE_NUM*3] ={
 		&Role_SunWuKong_0,
-		&Role_JinJiao_0,
-		//&Role_ZhuBaJie_0,
-
+		&Role_ZhuBaJie_0,
 		&Role_ShaWuJing_0,
 		&Role_ErLangShen_0,
 		&Role_XiaoLongNv_0,
@@ -272,12 +272,27 @@ int GetMaxRoleNum(int a1)
     maxrole = G_Max_Role;
   else
   //日版和海外版只能选8人
-    maxrole = 8;
+    //maxrole = 8;
   //暂时修改为返回定值10
   maxrole = MAX_ROLE_NUM;
   return maxrole;
 
 
+}
+//扩展nvram ID相关表
+int hook_sub_100657AE(int a1, int id)
+{
+	int RoleId; // r0@1
+	int roleid; // r5@1
+
+	RoleId = GetRealRoleId(id);
+	roleid = (unsigned __int16)RoleId;
+	if ( (signed int)(unsigned __int16)RoleId < MAX_ROLE_NUM )
+	{
+		RoleId = *(_DWORD *)(4 * (unsigned __int16)RoleId + NvIdRelTbl) + 1;
+		*(_DWORD *)(4 * roleid + NvIdRelTbl) = RoleId;
+	}
+	return RoleId;
 }
 
 

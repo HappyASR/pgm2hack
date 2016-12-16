@@ -2,9 +2,11 @@
 #include "../game_type.h"
 #include "PlayerSelect.h"
 #include "../Include/Role.h"
+#include "../Include/Image.h"
 #include "../xyj2_func.h"
 
 extern int NvIdRelTbl[];
+extern ImageList RoleMiniHeadList;
 
 extern Role Role_SunWuKong_0;
 extern Role Role_ZhuBaJie_0;

@@ -70,6 +70,10 @@
 		CMP R4,#60
 	//这个是迷你头像的颜色表
        	XXPATCH16PTR32(0x1005AF4C,MiniHeadPalTbl)
+	//可选人物迷你头像图片表，按60人重新生成
+	XXPATCH16PTR32(0x1005D928,RoleMiniHeadList)
+
+
 
 	//人名表
 	XXPATCH16PTR32(0x10057D3C,RoleNameTbl)

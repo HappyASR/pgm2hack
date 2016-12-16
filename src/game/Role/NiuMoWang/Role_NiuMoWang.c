@@ -11,7 +11,7 @@ const Role Role_NiuMoWang_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,		//10,			//short ROLE_ID
+				20,		//10,			//short ROLE_ID
 
 				0,			//int NULL
 

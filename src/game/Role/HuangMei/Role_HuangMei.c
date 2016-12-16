@@ -8,7 +8,7 @@ extern ActTypePtrTbl Role_HuangMei_ActPtrTbl_0[];
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_HuangMei_0={
 				FLAG_ROLE,			//Flag
-				11,			//Id 暂时设置为0，避免查表错误
+				27,			//17,
 				0,
 				0,
 				(int)Role_HuangMei_ActPtrTbl_0,//0x102BFBBC,

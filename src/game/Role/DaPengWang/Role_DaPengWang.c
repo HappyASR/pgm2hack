@@ -11,7 +11,7 @@ const Role Role_DaPengWang_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,			//short ROLE_ID
+				21,			//short ROLE_ID
 
 				0,			//int NULL
 

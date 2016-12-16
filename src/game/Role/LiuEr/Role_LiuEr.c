@@ -11,7 +11,7 @@ const Role Role_LiuEr_0={
 
 				0,			//short ROLE_FLAG
 
-				11,//8,			//short ROLE_ID
+				18,//8,			//short ROLE_ID
 
 				0,			//int NULL
 

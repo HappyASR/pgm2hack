@@ -10,7 +10,7 @@ const Role Role_JinYuJing_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,			//7,			//short ROLE_ID
+				17,			//7,			//short ROLE_ID
 
 				0,			//int NULL
 

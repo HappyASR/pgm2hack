@@ -4,9 +4,7 @@
 	XXPATCH16(0x1006055E)
 		MOVS R5,#30
 
-//增加小头像读取上限到30
-	XXPATCH16(0x1005AE20)
-		CMP R4,#30
+
 
 
 
@@ -66,6 +64,10 @@
        	XXPATCH16PTR32(0x1005C800,LevelLimitTbl3)   
        	XXPATCH16PTR32(0x1005C804,LevelLimitTbl4)
        	XXPATCH16PTR32(0x1005C808,LevelLimitTbl5)
+
+//增加小头像PAL读取上限到30
+	XXPATCH16(0x1005AE20)
+		CMP R4,#30
 	//这个是迷你头像的颜色表
        	XXPATCH16PTR32(0x1005AF4C,MiniHeadPalTbl)
 
@@ -82,7 +84,7 @@
 	XXPATCH16PTR32(0x1008EF58,RoleNameTbl)
 	XXPATCH16PTR32(0x1008F7AC,RoleNameTbl)
 
-//byte_10171B65 12byte per id	未知,ID相关
+//word_10171B65 12byte per id	未知,ID相关
 	XXPATCH16PTR32(0x10073FB8,RoleIdRelTbl1)
 
 //----------------------------------------------------------------------------------------

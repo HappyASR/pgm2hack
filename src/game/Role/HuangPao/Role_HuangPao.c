@@ -7,7 +7,7 @@ extern InputElem InputTbl_HuangPao_0[];
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_HuangPao_0={
 				FLAG_ROLE,
-				11,				//0x1E,
+				13,				//0x1E,
 				0, 
 				0, 
 				0x1027CA3C, 

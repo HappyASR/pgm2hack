@@ -11,7 +11,7 @@ const Role Role_HuLi_0={
 
 				0,			//short ROLE_FLAG
 
-				11,//4,			//short ROLE_ID
+				14,//4,			//short ROLE_ID
 
 				0,			//int NULL
 

@@ -11,7 +11,7 @@ const Role Role_YangLi_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,					//5,			//short ROLE_ID
+				15,					//5,			//short ROLE_ID
 
 				0,			//int NULL
 

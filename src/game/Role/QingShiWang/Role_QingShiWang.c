@@ -10,7 +10,7 @@ const Role Role_QingShiWang_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,				//13,			//short ROLE_ID
+				23,				//13,			//short ROLE_ID
 
 				0,			//int NULL
 

@@ -11,7 +11,7 @@ const Role Role_HongHaiEr_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
 
-				11,		//9,			//short ROLE_ID
+				19,		//9,			//short ROLE_ID
 
 				0,			//int NULL
 

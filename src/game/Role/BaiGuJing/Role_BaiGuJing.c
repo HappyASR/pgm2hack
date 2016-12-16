@@ -7,7 +7,7 @@
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_BaiGuJing_0={
 			FLAG_ROLE, 
-			11,		//0x1D, 
+			12,		//0x1D, 
 			0,
 			0, 
 			0x10276AEC,

@@ -6,7 +6,7 @@ extern InputElem InputTbl_HuangFeng_0[];
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_HuangFeng_0={
 				FLAG_ROLE,			//Flag
-				10,			//Id 暂时设置为0，避免查表错误
+				26,			//16,
 				0,
 				0,
 				0x102EE6AC,

@@ -52,7 +52,8 @@ extern Role Role_ZhiZhuJing_1;
 
 //定义新选人指针表，扩展新人。还需要HOOK和PATCH多段函数配合  默认总人数暂定为30个,里人物30个
 Role* RolePtrTbl[MAX_ROLE_NUM] ={
-		&Role_SunWuKong_0,
+		(Role*)0x101EBA40,					//用原版指针，定位用
+		//&Role_SunWuKong_0,
 		&Role_ZhuBaJie_0,
 		&Role_ShaWuJing_0,
 		&Role_ErLangShen_0,

@@ -7,6 +7,10 @@
 #define FLAG_ROLE 0
 #define FLAG_SOLDIER 1
 #define FLAG_BOSS 2
+//人物表里
+#define ROLE_COMM 0
+#define ROLE_NEW 1
+
 
 //可选人物结构体
 typedef struct {			

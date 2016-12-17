@@ -15,6 +15,7 @@ typedef struct{
 typedef struct{
 	ImageElem *image;
 	short num;				//Í¼Æ¬Êý
+	short reserved;
 }ImageList;
 
 

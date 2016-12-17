@@ -11,12 +11,12 @@
 #endif
 
 	//启动函数
-	//XXPATCH16JMP16(0x1002F90C,_main)
+	XXPATCH16JMP16(0x1002F90C,_main)
 
 	//测试hook选人主函数
 	XXPATCH16(0x10086780)
 #if EN_HOOK_SELECTROLE
-	XXJUMP16(0x10086780,hook_selectrole)
+	XXJUMP16(0x10086780,selectrole)
 #endif
 
 	//测试hook掉落ITEM 

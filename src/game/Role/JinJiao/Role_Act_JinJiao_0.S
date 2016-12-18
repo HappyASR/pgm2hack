@@ -3472,13 +3472,13 @@ Act_JinJiao_Motion_40:
 		SCR_End
 Act_JinJiao_Motion_41:
 		SCR_ScrLoopStart 3
-		SCR_PicElem 18,0,0
+		SCR_PicElem 9,0,0
 		SCR_ScrLoopEnd
 		SCR_ScrLoopStart 16
-		SCR_PicElem 18,0,0
+		SCR_PicElem 10,0,0
 		SCR_ScrLoopEnd
 		SCR_ScrLoopStart 2
-		SCR_PicElem 17,0,0
+		SCR_PicElem 10,0,0
 		SCR_ScrLoopEnd
 		SCR_End
 JinJiao_ActType_Attack:
@@ -3638,6 +3638,8 @@ Act_JinJiao_Attack_3:
 		SCR_ShowLoopPic 6
 		SCR_PicElem 121,0,0
 		SCR_PicElem 0,0,0
+		SCR_End
+Act_JinJiao_Attack_4:
 		SCR_End
 Act_JinJiao_Attack_5:
 		SCR_SetAttackDelay 6

@@ -7,6 +7,8 @@
 
 #include "../../Include/Role.h"
 
+extern const ActTypePtrTbl const Role_HongHaiEr_ActPtrTbl_0;
+
 const Role Role_HongHaiEr_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
@@ -17,7 +19,7 @@ const Role Role_HongHaiEr_0={
 
 				0,			//int NULL
 
-				0x1029E684,		//int ActionPtr
+				(int)&Role_HongHaiEr_ActPtrTbl_0,//0x1029E684,		//int ActionPtr
 
 				0x00000000,		//int 
 

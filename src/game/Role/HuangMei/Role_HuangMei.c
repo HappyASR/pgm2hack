@@ -11,7 +11,7 @@ const Role Role_HuangMei_0={
 				27,			//17,
 				0,
 				0,
-				(int)Role_HuangMei_ActPtrTbl_0,//0x102BFBBC,
+				(int)&Role_HuangMei_ActPtrTbl_0,//0x102BFBBC,
 				0,
 				0x102BF7E4,
 				0x102BF7E0,

@@ -6,6 +6,8 @@
 
 #include "../../Include/Role.h"
 
+extern const ActTypePtrTbl const Role_JinYuJing_ActPtrTbl_0;
+
 const Role Role_JinYuJing_0={
 
 				FLAG_ROLE,			//short ROLE_FLAG
@@ -16,12 +18,12 @@ const Role Role_JinYuJing_0={
 
 				0,			//int NULL
 
-				0x10294150,		//int ActionPtr
+				(int)&Role_JinYuJing_ActPtrTbl_0,//0x10294150,		//int ActionPtr
 
 				0x00000000,		//int 
 
 				0x10293D78,		//int pImageIdTbl
-
+	
 				0x10293D74,		//int pPalTbl
 
 	(InputElem*)0x102940F4,		//int pInputTbl

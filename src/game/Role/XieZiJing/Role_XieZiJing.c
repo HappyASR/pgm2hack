@@ -5,6 +5,7 @@
 */
 
 #include "../../Include/Role.h"
+extern const ActTypePtrTbl const Role_XieZiJing_ActPtrTbl_0;
 
 const Role Role_XieZiJing_0={
 
@@ -16,7 +17,7 @@ const Role Role_XieZiJing_0={
 
 				0,			//int NULL
 
-				0x102B9FF8,		//int ActionPtr
+				(int)&Role_XieZiJing_ActPtrTbl_0,//0x102B9FF8,		//int ActionPtr
 
 				0x00000000,		//int 
 

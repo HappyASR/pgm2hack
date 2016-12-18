@@ -3,13 +3,15 @@
 #include "../../Include/Role.h"
 extern InputElem InputTbl_HuangFeng_0[];
 
+extern const ActTypePtrTbl const Role_HuangFeng_ActPtrTbl_0;
+
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_HuangFeng_0={
 				FLAG_ROLE,			//Flag
 				26,			//16,
 				0,
 				0,
-				0x102EE6AC,
+				(int)&Role_HuangFeng_ActPtrTbl_0,//0x102EE6AC,
 				0,
 				0x102EE2DC,
 				0x102EE2D8,

@@ -7,6 +7,8 @@ ChangemenInfoAddr = 0x10283354
 
 #include "../../Include/Role.h"
 
+extern const ActTypePtrTbl const Role_HuLi_ActPtrTbl_0;
+
 const Role Role_HuLi_0={
 
 				0,			//short ROLE_FLAG
@@ -17,7 +19,7 @@ const Role Role_HuLi_0={
 
 				0,			//int NULL
 
-				0x10283324,		//int ActionPtr
+				(int)&Role_HuLi_ActPtrTbl_0,//0x10283324,		//int ActionPtr
 
 				0x00000000,		//int 
 

@@ -13,7 +13,6 @@ JinYuJing_ActType_Start:
 		ACT_Elem 1,1,  Act_JinYuJing_Start_1  ,2,1,0
 		ACT_Elem 1,2,  Act_JinYuJing_Start_2  ,2,1,0
 		ACT_Elem 1,3,  Act_JinYuJing_Start_3  ,2,1,0
-byte_10700060:
 		ACT_Elem 1,4,  Act_JinYuJing_Start_4  ,1,1,0
 		ACT_Elem 1,5,  Act_JinYuJing_Start_5  ,1,1,0
 		ACT_Elem 1,6,  Act_JinYuJing_Start_6  ,1,1,0

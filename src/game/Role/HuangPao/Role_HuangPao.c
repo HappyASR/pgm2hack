@@ -2,7 +2,7 @@
 
 #include "../../Include/Role.h"
 extern InputElem InputTbl_HuangPao_0[];
-
+extern const ActTypePtrTbl const Role_HuangPao_ActPtrTbl_0;
 
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_HuangPao_0={
@@ -10,7 +10,7 @@ const Role Role_HuangPao_0={
 				13,				//0x1E,
 				0, 
 				0, 
-				0x1027CA3C, 
+				(int)&Role_HuangPao_ActPtrTbl_0,		//0x1027CA3C, 
 				0, 
 				0x1027C644,
 				0x1027C640, 

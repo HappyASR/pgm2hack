@@ -1,7 +1,7 @@
 /*可选 银角*/
 
 #include "../../Include/Role.h"
-extern ActTypePtrTbl Role_JinJiao_ActPtrTbl_0;
+extern ActTypePtrTbl Role_YinJiao_ActPtrTbl_0;
 
 //人物结构体填充	新增人物其他版本命名后的编号递增
 const Role Role_YinJiao_0={
@@ -9,7 +9,7 @@ const Role Role_YinJiao_0={
 			11,		//0x1C,
 			0,
 			0,
-			(int)&Role_JinJiao_ActPtrTbl_0,//0x10270BC8,
+			(int)&Role_YinJiao_ActPtrTbl_0,//0x10270BC8,
 			0,
 			0x10270564,
 			0x10270560, 
@@ -25,7 +25,7 @@ const Role Role_YinJiao_0={
 			0x50000, 
 			1,
 			0, 
-			(int)&Role_JinJiao_ActPtrTbl_0,//0x10270BC4,
+			0x10270BC4,
 			0,	0,	0,	0,	0,	0,	0,	0,
 			0,										//初始武器ID
 			0,										//武器图指针

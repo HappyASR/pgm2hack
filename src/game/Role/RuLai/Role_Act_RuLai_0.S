@@ -13,7 +13,6 @@ RuLai_ActType_Start:
 		ACT_Elem 1,1,  Act_RuLai_Start_1  ,2,1,0
 		ACT_Elem 1,2,  Act_RuLai_Start_2  ,2,1,0
 		ACT_Elem 1,3,  Act_RuLai_Start_3  ,2,1,0
-byte_10700060:
 		ACT_Elem 1,4,  Act_RuLai_Start_4  ,1,1,0
 		ACT_Elem 1,5,  Act_RuLai_Start_5  ,1,1,0
 		ACT_Elem 1,6,  Act_RuLai_Start_6  ,1,1,0
@@ -3683,6 +3682,16 @@ Act_RuLai_Attack_17:
 		SCR_ShowLoopPic 3
 		SCR_PicElem 86,0,0
 		SCR_SetCaningAct 23
+		SCR_SetRolePal 0	//F00F,palno
+		SCR_ShowLoopPic 3
+		SCR_PicElem 86,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 85,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 84,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 83,0,0
+		SCR_End
 Act_RuLai_Attack_18:
 		SCR_SetRolePal 0	//F00F,palno
 		SCR_ShowLoopPic 3
@@ -3997,6 +4006,40 @@ Act_RuLai_Kill_2:
 		SCR_ShowLoopPic 2
 		SCR_PicElem 200,0,0
 		SCR_PlaySound 96,0,281,0	//param1,param2,sndid,off
+		SCR_SetInvincible
+		SCR_CallSysObj 4,26,7,2,-58	//F011 sys,id,param1,xPos,yPos
+		SCR_SetBgDarkRecover
+		SCR_SetRoroNoMoveTime 35
+		SCR_ShowLoopPic 34
+		SCR_PicElem 0,0,0
+		SCR_CallObj -2,0,0x102C8238,0,-2,-63	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 3
+		SCR_PicElem 190,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 191,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 192,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 193,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 194,0,0
+		SCR_ScrLoopStart 3
+		SCR_ShowLoopPic 7
+		SCR_PicElem 195,0,0
+		SCR_ShowLoopPic 7
+		SCR_PicElem 194,0,0
+		SCR_ScrLoopEnd
+		SCR_ShowLoopPic 3
+		SCR_PicElem 194,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 193,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 192,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 191,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 190,0,0
+		SCR_End
 Act_RuLai_Kill_3:
 		SCR_SetInvincible
 		SCR_CallSysObj 4,26,7,2,-58	//F011 sys,id,param1,xPos,yPos
@@ -4375,9 +4418,9 @@ Act_RuLai_Kill_11:
 		SCR_PicElem 189,0,0
 		SCR_End
 Act_RuLai_Kill_12:
-		SCR_JmpTo byte_1070530C,Act_RuLai_Kill_12
+		SCR_JmpTo byte_10705250,Act_RuLai_Kill_12
 		SCR_F058 0
-byte_1070527C:
+byte_107051C0:
 		SCR_CallSysObj 4,19,107,5,0	//F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 3,18,119,0,0	//F011 sys,id,param1,xPos,yPos
 		SCR_F02B 0,-1,60,0,0,0
@@ -4404,7 +4447,7 @@ byte_1070527C:
 		SCR_PicElem 58,0,0
 		SCR_PicElem 0,11,0
 		SCR_End
-byte_1070530C:
+byte_10705250:
 		SCR_ShowLoopPic 2
 		SCR_PicElem 195,0,0
 		SCR_ShowLoopPic 2
@@ -4429,7 +4472,7 @@ byte_1070530C:
 		SCR_CancelActionStart 1
 		SCR_F02B 0,-1,204,3,0,0
 		SCR_PicElemAtk 200,3,0
-		SCR_TestJmp byte_1070527C,Act_RuLai_Kill_12
+		SCR_TestJmp byte_107051C0,Act_RuLai_Kill_12
 		SCR_F02B 0,-1,204,3,0,1
 		SCR_PicElem 200,3,1
 		SCR_F02B 0,-1,204,3,0,1
@@ -4511,19 +4554,19 @@ byte_1070530C:
 		SCR_PicElem 53,1,8
 		SCR_F02B 0,-1,60,3,0,12
 		SCR_PicElemAtk 53,3,12
-		SCR_JmpTo byte_1070527C,Act_RuLai_Kill_12
+		SCR_JmpTo byte_107051C0,Act_RuLai_Kill_12
 Act_RuLai_Kill_13:
-		SCR_JmpTo byte_107055F8,Act_RuLai_Kill_13
-byte_107055DC:
+		SCR_JmpTo byte_1070553C,Act_RuLai_Kill_13
+byte_10705520:
 		SCR_CallSysObj 4,15,-1,-2,2	//F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic 7
 		SCR_PicElem 64,0,0
 		SCR_ShowLoopPic 3
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_107055F8:
+byte_1070553C:
 		SCR_F02A 1
-		SCR_TestJmp byte_107055DC,Act_RuLai_Kill_13
+		SCR_TestJmp byte_10705520,Act_RuLai_Kill_13
 		SCR_F02B 0,0,213,16,0,12
 		SCR_PicElem 69,0,1
 		SCR_F02B 0,0,213,16,0,11
@@ -4627,7 +4670,7 @@ byte_107055F8:
 		SCR_PicElem 69,1,18
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 69,1,20
-		SCR_JmpTo byte_107055DC,Act_RuLai_Kill_13
+		SCR_JmpTo byte_10705520,Act_RuLai_Kill_13
 Act_RuLai_Kill_14:
 		SCR_ShowLoopPic 2
 		SCR_PicElem 219,0,0
@@ -4695,8 +4738,8 @@ Act_RuLai_Kill_14:
 		SCR_PicElem 223,0,0
 		SCR_End
 Act_RuLai_Kill_15:
-		SCR_JmpTo byte_10705A28,Act_RuLai_Kill_15
-byte_10705A00:
+		SCR_JmpTo byte_1070596C,Act_RuLai_Kill_15
+byte_10705944:
 		SCR_F02A 0
 		SCR_CallSysObj 4,12,0,0,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ShowLoopPic 3
@@ -4706,7 +4749,7 @@ byte_10705A00:
 		SCR_ShowLoopPic 4
 		SCR_PicElem 63,0,0
 		SCR_End
-byte_10705A28:
+byte_1070596C:
 		SCR_F02A 1
 		SCR_ScrLoopStart 4
 		SCR_F02B 0,0,213,0,0,-3
@@ -4724,7 +4767,7 @@ byte_10705A28:
 		SCR_F04C 1
 		SCR_CallSpark 10,0
 		SCR_CancelActionStart 1
-		SCR_TestJmp byte_10705A00,Act_RuLai_Kill_15
+		SCR_TestJmp byte_10705944,Act_RuLai_Kill_15
 		SCR_CallObj 1,0,0x101CB280,46,0,-24	//F012 b1,b2,objPtr,w3,xPos,yPos
 		SCR_F02B 0,0,216,1,0,0
 		SCR_PicElemAtk 230,1,3
@@ -4809,7 +4852,7 @@ byte_10705A28:
 		SCR_PicElem 69,0,18
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 69,0,21
-		SCR_JmpTo byte_10705A00,Act_RuLai_Kill_15
+		SCR_JmpTo byte_10705944,Act_RuLai_Kill_15
 Act_RuLai_Kill_20:
 		SCR_SetInvincible
 		SCR_F056 0	//未知开关
@@ -5217,28 +5260,28 @@ Act_RuLai_Kill_29:
 		SCR_SetInvincible
 		SCR_SetAfterImage 2,-1
 		SCR_CallSysObj 4,36,11,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,3,3
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,3,4
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,4,5
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,5,6
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,6,7
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,7,8
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,8,9
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,9,10
 		SCR_SetAfterImage 0,0
-byte_1070644C:
-		SCR_TestJmp byte_10706458,Act_RuLai_Kill_29
+byte_10706390:
+		SCR_TestJmp byte_1070639C,Act_RuLai_Kill_29
 		SCR_PicElem 48,10,11
-		SCR_JmpTo byte_1070644C,Act_RuLai_Kill_29
-byte_10706458:
+		SCR_JmpTo byte_10706390,Act_RuLai_Kill_29
+byte_1070639C:
 		SCR_ClearInvincible
 		SCR_PicElem 49,18,0
 		SCR_ShowLoopPic 2
@@ -6942,7 +6985,7 @@ Act_RuLai_Caning_4:
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
-		SCR_TestJmp byte_1070813C,Act_RuLai_Caning_4
+		SCR_TestJmp byte_10708080,Act_RuLai_Caning_4
 		SCR_F05D 1
 		SCR_PicElem 23,9,1
 		SCR_PicElem 23,9,2
@@ -6962,7 +7005,7 @@ Act_RuLai_Caning_4:
 		SCR_PicElem 24,11,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,11,12
-byte_1070813C:
+byte_10708080:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -6998,7 +7041,7 @@ Act_RuLai_Caning_5:
 		SCR_PicElem 23,5,-1
 		SCR_PicElem 23,4,0
 		SCR_PicElem 23,4,0
-		SCR_TestJmp byte_1070821C,Act_RuLai_Caning_5
+		SCR_TestJmp byte_10708160,Act_RuLai_Caning_5
 		SCR_F05D 1
 		SCR_PicElem 23,5,1
 		SCR_PicElem 23,4,2
@@ -7019,7 +7062,7 @@ Act_RuLai_Caning_5:
 		SCR_PicElem 25,5,14
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,5,15
-byte_1070821C:
+byte_10708160:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -7050,7 +7093,7 @@ Act_RuLai_Caning_6:
 		SCR_PicElem 22,5,-2
 		SCR_PicElem 23,4,-1
 		SCR_PicElem 23,5,0
-		SCR_TestJmp byte_107082CC,Act_RuLai_Caning_6
+		SCR_TestJmp byte_10708210,Act_RuLai_Caning_6
 		SCR_F05D 1
 		SCR_PicElem 23,4,2
 		SCR_PicElem 23,4,2
@@ -7064,7 +7107,7 @@ Act_RuLai_Caning_6:
 		SCR_PicElem 25,2,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,2,12
-byte_107082CC:
+byte_10708210:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-1
 		SCR_PicElem 25,0,0
@@ -7102,7 +7145,7 @@ Act_RuLai_Caning_7:
 		SCR_PicElem 22,2,-1
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,1,0
-		SCR_TestJmp byte_107083D0,Act_RuLai_Caning_7
+		SCR_TestJmp byte_10708314,Act_RuLai_Caning_7
 		SCR_F05D 1
 		SCR_PicElem 23,1,1
 		SCR_PicElem 24,2,1
@@ -7130,7 +7173,7 @@ Act_RuLai_Caning_7:
 		SCR_PicElem 30,2,22
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,2,25
-byte_107083D0:
+byte_10708314:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -7196,7 +7239,7 @@ Act_RuLai_Caning_8:
 		SCR_PicElem 24,1,0
 		SCR_PicElem 24,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_10708584,Act_RuLai_Caning_8
+		SCR_TestJmp byte_107084C8,Act_RuLai_Caning_8
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,1,1
@@ -7240,7 +7283,7 @@ Act_RuLai_Caning_8:
 		SCR_PicElem 30,0,20
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_10708584:
+byte_107084C8:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
 		SCR_PicElem 25,0,0
@@ -7280,7 +7323,7 @@ Act_RuLai_Caning_9:
 		SCR_PicElem 2,7,-1
 		SCR_PicElem 2,7,0
 		SCR_PicElem 1,6,0
-		SCR_TestJmp byte_1070867C,Act_RuLai_Caning_9
+		SCR_TestJmp byte_107085C0,Act_RuLai_Caning_9
 		SCR_F05D 1
 		SCR_PicElem 1,7,1
 		SCR_PicElem 1,7,1
@@ -7303,7 +7346,7 @@ Act_RuLai_Caning_9:
 		SCR_PicElem 3,6,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 3,6,13
-byte_1070867C:
+byte_107085C0:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -7327,7 +7370,7 @@ Act_RuLai_Caning_10:
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,0
-		SCR_TestJmp byte_10708704,Act_RuLai_Caning_10
+		SCR_TestJmp byte_10708648,Act_RuLai_Caning_10
 		SCR_PicElem 27,2,0
 		SCR_PicElem 27,2,1
 		SCR_PicElem 27,2,1
@@ -7338,7 +7381,7 @@ Act_RuLai_Caning_10:
 		SCR_PicElem 27,2,7
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 27,2,11
-byte_10708704:
+byte_10708648:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -7364,7 +7407,7 @@ Act_RuLai_Caning_11:
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,2,-12
 		SCR_PicElem 23,1,-1
-		SCR_TestJmp byte_107087C0,Act_RuLai_Caning_11
+		SCR_TestJmp byte_10708704,Act_RuLai_Caning_11
 		SCR_F05D 1
 		SCR_PicElem 23,2,1
 		SCR_PicElem 23,1,1
@@ -7386,7 +7429,7 @@ Act_RuLai_Caning_11:
 		SCR_PicElem 24,2,17
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,2,20
-byte_107087C0:
+byte_10708704:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -7406,13 +7449,13 @@ Act_RuLai_Caning_12:
 		SCR_PicElem 27,3,-3
 		SCR_PicElem 27,3,-2
 		SCR_PicElem 24,2,-1
-		SCR_TestJmp byte_10708824,Act_RuLai_Caning_12
+		SCR_TestJmp byte_10708768,Act_RuLai_Caning_12
 		SCR_PicElem 24,3,1
 		SCR_PicElem 24,2,2
 		SCR_PicElem 24,3,3
 		SCR_PicElem 24,2,4
 		SCR_PicElem 24,3,5
-byte_10708824:
+byte_10708768:
 		SCR_PicElem 24,3,8
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,3,11
@@ -7430,7 +7473,7 @@ Act_RuLai_Caning_13:
 		SCR_PicElem 24,3,0
 		SCR_PicElem 24,-3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_10708898,Act_RuLai_Caning_13
+		SCR_TestJmp byte_107087DC,Act_RuLai_Caning_13
 		SCR_PicElem 24,6,20
 		SCR_PicElem 24,3,17
 		SCR_PicElem 24,2,15
@@ -7442,7 +7485,7 @@ Act_RuLai_Caning_13:
 		SCR_PicElem 24,1,19
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,1,22
-byte_10708898:
+byte_107087DC:
 		SCR_CallSysObj 3,19,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
@@ -7561,7 +7604,7 @@ Act_RuLai_Caning_18:
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
-		SCR_TestJmp byte_10708AB4,Act_RuLai_Caning_18
+		SCR_TestJmp byte_107089F8,Act_RuLai_Caning_18
 		SCR_F05D 1
 		SCR_PicElem 23,-9,1
 		SCR_PicElem 23,-9,2
@@ -7581,7 +7624,7 @@ Act_RuLai_Caning_18:
 		SCR_PicElem 24,-11,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-11,12
-byte_10708AB4:
+byte_107089F8:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -7617,7 +7660,7 @@ Act_RuLai_Caning_19:
 		SCR_PicElem 23,-5,-1
 		SCR_PicElem 23,-4,0
 		SCR_PicElem 23,-4,0
-		SCR_TestJmp byte_10708B94,Act_RuLai_Caning_19
+		SCR_TestJmp byte_10708AD8,Act_RuLai_Caning_19
 		SCR_F05D 1
 		SCR_PicElem 23,-5,1
 		SCR_PicElem 23,-4,2
@@ -7638,7 +7681,7 @@ Act_RuLai_Caning_19:
 		SCR_PicElem 25,-5,13
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-5,16
-byte_10708B94:
+byte_10708AD8:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -7669,7 +7712,7 @@ Act_RuLai_Caning_20:
 		SCR_PicElem 22,-5,-2
 		SCR_PicElem 23,-4,-1
 		SCR_PicElem 23,-5,0
-		SCR_TestJmp byte_10708C44,Act_RuLai_Caning_20
+		SCR_TestJmp byte_10708B88,Act_RuLai_Caning_20
 		SCR_F05D 1
 		SCR_PicElem 23,-4,2
 		SCR_PicElem 23,-4,2
@@ -7683,7 +7726,7 @@ Act_RuLai_Caning_20:
 		SCR_PicElem 25,-2,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-2,13
-byte_10708C44:
+byte_10708B88:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-1
 		SCR_PicElem 25,0,0
@@ -7721,7 +7764,7 @@ Act_RuLai_Caning_21:
 		SCR_PicElem 22,-2,-1
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-1,0
-		SCR_TestJmp byte_10708D48,Act_RuLai_Caning_21
+		SCR_TestJmp byte_10708C8C,Act_RuLai_Caning_21
 		SCR_F05D 1
 		SCR_PicElem 23,-1,1
 		SCR_PicElem 24,-2,1
@@ -7749,7 +7792,7 @@ Act_RuLai_Caning_21:
 		SCR_PicElem 30,-2,22
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,-2,25
-byte_10708D48:
+byte_10708C8C:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -7815,7 +7858,7 @@ Act_RuLai_Caning_22:
 		SCR_PicElem 44,-1,0
 		SCR_PicElem 44,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_10708EFC,Act_RuLai_Caning_22
+		SCR_TestJmp byte_10708E40,Act_RuLai_Caning_22
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,-1,1
@@ -7859,7 +7902,7 @@ Act_RuLai_Caning_22:
 		SCR_PicElem 30,0,20
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_10708EFC:
+byte_10708E40:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
 		SCR_PicElem 25,0,0
@@ -7899,7 +7942,7 @@ Act_RuLai_Caning_23:
 		SCR_PicElem 5,-7,-1
 		SCR_PicElem 5,-7,0
 		SCR_PicElem 6,-6,0
-		SCR_TestJmp byte_10708FF4,Act_RuLai_Caning_23
+		SCR_TestJmp byte_10708F38,Act_RuLai_Caning_23
 		SCR_F05D 1
 		SCR_PicElem 6,-7,1
 		SCR_PicElem 6,-7,1
@@ -7922,7 +7965,7 @@ Act_RuLai_Caning_23:
 		SCR_PicElem 4,-6,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 4,-6,13
-byte_10708FF4:
+byte_10708F38:
 		SCR_CallSysObj 2,16,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -7946,7 +7989,7 @@ Act_RuLai_Caning_24:
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,0
-		SCR_TestJmp byte_1070907C,Act_RuLai_Caning_24
+		SCR_TestJmp byte_10708FC0,Act_RuLai_Caning_24
 		SCR_PicElem 27,-2,0
 		SCR_PicElem 27,-2,1
 		SCR_PicElem 27,-2,1
@@ -7957,7 +8000,7 @@ Act_RuLai_Caning_24:
 		SCR_PicElem 27,-2,7
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 27,-2,10
-byte_1070907C:
+byte_10708FC0:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -7983,7 +8026,7 @@ Act_RuLai_Caning_25:
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-2,-12
 		SCR_PicElem 23,-1,-1
-		SCR_TestJmp byte_10709138,Act_RuLai_Caning_25
+		SCR_TestJmp byte_1070907C,Act_RuLai_Caning_25
 		SCR_F05D 1
 		SCR_PicElem 23,-2,1
 		SCR_PicElem 23,-1,1
@@ -8005,7 +8048,7 @@ Act_RuLai_Caning_25:
 		SCR_PicElem 25,-2,17
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-2,20
-byte_10709138:
+byte_1070907C:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -8025,7 +8068,7 @@ Act_RuLai_Caning_26:
 		SCR_PicElem 27,-3,-3
 		SCR_PicElem 27,-3,-2
 		SCR_PicElem 24,-2,-1
-		SCR_TestJmp byte_107091A8,Act_RuLai_Caning_26
+		SCR_TestJmp byte_107090EC,Act_RuLai_Caning_26
 		SCR_PicElem 24,-3,1
 		SCR_PicElem 24,-2,2
 		SCR_PicElem 24,-3,3
@@ -8034,7 +8077,7 @@ Act_RuLai_Caning_26:
 		SCR_PicElem 24,-3,8
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-3,11
-byte_107091A8:
+byte_107090EC:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -8047,7 +8090,7 @@ Act_RuLai_Caning_27:
 		SCR_PicElem 24,-3,0
 		SCR_PicElem 24,3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_10709208,Act_RuLai_Caning_27
+		SCR_TestJmp byte_1070914C,Act_RuLai_Caning_27
 		SCR_PicElem 24,-6,20
 		SCR_PicElem 24,-3,17
 		SCR_PicElem 24,-2,15
@@ -8059,7 +8102,7 @@ Act_RuLai_Caning_27:
 		SCR_PicElem 24,-1,19
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-1,22
-byte_10709208:
+byte_1070914C:
 		SCR_CallSysObj 3,19,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
@@ -8071,7 +8114,7 @@ byte_10709208:
 Act_RuLai_Caning_28:
 		SCR_ShowLoopPic 7
 		SCR_PicElem 112,0,0
-		SCR_IfDeadJmpTo byte_10709354,0
+		SCR_IfDeadJmpTo byte_10709298,0
 		SCR_SetInvincible
 		SCR_PlaySound 96,0,636,0	//param1,param2,sndid,off
 		SCR_ShowLoopPic 4
@@ -8133,7 +8176,7 @@ Act_RuLai_Caning_28:
 		SCR_End
 		SCR_CallFunc 0,3,0x100B246B
 		SCR_ScrLoopStart 30
-byte_10709354:
+byte_10709298:
 		SCR_PicElem 112,0,0
 		SCR_PicElemNone 112,0,0
 		SCR_ScrLoopEnd

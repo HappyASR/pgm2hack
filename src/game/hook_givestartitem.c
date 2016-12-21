@@ -11,9 +11,10 @@ int hook_GiveStartItem(int role_addr, char role_id)	//根据人物不同赠送�
 	*(int *)(item_addr + 676) = (int)((char *)0x20060114 + 688 * *(char *)(role_addr + 1));
 	addr = (int)(*(int *)(item_addr + 676));
 	if (!*(char *)(addr + 340)) {
-		switch (role_id) {
+		switch (role_id) {		
 		default:
-			return role_addr;
+		return role_addr;
+
 		case 0:
 			*(char *)(addr + 11) = 143;
 			*(char *)(addr + 12) = 9;
@@ -164,6 +165,7 @@ int hook_GiveStartItem(int role_addr, char role_id)	//根据人物不同赠送�
 			*(char *)(addr + 62) = 9;
 			*(char *)(addr + 340) = 6;
 			break;
+			
 		}
 	}
 	return item_addr;

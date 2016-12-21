@@ -13,6 +13,7 @@ LuLi_ActType_Start:
 		ACT_Elem 1,1,  Act_LuLi_Start_1  ,2,1,0
 		ACT_Elem 1,2,  Act_LuLi_Start_2  ,2,1,0
 		ACT_Elem 1,3,  Act_LuLi_Start_3  ,2,1,0
+byte_10700060:
 		ACT_Elem 1,4,  Act_LuLi_Start_4  ,1,1,0
 		ACT_Elem 1,5,  Act_LuLi_Start_5  ,1,1,0
 		ACT_Elem 1,6,  Act_LuLi_Start_6  ,1,1,0
@@ -1600,6 +1601,7 @@ byte_10701C84:
 		SCR_PicElem 3,1,-5
 		SCR_PicElem 3,0,-4
 		SCR_PicElem 3,1,-5
+byte_10701D04:
 		SCR_PicElem 4,0,-4
 		SCR_PicElem 4,0,-5
 		SCR_PicElem 4,1,-4
@@ -3263,17 +3265,17 @@ LuLi_ActType_Attack:
 		ACT_Elem 3,1,  Act_LuLi_Attack_1  ,1,0,0
 		ACT_Elem 3,2,  Act_LuLi_Attack_2  ,2,0,0
 		ACT_Elem 3,3,  Act_LuLi_Attack_3  ,1,0,0
-		ACT_Elem 3,4,  0  ,0,0,0
+		ACT_Elem 3,4,  Act_LuLi_Attack_4  ,2,0,0
 		ACT_Elem 3,5,  Act_LuLi_Attack_5  ,1,0,0
 		ACT_Elem 3,6,  Act_LuLi_Attack_6  ,1,0,0
 		ACT_Elem 3,7,  Act_LuLi_Attack_7  ,2,0,0
 		ACT_Elem 3,8,  Act_LuLi_Attack_8  ,1,0,0
-		ACT_Elem 3,9,  0  ,0,0,0
+		ACT_Elem 3,9,  Act_LuLi_Attack_9  ,2,0,0
 		ACT_Elem 3,10,  Act_LuLi_Attack_10  ,1,0,0
 		ACT_Elem 3,11,  Act_LuLi_Attack_11  ,1,0,0
 		ACT_Elem 3,12,  Act_LuLi_Attack_12  ,2,0,0
 		ACT_Elem 3,13,  Act_LuLi_Attack_13  ,1,0,0
-		ACT_Elem 3,14,  0  ,0,0,0
+		ACT_Elem 3,14,  Act_LuLi_Attack_14  ,2,0,0
 		ACT_Elem 3,15,  Act_LuLi_Attack_15  ,2,0,0
 		ACT_Elem 3,16,  Act_LuLi_Attack_16  ,2,0,0
 		ACT_Elem 3,17,  Act_LuLi_Attack_17  ,1,0,0
@@ -3399,6 +3401,34 @@ Act_LuLi_Attack_3:
 		SCR_ShowLoopPic 3
 		SCR_PicElem 119,0,0
 		SCR_End
+Act_LuLi_Attack_4:
+		SCR_SetCaningAct 14
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 1,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 180,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 38,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 39,0,0
+		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 2
+		SCR_PicElem 40,0,0
+		SCR_CheckPressAStart 0
+		SCR_CancelActionStart 1
+		SCR_ShowLoopPic 4
+		SCR_PicElemAtk 41,8,0
+		SCR_IfPressAJmpAct 3,3
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,4,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,1,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 43,0,0
+		SCR_End
 Act_LuLi_Attack_5:
 		SCR_SetCaningAct 14
 		SCR_SetAttackDelay 10
@@ -3518,6 +3548,34 @@ Act_LuLi_Attack_8:
 		SCR_ShowLoopPic 3
 		SCR_PicElem 119,0,0
 		SCR_End
+Act_LuLi_Attack_9:
+		SCR_SetCaningAct 14
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 1,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 180,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 38,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 39,0,0
+		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 2
+		SCR_PicElem 40,0,0
+		SCR_CheckPressAStart 0
+		SCR_CancelActionStart 1
+		SCR_ShowLoopPic 4
+		SCR_PicElemAtk 41,8,0
+		SCR_IfPressAJmpAct 3,3
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,4,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,1,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 43,0,0
+		SCR_End
 Act_LuLi_Attack_10:
 		SCR_SetCaningAct 14
 		SCR_SetAttackDelay 10
@@ -3636,6 +3694,34 @@ Act_LuLi_Attack_13:
 		SCR_PicElem 118,0,0
 		SCR_ShowLoopPic 3
 		SCR_PicElem 119,0,0
+		SCR_End
+Act_LuLi_Attack_14:
+		SCR_SetCaningAct 14
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 1,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 180,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 38,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 39,0,0
+		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 2
+		SCR_PicElem 40,0,0
+		SCR_CheckPressAStart 0
+		SCR_CancelActionStart 1
+		SCR_ShowLoopPic 4
+		SCR_PicElemAtk 41,8,0
+		SCR_IfPressAJmpAct 3,3
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,4,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,1,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 2
+		SCR_PicElem 42,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 43,0,0
 		SCR_End
 Act_LuLi_Attack_15:
 		SCR_ScrLoopStart 3
@@ -5508,9 +5594,9 @@ LuLi_ActType_Kill:
 		ACT_Elem 6,8,  0  ,1,0,0
 		ACT_Elem 6,9,  0  ,1,0,0
 		ACT_Elem 6,10,  Act_LuLi_Kill_10  ,1,0,0
-		ACT_Elem 6,11,  Act_LuLi_Kill_11  ,2,0,0
-		ACT_Elem 6,12,  Act_LuLi_Kill_12  ,2,0,0
-		ACT_Elem 6,13,  Act_LuLi_Kill_13  ,2,0,0
+		ACT_Elem 6,11,  Act_LuLi_Kill_11  ,1,0,0
+		ACT_Elem 6,12,  Act_LuLi_Kill_12  ,1,0,0
+		ACT_Elem 6,13,  Act_LuLi_Kill_13  ,1,0,0
 		ACT_Elem 6,14,  Act_LuLi_Kill_14  ,1,0,0
 		ACT_Elem 6,15,  Act_LuLi_Kill_15  ,2,0,0
 		ACT_Elem 6,16,  0  ,0,0,0
@@ -5525,6 +5611,7 @@ LuLi_ActType_Kill:
 		ACT_Elem 6,25,  Act_LuLi_Kill_25  ,2,0,0
 		ACT_Elem 6,26,  0  ,0,0,0
 		ACT_Elem 6,27,  0  ,0,0,0
+byte_10706A84:
 		ACT_Elem 6,28,  Act_LuLi_Kill_28  ,1,0,0
 		ACT_Elem 6,29,  Act_LuLi_Kill_29  ,2,0,0
 		ACT_Elem 6,30,  Act_LuLi_Kill_30  ,1,0,0
@@ -5537,6 +5624,7 @@ LuLi_ActType_Kill:
 		ACT_Elem 6,37,  0  ,0,0,0
 		ACT_Elem 6,38,  0  ,0,0,0
 		ACT_Elem 6,39,  Act_LuLi_Kill_39  ,2,0,0
+byte_10706B14:
 		ACT_Elem 6,40,  Act_LuLi_Kill_40  ,2,0,0
 		ACT_Elem 6,41,  Act_LuLi_Kill_41  ,1,0,0
 		ACT_Elem 6,42,  Act_LuLi_Kill_42  ,1,0,0
@@ -5922,567 +6010,337 @@ Act_LuLi_Kill_5:
 		SCR_PicElem 164,0,0
 		SCR_End
 Act_LuLi_Kill_10:
-		SCR_ShowLoopPic 3
-		SCR_PicElem 173,0,0
-		SCR_ShowLoopPic 4
-		SCR_PicElem 174,0,0
-		SCR_PlaySound 96,0,309,0	//param1,param2,sndid,off
-		SCR_PicElem 175,0,0
 		SCR_ShowLoopPic 2
-		SCR_PicElem 176,0,0
-		SCR_CallSysObj 4,40,99,0,-42	//F011 sys,id,param1,xPos,yPos
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 6
-		SCR_CallSpark 4,0
-		SCR_PlaySound 96,0,624,0	//param1,param2,sndid,off
-		SCR_PicElemAtk 267,0,0
-		SCR_PicElem 267,0,0
-		SCR_F039 1,0
-		SCR_CancelActionStart 1
-		SCR_PicElemAtk 268,0,0
-		SCR_PicElem 268,0,0
-		SCR_F039 1,0
-		SCR_PicElemAtk 269,0,0
-		SCR_PicElem 269,0,0
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 6
-		SCR_CallSpark 29,0
-		SCR_F039 1,0
-		SCR_PicElemAtk 268,0,0
-		SCR_PicElem 268,0,0
-		SCR_F039 1,0
-		SCR_PicElemAtk 267,0,0
-		SCR_PicElem 267,0,0
-		SCR_F039 1,0
-		SCR_PicElemAtk 269,0,0
-		SCR_PicElem 269,0,0
-		SCR_SetCaningAct 20
-		SCR_SetAttackDelay 10
-		SCR_CallSpark 32,0
-		SCR_F039 1,0
-		SCR_PicElemAtk 267,0,0
-		SCR_CancelActionEnd
-		SCR_PicElem 267,0,0
-		SCR_ShowLoopPic 8
-		SCR_PicElem 178,0,0
-		SCR_ShowLoopPic 6
-		SCR_PicElem 179,0,0
+		SCR_PicElem 135,0,0
 		SCR_ShowLoopPic 3
-		SCR_PicElem 180,0,0
+		SCR_PicElem 134,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 140,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 141,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 142,0,0
+		SCR_PlaySound 96,0,169,0	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,569,0	//param1,param2,sndid,off
+		SCR_SetCaningAct 17
+		SCR_SetAttackDelay 10
+		SCR_CallSpark 4,0
+		SCR_CancelActionStart 1
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 143,0,0
+		SCR_F039 1,0
+		SCR_SetCaningAct 19
+		SCR_SetAttackDelay 14
+		SCR_CallSpark 5,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 144,8,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 144,6,0
+		SCR_ShowLoopPic 5
+		SCR_PicElemAtk 144,2,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 3
+		SCR_PicElem 145,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 146,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 147,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 148,0,0
 		SCR_End
 Act_LuLi_Kill_11:
-		SCR_F025 1	//未知F025
 		SCR_ShowLoopPic 2
-		SCR_PicElem 195,0,0
+		SCR_PicElem 183,0,0
 		SCR_ShowLoopPic 2
-		SCR_PicElem 196,0,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 197,0,0
-		SCR_PicElem 198,27,0
-		SCR_PicElem 198,2,-4
-		SCR_PicElem 198,2,-4
-		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 10
-		SCR_CallSpark 28,0
-		SCR_PicElemAtk 200,2,-3
-		SCR_PicElem 200,2,-3
-		SCR_PicElem 201,9,-7
-		SCR_F039 1,0
-		SCR_PicElemAtk 201,2,-3
-		SCR_PicElem 202,3,-1
-		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
-		SCR_PicElem 202,2,-2
-		SCR_F039 1,0
-		SCR_PicElemAtk 203,2,-1
-		SCR_PicElem 203,2,0
-		SCR_PicElem 199,17,6
-		SCR_PicElem 199,2,0
-		SCR_PlaySound 96,0,313,0	//param1,param2,sndid,off
-		SCR_PicElem 182,3,-12
-		SCR_PicElem 182,2,3
-		SCR_PicElem 182,2,4
-		SCR_PicElem 182,2,5
-		SCR_PicElem 182,1,6
-		SCR_PicElem 182,1,7
-		SCR_SetZMode	//F003	设置Z轴模式
-		SCR_PicElem 183,0,9
-		SCR_CancelActionStart 1
-		SCR_CallFunc 0,0,0x1009CD79
-		SCR_CallSysObj 3,18,47,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ScreenShake 0,2
-		SCR_PicElem 183,0,0
-		SCR_ScreenShake 0,-2
-		SCR_PicElem 183,0,0
-		SCR_ScreenShake 0,2
-		SCR_PicElem 183,0,0
-		SCR_CallFunc 0,1,0x1009CD79
-		SCR_CallSysObj 3,18,80,5,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ScreenShake 0,-1
-		SCR_PicElem 183,0,0
-		SCR_ScreenShake 0,1
-		SCR_PicElem 183,0,0
-		SCR_CallFunc 0,2,0x1009CD79
-		SCR_CallSysObj 3,18,110,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ScreenShake 0,-1
-		SCR_PicElem 183,0,0
-		SCR_ScreenShake 0,1
-		SCR_PicElem 183,0,0
-		SCR_CallFunc 0,3,0x1009CD79
-		SCR_CallSysObj 3,18,135,-3,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ScreenShake 0,-1
-		SCR_PicElem 183,0,0
-		SCR_ScreenShake 0,1
-		SCR_PicElem 183,0,0
-		SCR_PicElem 184,0,0
-		SCR_PicElem 184,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 185,0,0
-		SCR_ShowLoopPic 4
-		SCR_PicElem 186,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 187,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 188,0,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 189,0,0
-		SCR_End
-Act_LuLi_Kill_12:
-		SCR_JmpTo byte_10707558,Act_LuLi_Kill_12
-		SCR_F058 0
-byte_107074C8:
-		SCR_CallSysObj 4,19,107,5,0	//F011 sys,id,param1,xPos,yPos
-		SCR_CallSysObj 3,18,119,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_F02B 0,-1,60,0,0,0
-		SCR_ScreenShake 0,-2
-		SCR_PicElem 53,0,0
-		SCR_F02B 0,-1,60,0,0,0
-		SCR_ScreenShake 0,2
-		SCR_PicElem 53,0,0
-		SCR_ShowLoopPic 4
-		SCR_F02B 0,-1,61,0,0,0
-		SCR_PicElem 54,0,0
-		SCR_ShowLoopPic 3
-		SCR_F02B 0,-1,62,0,0,0
-		SCR_PicElem 55,0,0
-		SCR_F02A 0
-		SCR_PicElem 56,9,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 56,0,0
-		SCR_PicElem 57,8,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 57,0,0
-		SCR_PicElem 58,6,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 58,0,0
-		SCR_PicElem 0,11,0
-		SCR_End
-byte_10707558:
-		SCR_ShowLoopPic 2
-		SCR_PicElem 195,0,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 196,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 197,0,0
-		SCR_PicElem 198,27,0
-		SCR_PicElem 198,0,0
-		SCR_PicElem 199,1,0
-		SCR_PlaySound 96,0,311,0	//param1,param2,sndid,off
-		SCR_PicElem 199,3,-5
-		SCR_PicElem 199,3,-4
-		SCR_PicElem 199,3,-3
-		SCR_PicElem 199,3,-3
-		SCR_PicElem 199,3,-2
-		SCR_PicElem 199,3,-2
-		SCR_PlaySound 96,0,568,64536	//param1,param2,sndid,off
-		SCR_F02A 1
-		SCR_SetCaningAct 18
-		SCR_SetAttackDelay 10
+		SCR_PicElem 182,0,0
+		SCR_ShowLoopPic 5
+		SCR_PicElem 181,0,0
+		SCR_PlaySound 96,0,569,2020	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,167,0	//param1,param2,sndid,off
+		SCR_SetCaningAct 15
+		SCR_SetAttackDelay 18
 		SCR_CallSpark 1,0
 		SCR_CancelActionStart 1
-		SCR_F02B 0,-1,204,3,0,0
-		SCR_PicElemAtk 200,3,0
-		SCR_TestJmp byte_107074C8,Act_LuLi_Kill_12
-		SCR_F02B 0,-1,204,3,0,1
-		SCR_PicElem 200,3,1
-		SCR_F02B 0,-1,204,3,0,1
-		SCR_PicElem 200,3,1
-		SCR_F02B 0,-1,204,4,0,2
-		SCR_PicElem 200,4,2
-		SCR_F02B 0,-1,204,4,0,2
-		SCR_PicElem 200,4,2
-		SCR_F02B 0,-1,205,4,0,2
-		SCR_PicElemAtk 201,4,2
-		SCR_F02B 0,-1,205,4,0,2
-		SCR_PicElem 201,4,2
-		SCR_F02B 0,-1,205,4,0,2
-		SCR_PicElem 201,4,2
-		SCR_PlaySound 96,0,568,64536	//param1,param2,sndid,off
-		SCR_F02B 0,-1,206,5,0,1
-		SCR_PicElemAtk 202,5,1
-		SCR_F02B 0,-1,206,5,0,1
-		SCR_PicElem 202,5,1
-		SCR_F02B 0,-1,206,5,0,1
-		SCR_PicElem 202,5,1
-		SCR_F039 1,0
-		SCR_F02B 0,-1,207,6,0,0
-		SCR_PicElemAtk 203,6,0
-		SCR_F02B 0,-1,207,6,0,0
-		SCR_PicElem 203,6,0
-		SCR_F02B 0,-1,207,6,0,0
-		SCR_PicElem 203,6,0
-		SCR_PlaySound 96,0,568,64536	//param1,param2,sndid,off
-		SCR_F039 1,0
-		SCR_F02B 0,-1,204,7,0,0
-		SCR_PicElemAtk 200,7,0
-		SCR_F02B 0,-1,204,6,0,-1
-		SCR_PicElem 200,6,-1
-		SCR_F02B 0,-1,204,6,0,-1
-		SCR_PicElem 200,6,-1
-		SCR_F039 1,0
-		SCR_F02B 0,-1,205,5,0,-1
-		SCR_PicElemAtk 201,5,-1
-		SCR_F02B 0,-1,205,5,0,-1
-		SCR_PicElem 201,5,-1
-		SCR_F02B 0,-1,205,4,0,-2
-		SCR_PicElem 201,4,-2
-		SCR_PlaySound 96,0,568,64536	//param1,param2,sndid,off
-		SCR_F039 1,0
-		SCR_F02B 0,-1,206,4,0,-2
-		SCR_PicElemAtk 202,4,-2
-		SCR_F02B 0,-1,206,4,0,-2
-		SCR_PicElem 202,4,-2
-		SCR_F02B 0,-1,206,3,0,-2
-		SCR_PicElem 202,3,-2
-		SCR_F039 1,0
-		SCR_F02B 0,-1,207,3,0,-2
-		SCR_PicElemAtk 203,3,-2
-		SCR_F02B 0,-1,207,3,0,-3
-		SCR_PicElem 203,3,-3
-		SCR_F02B 0,-1,207,3,0,-3
-		SCR_PicElem 203,3,-3
-		SCR_F02A 0
-		SCR_PicElem 51,18,-6
-		SCR_PicElem 51,2,-2
-		SCR_PicElem 51,2,-2
-		SCR_PicElem 51,2,0
-		SCR_PicElem 51,2,0
-		SCR_PicElem 51,2,1
-		SCR_PlaySound 96,0,313,0	//param1,param2,sndid,off
 		SCR_F02A 1
-		SCR_F02B 0,-1,59,1,0,1
-		SCR_PicElemAtk 52,1,1
-		SCR_F02B 0,-1,59,1,0,2
-		SCR_PicElem 52,1,2
-		SCR_F02B 0,-1,59,1,0,3
-		SCR_PicElem 52,1,3
-		SCR_F02B 0,-1,59,1,0,3
-		SCR_PicElemAtk 52,1,3
-		SCR_F02B 0,-1,60,1,0,4
-		SCR_PicElem 53,1,4
-		SCR_F02B 0,-1,60,1,0,8
-		SCR_PicElem 53,1,8
-		SCR_F02B 0,-1,60,3,0,12
-		SCR_PicElemAtk 53,3,12
-		SCR_JmpTo byte_107074C8,Act_LuLi_Kill_12
-Act_LuLi_Kill_13:
-		SCR_JmpTo byte_10707844,Act_LuLi_Kill_13
-byte_10707828:
-		SCR_CallSysObj 4,15,-1,-2,2	//F011 sys,id,param1,xPos,yPos
-		SCR_ShowLoopPic 7
-		SCR_PicElem 64,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 63,0,0
-		SCR_End
-byte_10707844:
-		SCR_F02A 1
-		SCR_TestJmp byte_10707828,Act_LuLi_Kill_13
-		SCR_F02B 0,0,213,16,0,12
-		SCR_PicElem 69,0,1
-		SCR_F02B 0,0,213,16,0,11
-		SCR_PicElem 69,1,1
-		SCR_F02B 0,0,214,15,0,9
-		SCR_PicElem 69,1,1
-		SCR_F02B 0,0,214,14,0,8
-		SCR_PicElem 69,1,1
-		SCR_F02B 0,0,215,11,0,7
-		SCR_PicElem 69,1,1
-		SCR_F02B 0,0,215,10,0,6
-		SCR_PicElem 70,8,1
-		SCR_PlaySound 96,0,317,0	//param1,param2,sndid,off
-		SCR_F02B 0,0,216,3,-1,4
-		SCR_PicElem 63,13,2
-		SCR_F02B 0,0,216,-10,0,1
-		SCR_PicElem 63,0,0
-		SCR_F02B 0,0,217,1,0,1
-		SCR_PicElem 209,1,1
-		SCR_F02B 0,0,217,4,0,1
-		SCR_PicElem 209,4,1
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 8
-		SCR_CallSpark 1,0
-		SCR_CancelActionStart 1
-		SCR_F02B 0,0,218,-4,0,1
-		SCR_PicElemAtk 210,-4,1
-		SCR_F02B 0,0,218,7,0,2
-		SCR_PicElem 210,7,2
-		SCR_CallFunc 0,0,0x1009CEA3
-		SCR_F02B 0,0,216,6,0,2
-		SCR_PicElem 210,6,2
-		SCR_F039 1,0
-		SCR_F02B 0,0,216,5,0,1
-		SCR_PicElemAtk 211,5,1
-		SCR_F02B 0,0,217,5,0,1
-		SCR_PicElem 211,5,1
-		SCR_F02B 0,0,217,5,0,0
-		SCR_PicElem 211,5,0
-		SCR_F039 1,0
-		SCR_F02B 0,0,218,4,0,0
-		SCR_PicElemAtk 212,4,0
-		SCR_F02B 0,0,218,5,0,-1
-		SCR_PicElem 212,5,-1
-		SCR_CallFunc 0,1,0x1009CEA3
-		SCR_F02B 0,0,216,6,0,-2
-		SCR_PicElem 212,6,-2
-		SCR_SetAttackDelay 10
+		SCR_F02B 0,10,121,-50,0,0
+		SCR_PicElemAtk 173,0,0
+		SCR_F02B 0,10,121,-50,0,0
+		SCR_PicElemAtk 173,0,0
+		SCR_SetCaningAct 21
+		SCR_SetAttackDelay 12
 		SCR_CallSpark 2,0
 		SCR_F039 1,0
-		SCR_F02B 0,0,216,7,0,-3
-		SCR_PicElemAtk 210,7,-3
-		SCR_F02B 0,0,217,7,0,-3
-		SCR_PicElem 210,7,-3
-		SCR_F02B 0,0,217,7,0,-4
-		SCR_PicElem 210,7,-4
-		SCR_F039 1,0
-		SCR_F02B 0,0,218,7,0,-5
-		SCR_PicElemAtk 211,7,-5
-		SCR_F02B 0,0,218,7,0,-5
-		SCR_PicElem 211,7,-5
-		SCR_F02B 0,0,216,7,0,-5
-		SCR_PicElem 211,7,-5
-		SCR_F02B 0,0,216,4,0,-6
-		SCR_PicElem 210,4,-6
-		SCR_F039 1,0
-		SCR_CallFunc 0,2,0x1009CEA3
-		SCR_F02B 0,0,217,4,0,-7
-		SCR_PicElemAtk 210,4,-7
-		SCR_F02B 0,0,217,3,0,-7
-		SCR_PicElem 210,3,-7
-		SCR_F02B 0,0,218,3,0,-6
-		SCR_PicElem 211,3,-6
-		SCR_F02B 0,0,218,3,0,-5
-		SCR_PicElem 211,3,-5
-		SCR_F02B 0,0,216,3,0,-4
-		SCR_PicElem 211,3,-4
-		SCR_SetAttackDelay 12
-		SCR_CallSpark 31,0
-		SCR_F039 1,0
-		SCR_CancelActionEnd
-		SCR_F02B 0,0,216,2,0,-3
-		SCR_PicElemAtk 212,2,-3
-		SCR_F02B 0,0,214,10,0,-1
-		SCR_PicElem 68,20,14
-		SCR_F02B 0,0,214,-10,0,-15
-		SCR_PicElem 68,5,-3
-		SCR_F02B 0,0,213,-13,0,-7
-		SCR_PicElem 68,2,-2
-		SCR_F02B 0,0,213,-15,-1,-4
-		SCR_PicElem 69,5,-2
-		SCR_F02B 0,0,213,-20,0,-3
-		SCR_PicElem 69,4,-1
+		SCR_F02B 0,10,122,-50,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 172,0,0
+		SCR_F02B 0,10,123,-50,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 172,0,0
 		SCR_F02A 0
-		SCR_PicElem 69,3,0
-		SCR_PicElem 69,2,4
-		SCR_PicElem 69,2,6
-		SCR_PicElem 69,2,9
-		SCR_PicElem 69,2,12
-		SCR_PicElem 69,2,15
-		SCR_PicElem 69,1,18
-		SCR_SetZMode	//F003	设置Z轴模式
-		SCR_PicElem 69,1,20
-		SCR_JmpTo byte_10707828,Act_LuLi_Kill_13
-Act_LuLi_Kill_14:
-		SCR_ShowLoopPic 2
-		SCR_PicElem 219,0,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 224,0,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 225,0,0
-		SCR_PlaySound 96,0,315,0	//param1,param2,sndid,off
-		SCR_ShowLoopPic 2
-		SCR_PicElem 226,0,0
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 4
-		SCR_CallSpark 4,0
-		SCR_PicElemAtk 227,5,0
-		SCR_PicElem 227,5,0
-		SCR_PicElemAtk 227,5,0
-		SCR_CallSysObj 4,67,47,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ShowLoopPic 3
-		SCR_PicElem 228,5,0
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
-		SCR_F039 1,0
-		SCR_CancelActionStart 1
-		SCR_PicElemAtk 227,4,0
-		SCR_PicElem 227,4,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 228,4,0
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
-		SCR_F039 1,0
-		SCR_PicElemAtk 227,3,0
-		SCR_PicElem 227,3,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 228,3,0
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
-		SCR_F039 1,0
-		SCR_PicElemAtk 227,2,0
-		SCR_PicElem 227,2,0
-		SCR_ShowLoopPic 2
-		SCR_PicElem 228,2,0
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
-		SCR_SetCaningAct 19
-		SCR_SetAttackDelay 8
-		SCR_CallSpark 29,0
-		SCR_F039 1,0
+		SCR_ShowLoopPic 20
 		SCR_CancelActionEnd
-		SCR_PicElemAtk 227,1,0
-		SCR_PicElem 227,1,0
-		SCR_PicElemAtk 227,1,0
-		SCR_ShowLoopPic 3
-		SCR_PicElem 228,1,0
-		SCR_ScrLoopStart 2
-		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
+		SCR_PicElem 172,0,0
+		SCR_ShowLoopPic 5
+		SCR_PicElem 174,0,0
+		SCR_ShowLoopPic 5
+		SCR_PicElem 183,0,0
+		SCR_End
+Act_LuLi_Kill_12:
+		SCR_SetAfterImage 4,-1
 		SCR_ShowLoopPic 4
-		SCR_PicElem 227,0,0
+		SCR_PicElem 171,1,0
+		SCR_PlaySound 96,0,172,0	//param1,param2,sndid,off
+		SCR_SetCaningAct 15
+		SCR_SetAttackDelay 8
+		SCR_CallSpark 1,0
+		SCR_CancelActionStart 1
+		SCR_ShowLoopPic 7
+		SCR_PicElemAtk 172,1,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 173,2,0
+		SCR_F039 1,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 174,3,0
+		SCR_SetCaningAct 17
+		SCR_SetAttackDelay 8
+		SCR_CallSpark 1,0
 		SCR_ShowLoopPic 4
-		SCR_PicElem 228,0,0
-		SCR_ScrLoopEnd
-		SCR_ShowLoopPic 9
-		SCR_PicElem 220,0,0
+		SCR_PicElemAtk 175,4,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 172,5,0
+		SCR_F039 1,0
+		SCR_SetCaningAct 16
+		SCR_SetAttackDelay 8
+		SCR_CallSpark 3,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 173,7,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 174,5,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 175,4,0
+		SCR_F039 1,0
+		SCR_SetCaningAct 19
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 2,0
+		SCR_ShowLoopPic 4
+		SCR_PicElemAtk 172,2,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 6
+		SCR_PicElem 172,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 178,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 182,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 183,0,0
+		SCR_PicElem 0,0,0
+		SCR_SetAfterImage 0,0
+		SCR_End
+Act_LuLi_Kill_13:
+		SCR_SetCaningAct 19
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 1,0
+		SCR_SetInvincible
+		SCR_ShowLoopPic 4
+		SCR_PicElem 37,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 38,0,0
+		SCR_CallSysObj 4,26,-36,0,-78	//F011 sys,id,param1,xPos,yPos
+		SCR_SetRoroNoMoveTime 35
+		SCR_SetBgDarkRecover
+		SCR_ShowLoopPic 34
+		SCR_PicElem 39,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 40,0,0
+		SCR_PlaySound 96,0,167,0	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
+		SCR_CancelActionStart 1
 		SCR_ShowLoopPic 3
-		SCR_PicElem 221,0,0
+		SCR_PicElemAtk 41,0,0
+		SCR_SetAfterImage 4,-1
+		SCR_ShowLoopPic 5
+		SCR_PicElemAtk 42,0,0
 		SCR_ShowLoopPic 3
-		SCR_PicElem 222,0,0
+		SCR_PicElem 43,10,0
 		SCR_ShowLoopPic 3
-		SCR_PicElem 223,0,0
+		SCR_PicElem 105,8,0
+		SCR_PlaySound 96,0,568,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 2
+		SCR_PicElem 106,5,0
+		SCR_SetAfterImage 0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 107,2,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 108,0,0
+		SCR_CancelActionEnd
+		SCR_ShowLoopPic 3
+		SCR_PicElem 109,0,0
+		SCR_PicElem 199,23,0
+		SCR_PicElem 199,0,0
+		SCR_PlaySound 96,0,176,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 5
+		SCR_PicElem 200,0,0
+		SCR_CallObj 0,0,0x1029244C,31,-1,0	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 4
+		SCR_PicElem 201,0,0
+		SCR_PicElem 202,1,0
+		SCR_ShowLoopPic 13
+		SCR_PicElem 202,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 203,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 204,0,0
+		SCR_PicElem 205,-12,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 205,0,0
+		SCR_PicElem 0,-8,0
+		SCR_End
+Act_LuLi_Kill_14:
+		SCR_SetInvincible
+		SCR_ShowLoopPic 3
+		SCR_PicElem 68,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 69,0,0
+		SCR_CallSysObj 4,26,-6,0,-84	//F011 sys,id,param1,xPos,yPos
+		SCR_SetRoroNoMoveTime 35
+		SCR_SetBgDarkRecover
+		SCR_ShowLoopPic 34
+		SCR_PicElem 70,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 71,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 72,0,0
+		SCR_PlaySound 96,0,171,0	//param1,param2,sndid,off
+		SCR_CallObj 8,0,0x102925D0,25,-2,-45	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,15,-2,-54	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,-17,-2,-66	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,7,-2,-44	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,39,-2,-57	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,-5,-2,-64	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,40,-2,-15	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,82,2,-20	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_CallObj 8,0,0x102925D0,-50,4,-15	//F012 b1,b2,objPtr,w3,xPos,yPos
+		SCR_ShowLoopPic 7
+		SCR_PicElem 73,0,0
+		SCR_ShowLoopPic 12
+		SCR_PicElem 73,0,0
+		SCR_ClearInvincible
+		SCR_ShowLoopPic 4
+		SCR_PicElem 74,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 75,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 76,0,0
 		SCR_End
 Act_LuLi_Kill_15:
-		SCR_JmpTo byte_10707C74,Act_LuLi_Kill_15
-byte_10707C4C:
-		SCR_F02A 0
-		SCR_CallSysObj 4,12,0,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_ShowLoopPic 3
-		SCR_PicElem 70,0,0
-		SCR_ShowLoopPic 7
-		SCR_PicElem 64,0,0
+		SCR_SetCaningAct 14
+		SCR_SetAttackDelay 12
+		SCR_CallSpark 3,0
+		SCR_SetInvincible
 		SCR_ShowLoopPic 4
-		SCR_PicElem 63,0,0
-		SCR_End
-byte_10707C74:
-		SCR_F02A 1
-		SCR_ScrLoopStart 4
-		SCR_F02B 0,0,213,0,0,-3
-		SCR_PicElem 229,0,0
-		SCR_ScrLoopEnd
-		SCR_ScrLoopStart 3
-		SCR_F02B 0,0,214,0,0,-3
-		SCR_PicElem 229,0,0
-		SCR_ScrLoopEnd
-		SCR_F02B 0,0,215,0,0,-3
-		SCR_PicElem 229,0,0
-		SCR_F02B 0,0,215,0,0,-3
-		SCR_PicElem 230,0,0
-		SCR_SetCaningAct 19
-		SCR_F04C 1
-		SCR_CallSpark 10,0
+		SCR_PicElem 156,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 157,0,0
+		SCR_CallSysObj 4,26,-32,0,-95	//F011 sys,id,param1,xPos,yPos
+		SCR_SetRoroNoMoveTime 35
+		SCR_SetBgDarkRecover
+		SCR_ShowLoopPic 34
+		SCR_PicElem 158,0,0
+		SCR_PlaySound 96,0,168,0	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
+		SCR_ShowLoopPic 2
+		SCR_PicElem 159,0,0
 		SCR_CancelActionStart 1
-		SCR_TestJmp byte_10707C4C,Act_LuLi_Kill_15
-		SCR_CallObj 1,0,0x101CB280,46,0,-24	//F012 b1,b2,objPtr,w3,xPos,yPos
-		SCR_F02B 0,0,216,1,0,0
-		SCR_PicElemAtk 230,1,3
-		SCR_F02B 0,0,216,1,0,1
-		SCR_PicElem 230,1,4
-		SCR_F02B 0,0,216,2,0,2
-		SCR_PicElemAtk 230,2,5
-		SCR_F02B 0,0,217,2,0,3
-		SCR_PicElem 230,2,6
-		SCR_F02B 0,0,217,2,0,4
-		SCR_PicElem 230,2,7
-		SCR_F02B 0,0,217,3,0,3
-		SCR_PicElemAtk 230,3,6
-		SCR_F02B 0,0,218,2,0,2
-		SCR_PicElem 230,2,5
-		SCR_F02B 0,0,218,2,0,1
-		SCR_PicElem 230,2,4
-		SCR_F02B 0,0,218,2,0,0
-		SCR_PicElemAtk 230,2,3
-		SCR_F02B 0,0,216,2,0,-1
-		SCR_PicElem 230,2,2
-		SCR_F02B 0,0,216,2,0,-2
-		SCR_PicElem 230,2,1
-		SCR_F02B 0,0,217,2,0,-2
-		SCR_PicElemAtk 230,2,1
-		SCR_F02B 0,0,217,2,0,-2
-		SCR_PicElem 230,2,1
-		SCR_F02B 0,0,218,2,0,-3
-		SCR_PicElem 230,2,0
-		SCR_F02B 0,0,218,2,0,-3
-		SCR_PicElemAtk 230,2,0
-		SCR_F02B 0,0,216,2,0,-3
-		SCR_PicElem 230,2,0
-		SCR_F02B 0,0,216,2,0,-4
-		SCR_PicElem 230,2,-1
-		SCR_F02B 0,0,217,1,0,-4
-		SCR_PicElemAtk 230,1,-1
-		SCR_F02B 0,0,217,1,0,-4
-		SCR_PicElem 230,1,-1
-		SCR_F02B 0,0,218,1,0,-4
-		SCR_PicElem 230,1,-1
-		SCR_F02B 0,0,218,1,0,-4
-		SCR_PicElemAtk 230,1,-1
-		SCR_F02B 0,0,216,1,0,-4
-		SCR_PicElem 230,1,-1
-		SCR_F02B 0,0,215,1,0,-4
-		SCR_PicElem 231,1,-1
+		SCR_F02A 1
+		SCR_F02B 0,-1,165,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElemAtk 160,0,0
+		SCR_F039 1,0
+		SCR_F02B 0,-1,166,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,167,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,168,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,169,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,170,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_PlaySound 96,0,168,0	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
+		SCR_F02B 0,-1,165,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElemAtk 160,0,0
+		SCR_F039 1,0
+		SCR_F02B 0,-1,166,0,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,167,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,168,0,0,0
+		SCR_ShowLoopPic 2
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,169,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,170,0,0,0
+		SCR_ShowLoopPic 4
+		SCR_PicElem 161,0,0
+		SCR_PlaySound 96,0,172,0	//param1,param2,sndid,off
+		SCR_PlaySound 96,0,565,0	//param1,param2,sndid,off
+		SCR_SetCaningAct 18
+		SCR_SetAttackDelay 16
+		SCR_CallSpark 2,0
+		SCR_F02B 0,-1,165,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElemAtk 160,0,0
+		SCR_F039 1,0
 		SCR_CancelActionEnd
-		SCR_F02B 0,0,215,1,0,-4
-		SCR_PicElem 231,1,-1
-		SCR_F02B 0,0,214,2,0,-4
-		SCR_PicElem 231,2,-1
-		SCR_F02B 0,0,214,2,0,-4
-		SCR_PicElem 231,2,-1
-		SCR_F02B 0,0,213,-7,0,-7
-		SCR_PicElem 66,4,-11
-		SCR_F02B 0,0,213,-12,0,4
-		SCR_PicElem 66,2,-3
-		SCR_F02B 0,0,213,-15,0,7
-		SCR_PicElem 66,2,-3
-		SCR_F02B 0,0,213,-18,0,10
-		SCR_PicElem 66,2,-4
+		SCR_F02B 0,-1,166,0,0,0
+		SCR_ShowLoopPic 16
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,167,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,168,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,169,0,0,0
+		SCR_ShowLoopPic 3
+		SCR_PicElem 161,0,0
+		SCR_F02B 0,-1,170,0,0,0
+		SCR_ShowLoopPic 11
+		SCR_PicElem 161,0,0
 		SCR_F02A 0
-		SCR_PicElem 66,2,-3
-		SCR_PicElem 67,2,-2
-		SCR_PicElem 67,2,-1
-		SCR_PicElem 67,2,-1
-		SCR_PicElem 200,6,-8
-		SCR_PicElem 200,2,-1
-		SCR_PicElem 201,12,-3
-		SCR_PicElem 201,2,-1
-		SCR_PicElem 201,2,0
-		SCR_PicElem 202,2,7
-		SCR_PicElem 202,2,0
-		SCR_PicElem 202,2,1
-		SCR_PicElem 203,5,8
-		SCR_PicElem 203,2,2
-		SCR_PicElem 203,1,3
-		SCR_PicElem 69,7,16
-		SCR_PicElem 69,0,12
-		SCR_PicElem 69,0,15
-		SCR_PicElem 69,0,18
-		SCR_SetZMode	//F003	设置Z轴模式
-		SCR_PicElem 69,0,21
-		SCR_JmpTo byte_10707C4C,Act_LuLi_Kill_15
+		SCR_ShowLoopPic 3
+		SCR_PicElem 162,0,0
+		SCR_ShowLoopPic 5
+		SCR_PicElem 163,0,0
+		SCR_ShowLoopPic 5
+		SCR_PicElem 164,0,0
+		SCR_End
 Act_LuLi_Kill_20:
 		SCR_SetInvincible
 		SCR_F056 0	//未知开关
@@ -6890,28 +6748,28 @@ Act_LuLi_Kill_29:
 		SCR_SetInvincible
 		SCR_SetAfterImage 2,-1
 		SCR_CallSysObj 4,36,11,0,0	//F011 sys,id,param1,xPos,yPos
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,3,3
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,3,4
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,4,5
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,5,6
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,6,7
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,7,8
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,8,9
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,9,10
 		SCR_SetAfterImage 0,0
-byte_10708698:
-		SCR_TestJmp byte_107086A4,Act_LuLi_Kill_29
+byte_107081BC:
+		SCR_TestJmp byte_107081C8,Act_LuLi_Kill_29
 		SCR_PicElem 48,10,11
-		SCR_JmpTo byte_10708698,Act_LuLi_Kill_29
-byte_107086A4:
+		SCR_JmpTo byte_107081BC,Act_LuLi_Kill_29
+byte_107081C8:
 		SCR_ClearInvincible
 		SCR_PicElem 49,18,0
 		SCR_ShowLoopPic 2
@@ -8615,7 +8473,7 @@ Act_LuLi_Caning_4:
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
 		SCR_PicElem 23,9,0
-		SCR_TestJmp byte_1070A388,Act_LuLi_Caning_4
+		SCR_TestJmp byte_10709EAC,Act_LuLi_Caning_4
 		SCR_F05D 1
 		SCR_PicElem 23,9,1
 		SCR_PicElem 23,9,2
@@ -8635,7 +8493,7 @@ Act_LuLi_Caning_4:
 		SCR_PicElem 24,11,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,11,12
-byte_1070A388:
+byte_10709EAC:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -8671,7 +8529,7 @@ Act_LuLi_Caning_5:
 		SCR_PicElem 23,5,-1
 		SCR_PicElem 23,4,0
 		SCR_PicElem 23,4,0
-		SCR_TestJmp byte_1070A468,Act_LuLi_Caning_5
+		SCR_TestJmp byte_10709F8C,Act_LuLi_Caning_5
 		SCR_F05D 1
 		SCR_PicElem 23,5,1
 		SCR_PicElem 23,4,2
@@ -8692,7 +8550,7 @@ Act_LuLi_Caning_5:
 		SCR_PicElem 25,5,14
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,5,15
-byte_1070A468:
+byte_10709F8C:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -8723,7 +8581,7 @@ Act_LuLi_Caning_6:
 		SCR_PicElem 22,5,-2
 		SCR_PicElem 23,4,-1
 		SCR_PicElem 23,5,0
-		SCR_TestJmp byte_1070A518,Act_LuLi_Caning_6
+		SCR_TestJmp byte_1070A03C,Act_LuLi_Caning_6
 		SCR_F05D 1
 		SCR_PicElem 23,4,2
 		SCR_PicElem 23,4,2
@@ -8737,7 +8595,7 @@ Act_LuLi_Caning_6:
 		SCR_PicElem 25,2,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,2,12
-byte_1070A518:
+byte_1070A03C:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-1
 		SCR_PicElem 25,0,0
@@ -8775,7 +8633,7 @@ Act_LuLi_Caning_7:
 		SCR_PicElem 22,2,-1
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,1,0
-		SCR_TestJmp byte_1070A61C,Act_LuLi_Caning_7
+		SCR_TestJmp byte_1070A140,Act_LuLi_Caning_7
 		SCR_F05D 1
 		SCR_PicElem 23,1,1
 		SCR_PicElem 24,2,1
@@ -8803,7 +8661,7 @@ Act_LuLi_Caning_7:
 		SCR_PicElem 30,2,22
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,2,25
-byte_1070A61C:
+byte_1070A140:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -8869,7 +8727,7 @@ Act_LuLi_Caning_8:
 		SCR_PicElem 24,1,0
 		SCR_PicElem 24,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070A7D0,Act_LuLi_Caning_8
+		SCR_TestJmp byte_1070A2F4,Act_LuLi_Caning_8
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,1,1
@@ -8913,7 +8771,7 @@ Act_LuLi_Caning_8:
 		SCR_PicElem 30,0,20
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_1070A7D0:
+byte_1070A2F4:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
 		SCR_PicElem 25,0,0
@@ -8953,7 +8811,7 @@ Act_LuLi_Caning_9:
 		SCR_PicElem 2,7,-1
 		SCR_PicElem 2,7,0
 		SCR_PicElem 1,6,0
-		SCR_TestJmp byte_1070A8C8,Act_LuLi_Caning_9
+		SCR_TestJmp byte_1070A3EC,Act_LuLi_Caning_9
 		SCR_F05D 1
 		SCR_PicElem 1,7,1
 		SCR_PicElem 1,7,1
@@ -8976,7 +8834,7 @@ Act_LuLi_Caning_9:
 		SCR_PicElem 3,6,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 3,6,13
-byte_1070A8C8:
+byte_1070A3EC:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -9000,7 +8858,7 @@ Act_LuLi_Caning_10:
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,-1
 		SCR_PicElem 27,1,0
-		SCR_TestJmp byte_1070A950,Act_LuLi_Caning_10
+		SCR_TestJmp byte_1070A474,Act_LuLi_Caning_10
 		SCR_PicElem 27,2,0
 		SCR_PicElem 27,2,1
 		SCR_PicElem 27,2,1
@@ -9011,7 +8869,7 @@ Act_LuLi_Caning_10:
 		SCR_PicElem 27,2,7
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 27,2,11
-byte_1070A950:
+byte_1070A474:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -9037,7 +8895,7 @@ Act_LuLi_Caning_11:
 		SCR_PicElem 22,1,-1
 		SCR_PicElem 23,2,-12
 		SCR_PicElem 23,1,-1
-		SCR_TestJmp byte_1070AA0C,Act_LuLi_Caning_11
+		SCR_TestJmp byte_1070A530,Act_LuLi_Caning_11
 		SCR_F05D 1
 		SCR_PicElem 23,2,1
 		SCR_PicElem 23,1,1
@@ -9059,7 +8917,7 @@ Act_LuLi_Caning_11:
 		SCR_PicElem 24,2,17
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,2,20
-byte_1070AA0C:
+byte_1070A530:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -9079,13 +8937,13 @@ Act_LuLi_Caning_12:
 		SCR_PicElem 27,3,-3
 		SCR_PicElem 27,3,-2
 		SCR_PicElem 24,2,-1
-		SCR_TestJmp byte_1070AA70,Act_LuLi_Caning_12
+		SCR_TestJmp byte_1070A594,Act_LuLi_Caning_12
 		SCR_PicElem 24,3,1
 		SCR_PicElem 24,2,2
 		SCR_PicElem 24,3,3
 		SCR_PicElem 24,2,4
 		SCR_PicElem 24,3,5
-byte_1070AA70:
+byte_1070A594:
 		SCR_PicElem 24,3,8
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,3,11
@@ -9103,7 +8961,7 @@ Act_LuLi_Caning_13:
 		SCR_PicElem 24,3,0
 		SCR_PicElem 24,-3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070AAE4,Act_LuLi_Caning_13
+		SCR_TestJmp byte_1070A608,Act_LuLi_Caning_13
 		SCR_PicElem 24,6,20
 		SCR_PicElem 24,3,17
 		SCR_PicElem 24,2,15
@@ -9115,7 +8973,7 @@ Act_LuLi_Caning_13:
 		SCR_PicElem 24,1,19
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,1,22
-byte_1070AAE4:
+byte_1070A608:
 		SCR_CallSysObj 3,19,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
@@ -9234,7 +9092,7 @@ Act_LuLi_Caning_18:
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
 		SCR_PicElem 23,-9,0
-		SCR_TestJmp byte_1070AD00,Act_LuLi_Caning_18
+		SCR_TestJmp byte_1070A824,Act_LuLi_Caning_18
 		SCR_F05D 1
 		SCR_PicElem 23,-9,1
 		SCR_PicElem 23,-9,2
@@ -9254,7 +9112,7 @@ Act_LuLi_Caning_18:
 		SCR_PicElem 24,-11,9
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-11,12
-byte_1070AD00:
+byte_1070A824:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -9290,7 +9148,7 @@ Act_LuLi_Caning_19:
 		SCR_PicElem 23,-5,-1
 		SCR_PicElem 23,-4,0
 		SCR_PicElem 23,-4,0
-		SCR_TestJmp byte_1070ADE0,Act_LuLi_Caning_19
+		SCR_TestJmp byte_1070A904,Act_LuLi_Caning_19
 		SCR_F05D 1
 		SCR_PicElem 23,-5,1
 		SCR_PicElem 23,-4,2
@@ -9311,7 +9169,7 @@ Act_LuLi_Caning_19:
 		SCR_PicElem 25,-5,13
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-5,16
-byte_1070ADE0:
+byte_1070A904:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -9342,7 +9200,7 @@ Act_LuLi_Caning_20:
 		SCR_PicElem 22,-5,-2
 		SCR_PicElem 23,-4,-1
 		SCR_PicElem 23,-5,0
-		SCR_TestJmp byte_1070AE90,Act_LuLi_Caning_20
+		SCR_TestJmp byte_1070A9B4,Act_LuLi_Caning_20
 		SCR_F05D 1
 		SCR_PicElem 23,-4,2
 		SCR_PicElem 23,-4,2
@@ -9356,7 +9214,7 @@ Act_LuLi_Caning_20:
 		SCR_PicElem 25,-2,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-2,13
-byte_1070AE90:
+byte_1070A9B4:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-1
 		SCR_PicElem 25,0,0
@@ -9394,7 +9252,7 @@ Act_LuLi_Caning_21:
 		SCR_PicElem 22,-2,-1
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-1,0
-		SCR_TestJmp byte_1070AF94,Act_LuLi_Caning_21
+		SCR_TestJmp byte_1070AAB8,Act_LuLi_Caning_21
 		SCR_F05D 1
 		SCR_PicElem 23,-1,1
 		SCR_PicElem 24,-2,1
@@ -9422,7 +9280,7 @@ Act_LuLi_Caning_21:
 		SCR_PicElem 30,-2,22
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,-2,25
-byte_1070AF94:
+byte_1070AAB8:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -9488,7 +9346,7 @@ Act_LuLi_Caning_22:
 		SCR_PicElem 44,-1,0
 		SCR_PicElem 44,0,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070B148,Act_LuLi_Caning_22
+		SCR_TestJmp byte_1070AC6C,Act_LuLi_Caning_22
 		SCR_F05D 1
 		SCR_PicElem 24,0,1
 		SCR_PicElem 24,-1,1
@@ -9532,7 +9390,7 @@ Act_LuLi_Caning_22:
 		SCR_PicElem 30,0,20
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 30,0,23
-byte_1070B148:
+byte_1070AC6C:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
 		SCR_PicElem 25,0,0
@@ -9572,7 +9430,7 @@ Act_LuLi_Caning_23:
 		SCR_PicElem 5,-7,-1
 		SCR_PicElem 5,-7,0
 		SCR_PicElem 6,-6,0
-		SCR_TestJmp byte_1070B240,Act_LuLi_Caning_23
+		SCR_TestJmp byte_1070AD64,Act_LuLi_Caning_23
 		SCR_F05D 1
 		SCR_PicElem 6,-7,1
 		SCR_PicElem 6,-7,1
@@ -9595,7 +9453,7 @@ Act_LuLi_Caning_23:
 		SCR_PicElem 4,-6,10
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 4,-6,13
-byte_1070B240:
+byte_1070AD64:
 		SCR_CallSysObj 2,16,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-3
 		SCR_PicElem 25,0,0
@@ -9619,7 +9477,7 @@ Act_LuLi_Caning_24:
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,-1
 		SCR_PicElem 27,-1,0
-		SCR_TestJmp byte_1070B2C8,Act_LuLi_Caning_24
+		SCR_TestJmp byte_1070ADEC,Act_LuLi_Caning_24
 		SCR_PicElem 27,-2,0
 		SCR_PicElem 27,-2,1
 		SCR_PicElem 27,-2,1
@@ -9630,7 +9488,7 @@ Act_LuLi_Caning_24:
 		SCR_PicElem 27,-2,7
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 27,-2,10
-byte_1070B2C8:
+byte_1070ADEC:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -9656,7 +9514,7 @@ Act_LuLi_Caning_25:
 		SCR_PicElem 22,-1,-1
 		SCR_PicElem 23,-2,-12
 		SCR_PicElem 23,-1,-1
-		SCR_TestJmp byte_1070B384,Act_LuLi_Caning_25
+		SCR_TestJmp byte_1070AEA8,Act_LuLi_Caning_25
 		SCR_F05D 1
 		SCR_PicElem 23,-2,1
 		SCR_PicElem 23,-1,1
@@ -9678,7 +9536,7 @@ Act_LuLi_Caning_25:
 		SCR_PicElem 25,-2,17
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 25,-2,20
-byte_1070B384:
+byte_1070AEA8:
 		SCR_CallSysObj 0,4,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-5
 		SCR_PicElem 25,0,0
@@ -9698,7 +9556,7 @@ Act_LuLi_Caning_26:
 		SCR_PicElem 27,-3,-3
 		SCR_PicElem 27,-3,-2
 		SCR_PicElem 24,-2,-1
-		SCR_TestJmp byte_1070B3F4,Act_LuLi_Caning_26
+		SCR_TestJmp byte_1070AF18,Act_LuLi_Caning_26
 		SCR_PicElem 24,-3,1
 		SCR_PicElem 24,-2,2
 		SCR_PicElem 24,-3,3
@@ -9707,7 +9565,7 @@ Act_LuLi_Caning_26:
 		SCR_PicElem 24,-3,8
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-3,11
-byte_1070B3F4:
+byte_1070AF18:
 		SCR_ShowLoopPic 2
 		SCR_CallSysObj 0,3,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_PicElem 26,0,0
@@ -9720,7 +9578,7 @@ Act_LuLi_Caning_27:
 		SCR_PicElem 24,-3,0
 		SCR_PicElem 24,3,0
 		SCR_ScrLoopEnd
-		SCR_TestJmp byte_1070B454,Act_LuLi_Caning_27
+		SCR_TestJmp byte_1070AF78,Act_LuLi_Caning_27
 		SCR_PicElem 24,-6,20
 		SCR_PicElem 24,-3,17
 		SCR_PicElem 24,-2,15
@@ -9732,7 +9590,7 @@ Act_LuLi_Caning_27:
 		SCR_PicElem 24,-1,19
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 24,-1,22
-byte_1070B454:
+byte_1070AF78:
 		SCR_CallSysObj 3,19,0,-1,0	//F011 sys,id,param1,xPos,yPos
 		SCR_CallSysObj 0,4,0,-2,0	//F011 sys,id,param1,xPos,yPos
 		SCR_ScreenShake 0,-6
@@ -9744,7 +9602,7 @@ byte_1070B454:
 Act_LuLi_Caning_28:
 		SCR_ShowLoopPic 7
 		SCR_PicElem 99,0,0
-		SCR_IfDeadJmpTo byte_1070B4CC,0
+		SCR_IfDeadJmpTo byte_1070AFF0,0
 		SCR_SetInvincible
 		SCR_ShowLoopPic 5
 		SCR_PicElem 100,0,0
@@ -9760,7 +9618,7 @@ Act_LuLi_Caning_28:
 		SCR_End
 		SCR_CallFunc 0,3,0x100A781B
 		SCR_ScrLoopStart 30
-byte_1070B4CC:
+byte_1070AFF0:
 		SCR_PicElem 99,0,0
 		SCR_PicElemNone 99,0,0
 		SCR_ScrLoopEnd

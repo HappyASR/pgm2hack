@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_ZiYi_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_ZiYi_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_ZiYi_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_ZiYi_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_ZiYi_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_ZiYi_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_ZiYi_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_ZiYi_Start_44  ,2,1,0
 		ACT_Elem 1,45,  0  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_ZiYi_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_ZiYi_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_ZiYi_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -95,6 +98,7 @@ byte_10700348:
 		SCR_PicElem 55,0,0
 		SCR_PicElem 0,0,0
 		SCR_F056 1	//未知开关
+byte_10700368:
 		SCR_ClearInvincible
 		SCR_End
 Act_ZiYi_Start_1:
@@ -174,6 +178,7 @@ Act_ZiYi_Start_2:
 		SCR_PicElem 180,0,0
 		SCR_SetRoleBright 24
 		SCR_ShowLoopPic 8
+byte_107004A8:
 		SCR_PicElem 180,0,0
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
@@ -207,6 +212,7 @@ Act_ZiYi_Start_2:
 		SCR_PicElem 180,0,0
 		SCR_ShowLoopPic 4
 		SCR_PicElem 181,0,0
+byte_1070052C:
 		SCR_ShowLoopPic 4
 		SCR_PicElem 182,0,0
 		SCR_ShowLoopPic 4
@@ -251,6 +257,7 @@ Act_ZiYi_Start_3:
 		SCR_PicElem 51,69,8
 		SCR_ShowLoopPic 4
 		SCR_PicElem 52,68,16
+byte_107005D8:
 		SCR_SetZMode	//F003	设置Z轴模式
 		SCR_PicElem 53,68,32
 		SCR_F018 0	//F018
@@ -281,6 +288,7 @@ Act_ZiYi_Start_4:
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x100A3B41
 		SCR_PicElem 12,0,0
+byte_1070065C:
 		SCR_ScrLoopEnd
 		SCR_SetRoleDark 18
 		SCR_ScrLoopStart 6
@@ -407,6 +415,7 @@ byte_107007EC:
 		SCR_PicElem 14,1,-1
 		SCR_ShowLoopPic 4
 		SCR_PicElem 15,0,-1
+byte_10700868:
 		SCR_ShowLoopPic 4
 		SCR_PicElem 16,0,-1
 		SCR_F018 0	//F018
@@ -498,6 +507,7 @@ Act_ZiYi_Start_7:
 		SCR_PicElem 1,1,-32
 		SCR_PicElem 1,63,-32
 		SCR_PicElem 1,1,-32
+byte_107009F4:
 		SCR_PicElem 1,1,-32
 		SCR_PicElem 1,63,-32
 		SCR_PicElem 1,1,-32

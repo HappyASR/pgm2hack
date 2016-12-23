@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_SunWuKong_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_SunWuKong_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_SunWuKong_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_SunWuKong_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_SunWuKong_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_SunWuKong_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_SunWuKong_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_SunWuKong_Start_44  ,2,1,0
 		ACT_Elem 1,45,  0  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_SunWuKong_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_SunWuKong_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_SunWuKong_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -174,6 +177,7 @@ Act_SunWuKong_Start_2:
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
 		SCR_PicElem 169,0,0
+byte_107004A8:
 		SCR_SetRoleBright 24
 		SCR_ShowLoopPic 6
 		SCR_PicElem 169,0,0
@@ -208,6 +212,7 @@ Act_SunWuKong_Start_3:
 		SCR_F018 1	//F018
 		SCR_F025 2	//δ֪F025
 		SCR_ShowLoopPic 3
+byte_1070052C:
 		SCR_PicElem 19,65,0
 		SCR_ShowLoopPic 3
 		SCR_PicElem 20,65,0
@@ -279,6 +284,7 @@ Act_SunWuKong_Start_4:
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x1009DD45
 		SCR_PicElem 24,0,0
+byte_1070065C:
 		SCR_ScrLoopEnd
 		SCR_SetRoleDark 25
 		SCR_ScrLoopStart 6
@@ -314,6 +320,7 @@ Act_SunWuKong_Start_5:
 		SCR_F018 1	//F018
 		SCR_FaceToLeft
 		SCR_CallFunc 0,0,0x1009DD6D
+byte_107006F8:
 		SCR_ShowLoopPic 6
 		SCR_PicElem 19,1,-1
 		SCR_ShowLoopPic 6
@@ -469,6 +476,7 @@ Act_SunWuKong_Start_7:
 		SCR_CallFunc 0,1,0x1009DD7F
 		SCR_PicElem 0,1,-40
 		SCR_PicElem 0,1,-40
+byte_10700970:
 		SCR_CallFunc 0,1,0x1009DD7F
 		SCR_PicElem 0,1,-40
 		SCR_PicElem 0,63,-40
@@ -498,6 +506,7 @@ Act_SunWuKong_Start_7:
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,127,-40
 		SCR_PicElem 2,127,-40
+byte_107009F4:
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40

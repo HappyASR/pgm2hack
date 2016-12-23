@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_TieShan_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_TieShan_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_TieShan_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_TieShan_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_TieShan_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_TieShan_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_TieShan_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_TieShan_Start_44  ,2,1,0
 		ACT_Elem 1,45,  Act_TieShan_Start_45  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_TieShan_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_TieShan_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_TieShan_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -95,6 +98,7 @@ byte_10700348:
 		SCR_PicElem 45,0,0
 		SCR_PicElem 0,0,0
 		SCR_F056 1	//Î´Öª¿ª¹Ø
+byte_10700368:
 		SCR_ClearInvincible
 		SCR_End
 Act_TieShan_Start_1:
@@ -175,6 +179,7 @@ Act_TieShan_Start_2:
 		SCR_PicElem 96,0,0
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
+byte_107004A8:
 		SCR_PicElem 96,0,0
 		SCR_SetRoleBright 32
 		SCR_ShowLoopPic 6
@@ -208,6 +213,7 @@ Act_TieShan_Start_2:
 		SCR_ShowLoopPic 4
 		SCR_PicElem 99,0,0
 		SCR_ShowLoopPic 4
+byte_1070052C:
 		SCR_PicElem 100,0,0
 		SCR_ClearInvincible
 		SCR_End
@@ -281,6 +287,7 @@ Act_TieShan_Start_4:
 		SCR_SetRoleDark 18
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x100A23B1
+byte_1070065C:
 		SCR_PicElem 19,0,0
 		SCR_ScrLoopEnd
 		SCR_SetRoleDark 18
@@ -499,6 +506,7 @@ Act_TieShan_Start_7:
 		SCR_PicElem 1,1,-32
 		SCR_PicElem 1,1,-40
 		SCR_PicElem 1,1,-40
+byte_107009F4:
 		SCR_PicElem 1,65,-40
 		SCR_PicElem 1,65,-40
 		SCR_PicElem 1,65,-40

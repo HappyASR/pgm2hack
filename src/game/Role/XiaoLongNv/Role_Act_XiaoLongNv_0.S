@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_XiaoLongNv_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_XiaoLongNv_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_XiaoLongNv_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_XiaoLongNv_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_XiaoLongNv_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_XiaoLongNv_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_XiaoLongNv_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_XiaoLongNv_Start_44  ,2,1,0
 		ACT_Elem 1,45,  0  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_XiaoLongNv_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_XiaoLongNv_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_XiaoLongNv_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -95,6 +98,7 @@ byte_10700348:
 		SCR_PicElem 45,0,0
 		SCR_PicElem 0,0,0
 		SCR_F056 1	//未知开关
+byte_10700368:
 		SCR_ClearInvincible
 		SCR_End
 Act_XiaoLongNv_Start_1:
@@ -175,6 +179,7 @@ Act_XiaoLongNv_Start_2:
 		SCR_PicElem 276,0,0
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
+byte_107004A8:
 		SCR_PicElem 276,0,0
 		SCR_SetRoleBright 24
 		SCR_ShowLoopPic 6
@@ -209,6 +214,7 @@ Act_XiaoLongNv_Start_3:
 		SCR_F025 2	//未知F025
 		SCR_ShowLoopPic 3
 		SCR_PicElem 11,65,0
+byte_1070052C:
 		SCR_ShowLoopPic 3
 		SCR_PicElem 12,65,0
 		SCR_ShowLoopPic 3
@@ -280,6 +286,7 @@ Act_XiaoLongNv_Start_4:
 		SCR_CallFunc 0,0,0x100A0C15
 		SCR_PicElem 16,0,0
 		SCR_ScrLoopEnd
+byte_1070065C:
 		SCR_SetRoleDark 25
 		SCR_ScrLoopStart 6
 		SCR_CallFunc 0,0,0x100A0C15
@@ -499,6 +506,7 @@ Act_XiaoLongNv_Start_7:
 		SCR_PicElem 2,127,-40
 		SCR_PicElem 2,127,-40
 		SCR_PicElem 2,65,-40
+byte_107009F4:
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40

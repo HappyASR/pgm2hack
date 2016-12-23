@@ -17,6 +17,7 @@ const ActTypePtrTbl const Role_DaPengWang_ActPtrTbl_0 ={
 		DaPengWang_ActType_Type4,		//(ActElem*)0x107046D0,
 		DaPengWang_ActType_Type5,		//(ActElem*)0x10706038,
 		DaPengWang_ActType_Kill,		//(ActElem*)0x10706E78,
+		0,
 		DaPengWang_ActType_Caning,		//(ActElem*)0x10707BB8,
 		DaPengWang_ActType_Victor,		//(ActElem*)0x10709198,
 		0,

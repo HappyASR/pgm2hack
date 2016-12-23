@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_ZhiZhuJing_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_ZhiZhuJing_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_ZhiZhuJing_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_ZhiZhuJing_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_ZhiZhuJing_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_ZhiZhuJing_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_ZhiZhuJing_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_ZhiZhuJing_Start_44  ,2,1,0
 		ACT_Elem 1,45,  0  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_ZhiZhuJing_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_ZhiZhuJing_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_ZhiZhuJing_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -95,6 +98,7 @@ byte_10700348:
 		SCR_PicElem 45,0,0
 		SCR_PicElem 0,0,0
 		SCR_F056 1	//未知开关
+byte_10700368:
 		SCR_ClearInvincible
 		SCR_End
 Act_ZhiZhuJing_Start_1:
@@ -174,6 +178,7 @@ Act_ZhiZhuJing_Start_2:
 		SCR_PicElem 185,0,0
 		SCR_SetRoleBright 32
 		SCR_ShowLoopPic 6
+byte_107004A8:
 		SCR_PicElem 185,0,0
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
@@ -208,6 +213,7 @@ Act_ZhiZhuJing_Start_2:
 Act_ZhiZhuJing_Start_3:
 		SCR_SetInvincible
 		SCR_F018 1	//F018
+byte_1070052C:
 		SCR_F025 2	//未知F025
 		SCR_ShowLoopPic 3
 		SCR_PicElem 11,65,0
@@ -409,6 +415,7 @@ Act_ZhiZhuJing_Start_6:
 		SCR_PicElem 11,0,-1
 		SCR_ShowLoopPic 6
 		SCR_PicElem 12,0,-1
+byte_10700868:
 		SCR_ShowLoopPic 6
 		SCR_PicElem 13,0,-1
 		SCR_ShowLoopPic 6
@@ -498,6 +505,7 @@ Act_ZhiZhuJing_Start_7:
 		SCR_PicElem 1,65,-40
 		SCR_PicElem 1,65,-40
 		SCR_PicElem 2,65,-40
+byte_107009F4:
 		SCR_PicElem 2,127,-40
 		SCR_PicElem 2,127,-40
 		SCR_PicElem 2,65,-40

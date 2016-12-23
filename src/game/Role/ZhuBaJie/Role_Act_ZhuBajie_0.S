@@ -23,6 +23,7 @@ byte_10700060:
 		ACT_Elem 1,10,  Act_ZhuBajie_Start_10  ,2,1,0
 		ACT_Elem 1,11,  Act_ZhuBajie_Start_11  ,2,1,0
 		ACT_Elem 1,12,  Act_ZhuBajie_Start_12  ,1,1,0
+byte_107000CC:
 		ACT_Elem 1,13,  Act_ZhuBajie_Start_13  ,1,1,0
 		ACT_Elem 1,14,  Act_ZhuBajie_Start_14  ,1,1,0
 		ACT_Elem 1,15,  Act_ZhuBajie_Start_15  ,1,1,0
@@ -56,6 +57,7 @@ byte_10700060:
 		ACT_Elem 1,43,  Act_ZhuBajie_Start_43  ,1,1,0
 		ACT_Elem 1,44,  Act_ZhuBajie_Start_44  ,2,1,0
 		ACT_Elem 1,45,  0  ,1,1,0
+byte_10700258:
 		ACT_Elem 1,46,  Act_ZhuBajie_Start_46  ,1,1,0
 		ACT_Elem 1,47,  Act_ZhuBajie_Start_47  ,1,1,0
 		ACT_Elem 1,48,  Act_ZhuBajie_Start_48  ,1,1,0
@@ -67,6 +69,7 @@ byte_10700060:
 		ACT_Elem 1,54,  0  ,1,1,0
 		ACT_Elem 1,55,  0  ,1,1,0
 		ACT_Elem 1,56,  0  ,1,1,0
+byte_107002DC:
 		ACT_Elem 1,57,  0  ,1,1,0
 		ACT_Elem 1,58,  0  ,1,1,0
 		ACT_Elem 1,59,  0  ,1,1,0
@@ -174,6 +177,7 @@ Act_ZhuBajie_Start_2:
 		SCR_PicElem 155,0,0
 		SCR_SetRoleBright 28
 		SCR_ShowLoopPic 6
+byte_107004A8:
 		SCR_PicElem 155,0,0
 		SCR_SetRoleBright 24
 		SCR_ShowLoopPic 6
@@ -208,6 +212,7 @@ Act_ZhuBajie_Start_3:
 		SCR_PicElem 11,65,0
 		SCR_ShowLoopPic 3
 		SCR_PicElem 12,65,0
+byte_1070052C:
 		SCR_ShowLoopPic 3
 		SCR_PicElem 13,65,0
 		SCR_ShowLoopPic 3
@@ -279,6 +284,7 @@ Act_ZhuBajie_Start_4:
 		SCR_ScrLoopEnd
 		SCR_SetRoleDark 25
 		SCR_ScrLoopStart 6
+byte_1070065C:
 		SCR_CallFunc 0,0,0x1009EC11
 		SCR_PicElem 17,0,0
 		SCR_ScrLoopEnd
@@ -314,6 +320,7 @@ Act_ZhuBajie_Start_5:
 		SCR_ShowLoopPic 6
 		SCR_PicElem 11,1,-1
 		SCR_ShowLoopPic 6
+byte_107006F8:
 		SCR_PicElem 12,1,-1
 		SCR_ShowLoopPic 6
 		SCR_PicElem 13,1,-1
@@ -443,6 +450,7 @@ byte_107008D8:
 Act_ZhuBajie_Start_7:
 		SCR_CallFunc 0,0,0x1009DD7F
 		SCR_F018 1	//F018
+byte_107008EC:
 		SCR_F058 70
 		SCR_F025 2	//δ֪F025
 		SCR_CallFunc 0,3,0x1009DD7F
@@ -468,6 +476,7 @@ Act_ZhuBajie_Start_7:
 		SCR_PicElem 0,1,-40
 		SCR_CallFunc 0,1,0x1009DD7F
 		SCR_PicElem 0,1,-40
+byte_10700970:
 		SCR_PicElem 0,63,-40
 		SCR_CallFunc 0,1,0x1009DD7F
 		SCR_PicElem 0,63,-40
@@ -498,6 +507,7 @@ Act_ZhuBajie_Start_7:
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40
+byte_107009F4:
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,65,-40
 		SCR_PicElem 2,127,-40

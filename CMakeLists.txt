@@ -28,7 +28,7 @@ target_link_libraries(pgm2 c_s nosys gcc g m)
 #custom command to use objcopy to create .bin files out of ELF files
 function(apply_patch INPUT)
 	add_custom_command(TARGET ${INPUT} POST_BUILD
-		COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/app_patch.py ${INPUT} ${GAME_MAP} ${CMAKE_CURRENT_SOURCE_DIR}/xyj2_v104cn_d.u7 ${CMAKE_CURRENT_SOURCE_DIR}/xyj2_v104cn.u7
+		COMMAND python ${CMAKE_CURRENT_SOURCE_DIR}/app_patch.py ${INPUT} ${GAME_MAP} ${CMAKE_CURRENT_SOURCE_DIR}/xyj2_v104cn_d.u7 ${CMAKE_CURRENT_SOURCE_DIR}/xyj2_v104cn_h.u7
 		COMMENT "Generating Final ROM")
 	set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES ${CMAKE_CURRENT_SOURCE_DIR}/xyj2_v104cn.u7)
 endfunction(apply_patch)

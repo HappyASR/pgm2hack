@@ -14,7 +14,21 @@ int hook_GiveStartItem(int role_addr, char role_id)	//根据人物不同赠送�
 		switch (role_id) {		
 		default:
 		return role_addr;
-
+		case 11:
+			*(char *)(addr + 11) = 143;
+			*(char *)(addr + 12) = 9;
+			*(char *)(addr + 21) = 144;
+			*(char *)(addr + 22) = 9;
+			*(char *)(addr + 31) = 145;
+			*(char *)(addr + 32) = 9;
+			*(char *)(addr + 41) = 146;
+			*(char *)(addr + 42) = 9;
+			*(char *)(addr + 51) = 147;
+			*(char *)(addr + 52) = 9;
+			*(char *)(addr + 61) = 148;
+			*(char *)(addr + 62) = 9;
+			*(char *)(addr + 340) = 6;
+			break;		
 		case 0:
 			*(char *)(addr + 11) = 143;
 			*(char *)(addr + 12) = 9;

@@ -1,4 +1,4 @@
-
+//输入按键定义
 #define INP_INS_END   0x4000			//输入指令流结束标志
 #define INP_UP 1				//上
 #define INP_DOWN 2				//下
@@ -8,10 +8,25 @@
 #define INP_B 0x82				//B
 #define INP_C 0x84				//C
 #define INP_D 0x88				//D
-#define INP_UNKNOW1 0x14		//
 
-//参数定义
-  
+//招式参数定义
+#define ON_GROUND	0x4000			//地面可用
+#define IN_AIR		0x800			//空中可用
+
+#define NO_BURST	0x80			//非曝气
+#define BURST		0x40			//曝气
+
+#define ON_GROUND_LIMIT		0x20		//地面限制
+#define IN_AIR_LIMIT		0x10		//空中限制
+
+#define LEVEL_LIMIT_1	1			//等级限制1
+#define LEVEL_LIMIT_2	2			//等级限制2
+#define LEVEL_LIMIT_3	3			//等级限制3
+#define LEVEL_LIMIT_4	4			//等级限制4
+#define LEVEL_LIMIT_5	5			//等级限制5
+#define LEVEL_LIMIT_6	6			//等级限制6
+#define LEVEL_LIMIT_7	7			//等级限制7
+#define LEVEL_LIMIT_8	8			//等级限制8
 
 //输入指令序列结构
 /*

@@ -7,7 +7,7 @@
 	//赠送游戏初始道具的地方
 	XXPATCH16(0x10073A02)
 #if EN_HOOK_GIVESTARTITEM
-	//XXJUMP16(0x10073A02,hook_GiveStartItem)
+	XXJUMP16(0x10073A02,hook_GiveStartItem)
 #endif
 
 	//启动函数

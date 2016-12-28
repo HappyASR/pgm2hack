@@ -1,6 +1,6 @@
-//#include "Action.h"
+#include "Action.h"
 //#include "Collision.h"
-//#include "pic.h"
+#include "Image.h"
 
 //#pragma pack(push, 2)
 //OBJ½á¹¹,0x54×Ö½Ú
@@ -66,7 +66,7 @@ typedef struct{
 	LONG Var6C;
 	LONG Var70;
 
-}KOVOBJ;
+}OBJ;
 
 //#pragma pack(pop)
 
